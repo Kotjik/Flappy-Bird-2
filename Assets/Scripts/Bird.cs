@@ -9,12 +9,14 @@ public class Bird : MonoBehaviour
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
+    private GameObject flappy;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        flappy = this.gameObject;
         
     }
 
@@ -28,7 +30,22 @@ public class Bird : MonoBehaviour
                 anim.SetTrigger("Flap");
             }
         }
-        
+
+        //if(GameController.instance.score % 2 == 1)
+        if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            flappy.transform.localScale = new Vector2(0.8f, 0.8f);
+        }
+        else if(Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            flappy.transform.localScale = new Vector2(1.2f, 1.2f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            flappy.transform.localScale = new Vector2(1f, 1f);
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
