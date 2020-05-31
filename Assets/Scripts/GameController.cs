@@ -9,10 +9,15 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
     public GameObject gameOverText;
+    public GameObject life1White;
+    public GameObject life2White;
+    public GameObject life3White;
     public Text scoreText;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
     private int score = 0;
+    public int life = 2;
+
     
 
     // Start is called before the first frame update
@@ -37,6 +42,20 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+        if (life == 2)
+        {
+            life3White.SetActive(true);
+        }
+        if (life == 1)
+        {
+            life2White.SetActive(true);
+        }
+        if (life == 0)
+        {
+            life1White.SetActive(true);
+        }
+
+
     }
 
     public void BirdScored()
@@ -53,5 +72,6 @@ public class GameController : MonoBehaviour
     {
         gameOverText.SetActive(true);
         gameOver = true;
+        
     }
 }
