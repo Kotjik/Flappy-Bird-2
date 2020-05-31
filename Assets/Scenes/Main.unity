@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 45338450}
   - component: {fileID: 45338449}
   - component: {fileID: 45338451}
+  - component: {fileID: 45338452}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -187,6 +188,21 @@ MonoBehaviour:
   spawnRate: 4
   columnMin: 2
   columnMax: -2
+--- !u!114 &45338452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45338448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179a4d82dbf19684f877419f327f7963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 6238168801244527305, guid: 5434142ee13325041a266afbec009696,
+    type: 3}
+  spawnTime: 4
 --- !u!1 &112041404
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +840,7 @@ GameObject:
   - component: {fileID: 1563440563}
   - component: {fileID: 1563440564}
   - component: {fileID: 1563440565}
+  - component: {fileID: 1563440566}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -989,6 +1006,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1563440566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563440559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb8b2e56b73cac4fa0bea664c13ea59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780160878
 GameObject:
   m_ObjectHideFlags: 0
