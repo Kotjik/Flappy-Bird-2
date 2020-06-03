@@ -16,7 +16,7 @@ public class Column : MonoBehaviour
             if(GameController.instance.score > 0 && GameController.instance.score % 2 == 0)
             {
                 float currentSpeed = GameController.instance.scrollSpeed;
-                GameController.instance.ChangeGameSpeed(currentSpeed - 2);
+                GameController.instance.ChangeGameSpeed(currentSpeed - 1);
             }
            
         }
