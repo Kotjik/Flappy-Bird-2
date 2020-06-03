@@ -10,6 +10,8 @@ public class Bird : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator anim;
     private GameObject flappy;
+    private bool immortal = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,11 +52,42 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         // On Die --> Bird standsStill
         //rb2d.velocity = Vector2.zero;
-
-        isDead = true;
-        anim.SetTrigger("Die");
-        GameController.instance.BirdDied();
+        if (immortal == false)
+        {
+            if (GameController.instance.life == 0)
+            {
+                isDead = true;
+                anim.SetTrigger("Die");
+                GameController.instance.BirdDied();
+                Debug.Log(GameController.instance.life);
+            }
+            else
+            {
+                StartCoroutine("makeImmortal");
+                GameController.instance.life--;
+                Debug.Log(GameController.instance.life);
+                Debug.Log(immortal);
+            }
+        }
     }
+
+
+    private IEnumerator makeImmortal()
+    {
+        immortal = true;
+        anim.SetTrigger("Ghost");
+        Debug.Log(immortal);
+        yield return new WaitForSeconds(3f);
+        immortal = false;
+        anim.SetTrigger("Ghost");
+        Debug.Log(immortal);
+        yield return null;
+
+    }
+
+
+
 }
