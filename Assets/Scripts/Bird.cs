@@ -36,8 +36,10 @@ public class Bird : MonoBehaviour
         // On Die --> Bird standsStill
         //rb2d.velocity = Vector2.zero;
 
-        isDead = true;
+        //TODO turn on
+      /*  isDead = true;
         anim.SetTrigger("Die");
         GameController.instance.BirdDied();
+        */
     }
 }

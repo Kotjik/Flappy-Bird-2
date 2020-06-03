@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
-    private int score = 0;
+    public int score = 0;
     
 
     // Start is called before the first frame update
@@ -37,6 +37,11 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+
+        Debug.Log("speed" + scrollSpeed);
+
+
+        
     }
 
     public void BirdScored()
@@ -47,11 +52,28 @@ public class GameController : MonoBehaviour
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
+       
     }
 
     public void BirdDied()
     {
         gameOverText.SetActive(true);
         gameOver = true;
+        //TODO
+        DefaultGameSpeed();
+    }
+
+
+
+    //TODO to make game / bird / obstacles faster or slower
+    public void ChangeGameSpeed(float speed)
+    {
+        scrollSpeed = speed;
+        Debug.Log(scrollSpeed);
+    }
+    //TODO
+    public void DefaultGameSpeed()
+    {
+        scrollSpeed = -1.5f;
     }
 }
