@@ -12,13 +12,8 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
-    public int score = 0;
-    public GameObject life1White;
-    public GameObject life2White;
-    public GameObject life3White;
-    public int life = 2;
-
-
+    private int score = 0;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -42,19 +37,6 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
-        if (life == 2)
-        {
-            life3White.SetActive(true);
-        }
-        if (life == 1)
-        {
-            life2White.SetActive(true);
-        }
-        if (life == 0)
-        {
-            life1White.SetActive(true);
-        }
-
     }
 
     public void BirdScored()
