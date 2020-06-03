@@ -68,7 +68,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 915
+=======
+    x: 1113
+>>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
 =======
     x: 1113
 >>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
@@ -399,6 +403,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: 16
+<<<<<<< HEAD
   m_LastProjectPath: J:\Burak\Documents\FlappyBirdProject\Flappy-Bird-2-dev
 =======
     - Assets/Prefabs
@@ -407,6 +412,9 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Prefabs
   m_LastFoldersGridSize: 16
+  m_LastProjectPath: C:\Users\PC\Documents\GitHub\Flappy-Bird-2
+>>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
+=======
   m_LastProjectPath: C:\Users\PC\Documents\GitHub\Flappy-Bird-2
 >>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
   m_LockTracker:
@@ -794,7 +802,11 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 914, y: 643}
+=======
+  m_LastWindowPixelSize: {x: 1112, y: 665}
+>>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
 =======
   m_LastWindowPixelSize: {x: 1112, y: 665}
 >>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s

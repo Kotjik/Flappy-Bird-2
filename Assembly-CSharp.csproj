@@ -50,6 +50,7 @@
       <HintPath>J:\Users\Burak\Programme\2019.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
+<<<<<<< HEAD
       <HintPath>J:\Users\Burak\Programme\2019.3.14f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -673,6 +674,8 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.3.14f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
+=======
+>>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.3.14f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -1296,6 +1299,9 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+>>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
+=======
 >>>>>>> parent of 5ce539c... Merge branch 'dev' into feature-s
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
