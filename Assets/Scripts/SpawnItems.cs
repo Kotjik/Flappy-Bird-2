@@ -13,6 +13,7 @@ public class SpawnItems : MonoBehaviour
     public GameObject itemPrefab3;
 
     public float spawnTime = 4.0f;
+    public float columnMin = -2f;
 
     private Vector2 screenBounds;
 
@@ -35,7 +36,7 @@ public class SpawnItems : MonoBehaviour
     // Spawn one item
     void Spawn()
     {
-        int y = (int)UnityEngine.Random.Range(-screenBounds.y, screenBounds.y);
+        int y = (int)UnityEngine.Random.Range(columnMin, screenBounds.y);
         int x = (int)screenBounds.x * 2;
         int prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
     
