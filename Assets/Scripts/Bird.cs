@@ -11,30 +11,36 @@ public class Bird : MonoBehaviour
     private Animator anim;
     private GameObject flappy;
     private bool immortal = false;
-
+    private Menu menuScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        menuScript = GameObject.Find("GameController").GetComponent<Menu>();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         flappy = this.gameObject;
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isDead == false){
-            if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
-                rb2d.velocity = Vector2.zero;
-                rb2d.AddForce(new Vector2(0, upForce));
-                anim.SetTrigger("Flap");
+        if (menuScript.gamePaused == false)
+        {
+            if (isDead == false)
+            {
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    rb2d.velocity = Vector2.zero;
+                    rb2d.AddForce(new Vector2(0, upForce));
+                    anim.SetTrigger("Flap");
+                }
             }
         }
 
         //if(GameController.instance.score % 2 == 1)
-        if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
             flappy.transform.localScale = new Vector2(0.8f, 0.8f);
         }

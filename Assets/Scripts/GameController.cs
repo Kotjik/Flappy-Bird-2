@@ -17,13 +17,15 @@ public class GameController : MonoBehaviour
     public GameObject life2White;
     public GameObject life3White;
     public int life = 2;
-
+    private Menu menuScript;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance == null)
+        menuScript = GameObject.Find("GameController").GetComponent<Menu>();
+
+        if (instance == null)
         {
             instance = this;
         }
@@ -36,10 +38,14 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameOver == true)
+        if (menuScript.gamePaused == false)
         {
-            if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)){
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (gameOver == true)
+            {
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
         if (life == 2)
