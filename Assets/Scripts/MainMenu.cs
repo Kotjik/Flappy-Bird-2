@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject settingsPanel;
+
     // Start is called before the first frame update
     public void StartGame()
     {
@@ -15,6 +17,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         print("quit game");
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
     }
       
 }
