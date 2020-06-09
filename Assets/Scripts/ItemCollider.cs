@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ItemCollider : MonoBehaviour
 {
-    //necessary?
-    bool itemColl = false;
-
     private void OnTriggerEnter2D(Collider2D coll)
     {
         //Item Collision
@@ -37,6 +34,14 @@ public class ItemCollider : MonoBehaviour
 
             //GameController.instance.BirdScored();
             UnityEngine.Debug.Log("Bounds Item3");
+        }
+        else if (coll.name.StartsWith("ItemPrefab4"))
+        {
+            // Remove the Item
+            Destroy(coll.gameObject);
+
+            //GameController.instance.BirdScored();
+            UnityEngine.Debug.Log("Bounds Item4");
         }
     }
 }

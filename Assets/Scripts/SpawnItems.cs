@@ -8,9 +8,12 @@ public class SpawnItems : MonoBehaviour
 {
     // Item Prefab
     List<GameObject> prefabList = new List<GameObject>();
-    public GameObject itemPrefab1;
-    public GameObject itemPrefab2;
-    public GameObject itemPrefab3;
+    public GameObject itemBirdIncrease;
+    public GameObject itemBirdDecrease;
+    public GameObject itemSpeedUp;
+    public GameObject itemSpeedDown;
+    public GameObject itemInvulnerable;
+    public GameObject itemAddLife;
 
     public float spawnTime = 4.0f;
     public float columnMin = -2f;
@@ -24,9 +27,12 @@ public class SpawnItems : MonoBehaviour
     void Start()
     {
         //add possible Items to List
-        prefabList.Add(itemPrefab1);
-        prefabList.Add(itemPrefab2);
-        prefabList.Add(itemPrefab3);
+        prefabList.Add(itemBirdIncrease);
+        prefabList.Add(itemBirdDecrease);
+        prefabList.Add(itemSpeedUp);
+        prefabList.Add(itemSpeedDown);
+        prefabList.Add(itemInvulnerable);
+        prefabList.Add(itemAddLife);
 
         // Spawn items every 4 seconds, starting in 2
         InvokeRepeating("Spawn", 2, spawnTime);
