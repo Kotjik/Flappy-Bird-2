@@ -42,23 +42,38 @@ public class Bird : MonoBehaviour
         //if(GameController.instance.score % 2 == 1)
         if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
-            flappy.transform.localScale = new Vector2(0.8f, 0.8f);
+            FlappyShrinkScale();
         }
-        else if(Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
         {
-            flappy.transform.localScale = new Vector2(1.2f, 1.2f);
+            FlappyEnlargeScale();
         }
         else if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
         {
-            flappy.transform.localScale = new Vector2(1f, 1f);
+            FlappyNormaliseScale();
         }
 
+        //
 
+    }
+
+    public void FlappyEnlargeScale()
+    {
+        flappy.transform.localScale = new Vector2(1.2f, 1.2f);
+    }
+
+    public void FlappyShrinkScale()
+    {
+        flappy.transform.localScale = new Vector2(0.8f, 0.8f);
+    }
+
+    public void FlappyNormaliseScale()
+    {
+        flappy.transform.localScale = new Vector2(1f, 1f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         // On Die --> Bird standsStill
         //rb2d.velocity = Vector2.zero;
         if (immortal == false)
@@ -77,6 +92,23 @@ public class Bird : MonoBehaviour
                 Debug.Log(GameController.instance.life);
                 Debug.Log(immortal);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Item Collision
+        if (collision.name.StartsWith("ItemFlappyEnlarge"))
+        {
+            FlappyEnlargeScale();
+        }
+        else if (collision.name.StartsWith("ItemFlappyShrink"))
+        {
+            FlappyShrinkScale();
+        }
+        else if (collision.name.StartsWith("ItemFlappyNormalise"))
+        {
+            FlappyNormaliseScale();
         }
     }
 

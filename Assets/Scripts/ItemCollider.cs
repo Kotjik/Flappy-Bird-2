@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ItemCollider : MonoBehaviour
 {
+
+    public Bird flappy;
     private void OnTriggerEnter2D(Collider2D coll)
     {
         //Item Collision
-        if (coll.name.StartsWith("ItemPrefab1"))
+        if (coll.name.StartsWith("ItemFlappyEnlarge"))
         {
             // Get longer in next Move call
             //itemColl = true;
@@ -17,23 +19,26 @@ public class ItemCollider : MonoBehaviour
             Destroy(coll.gameObject);
 
             //GameController.instance.BirdScored();
-            UnityEngine.Debug.Log("Bounds Item1");
+            UnityEngine.Debug.Log("Bounds ItemFlappyEnlarge");
+
         }
-        else if (coll.name.StartsWith("ItemPrefab2"))
+        else if (coll.name.StartsWith("ItemFlappyShrink"))
         {
             // Remove the Item
             Destroy(coll.gameObject);
 
             //GameController.instance.BirdScored();
-            UnityEngine.Debug.Log("Bounds Item2");
+            UnityEngine.Debug.Log("Bounds ItemFlappyShrink");
+
         }
-        else if (coll.name.StartsWith("ItemPrefab3"))
+        else if (coll.name.StartsWith("ItemFlappyNormalise"))
         {
             // Remove the Item
             Destroy(coll.gameObject);
 
             //GameController.instance.BirdScored();
-            UnityEngine.Debug.Log("Bounds Item3");
+            UnityEngine.Debug.Log("Bounds ItemFlappyNormalise");
+
         }
         else if (coll.name.StartsWith("ItemPrefab4"))
         {
@@ -41,7 +46,7 @@ public class ItemCollider : MonoBehaviour
             Destroy(coll.gameObject);
 
             //GameController.instance.BirdScored();
-            UnityEngine.Debug.Log("Bounds Item4");
+            UnityEngine.Debug.Log("Bounds Item4");        
         }
     }
 }
