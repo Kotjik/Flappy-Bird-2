@@ -10,6 +10,7 @@ public class SpawnItems : MonoBehaviour
     List<GameObject> prefabList = new List<GameObject>();
     public GameObject itemBirdIncrease;
     public GameObject itemBirdDecrease;
+    public GameObject itemBirdNormalise;
     public GameObject itemSpeedUp;
     public GameObject itemSpeedDown;
     public GameObject itemInvulnerable;
@@ -29,6 +30,7 @@ public class SpawnItems : MonoBehaviour
         //add possible Items to List
         prefabList.Add(itemBirdIncrease);
         prefabList.Add(itemBirdDecrease);
+        prefabList.Add(itemBirdNormalise);
         prefabList.Add(itemSpeedUp);
         prefabList.Add(itemSpeedDown);
         prefabList.Add(itemInvulnerable);
