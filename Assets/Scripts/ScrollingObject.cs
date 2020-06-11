@@ -19,6 +19,7 @@ public class ScrollingObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
         //delete unused prefabs
         if (transform.position.x < -screenBounds.x)
         {

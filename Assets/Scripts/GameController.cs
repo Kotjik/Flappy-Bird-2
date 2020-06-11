@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
     public GameObject gameOverText;
     public Text scoreText;
     public bool gameOver = false;
-    public float scrollSpeed = -1.5f;
     public int score = 0;
     public GameObject life1White;
     public GameObject life2White;
@@ -20,6 +19,7 @@ public class GameController : MonoBehaviour
     private Menu menuScript;
 
     public float obstacleSpawnDistance = 10f;
+    public float scrollSpeed = -1.5f;
 
 
     // Start is called before the first frame update
@@ -73,11 +73,28 @@ public class GameController : MonoBehaviour
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
+
+        if(score % 2 == 0)
+        {
+            ChangeSpeed(-1);
+        }
     }
 
     public void BirdDied()
     {
         gameOverText.SetActive(true);
         gameOver = true;
+        ResetSpeed();
     }
+
+    private void ChangeSpeed(float value)
+    {
+        scrollSpeed += value;
+    }
+
+    private void ResetSpeed()
+    {
+        scrollSpeed = -1.5f;
+    }
+
 }
