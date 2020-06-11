@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public int life = 2;
     private Menu menuScript;
 
+    public float obstacleSpawnDistance = 10f;
+
 
     // Start is called before the first frame update
     void Awake()

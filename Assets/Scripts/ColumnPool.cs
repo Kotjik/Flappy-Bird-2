@@ -7,15 +7,17 @@ public class ColumnPool : MonoBehaviour
 
     public int columnPoolSize = 5;
     public GameObject columnPrefab;
-    public float spawnRate = 4f;
     public float columnMin = -2f;
     public float columnMax = 2f;
 
     private GameObject[] columns;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
-    private float timeSinceLastSpawned;
     private float spawXPosition = 10f;
     private int currentColumn = 0;
+
+    
+    private float distanceToLastObstacle;
+
     
     // Start is called before the first frame update
     void Start()
@@ -25,20 +27,40 @@ public class ColumnPool : MonoBehaviour
         {
             columns[i] = (GameObject)Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity);
         }
+
+        float spawnYPosition = Random.Range(columnMin, columnMax);
+        columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
+        currentColumn++;
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeSinceLastSpawned += Time.deltaTime;
-
-        if (GameController.instance.gameOver == false && timeSinceLastSpawned >= spawnRate)
+       
+        int correctIndex;
+        if (currentColumn == 0)
         {
-            timeSinceLastSpawned = 0;
+            correctIndex = 4;
+        }
+        else
+        {
+            correctIndex = currentColumn - 1;
+        }
+
+        distanceToLastObstacle = spawXPosition - columns[correctIndex].transform.position.x;
+      
+      
+
+        if(GameController.instance.gameOver == false && distanceToLastObstacle > GameController.instance.obstacleSpawnDistance)
+        {
+            Debug.Log("spawn");
+           
             float spawnYPosition = Random.Range(columnMin, columnMax);
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
             currentColumn++;
-            if(currentColumn >= columnPoolSize)
+            if (currentColumn >= columnPoolSize)
             {
                 currentColumn = 0;
             }
