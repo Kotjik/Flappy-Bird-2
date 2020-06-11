@@ -74,9 +74,16 @@ public class GameController : MonoBehaviour
         score++;
         scoreText.text = "Score: " + score.ToString();
 
+        //speed up the game
         if(score % 2 == 0)
         {
             ChangeSpeed(-1);
+        }
+
+        //distance between obstacles smaller
+        if (score % 3 == 0)
+        {
+            obstacleSpawnDistance -= 2;
         }
     }
 
@@ -85,6 +92,7 @@ public class GameController : MonoBehaviour
         gameOverText.SetActive(true);
         gameOver = true;
         ResetSpeed();
+        obstacleSpawnDistance = 10;
     }
 
     private void ChangeSpeed(float value)
