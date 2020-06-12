@@ -156,12 +156,13 @@ MonoBehaviour:
   gameOverText: {fileID: 624407514}
   scoreText: {fileID: 805380809}
   gameOver: 0
-  scrollSpeed: -1.5
   score: 0
   life1White: {fileID: 109374343}
   life2White: {fileID: 427204352}
   life3White: {fileID: 2140877927}
   life: 3
+  obstacleSpawnDistance: 10
+  scrollSpeed: -1.5
 --- !u!4 &45338450
 Transform:
   m_ObjectHideFlags: 0
@@ -191,7 +192,6 @@ MonoBehaviour:
   columnPoolSize: 5
   columnPrefab: {fileID: 2535264263235590770, guid: f12ea8dfa1add124bb1174d99f9bb5a4,
     type: 3}
-  spawnRate: 4
   columnMin: 2
   columnMax: -2
 --- !u!114 &45338452
@@ -226,10 +226,14 @@ MonoBehaviour:
     type: 3}
   itemBirdNormalise: {fileID: 6238168801244527305, guid: 2c486ce6464186743b6cdf9044abb88f,
     type: 3}
-  itemSpeedUp: {fileID: 0}
-  itemSpeedDown: {fileID: 0}
-  itemInvulnerable: {fileID: 0}
-  itemAddLife: {fileID: 0}
+  itemSpeedUp: {fileID: 6238168801244527305, guid: c9c69e31128e4e842b585c576e870477,
+    type: 3}
+  itemSpeedDown: {fileID: 6238168801244527305, guid: c9c69e31128e4e842b585c576e870477,
+    type: 3}
+  itemInvulnerable: {fileID: 6238168801244527305, guid: c9c69e31128e4e842b585c576e870477,
+    type: 3}
+  itemAddLife: {fileID: 6238168801244527305, guid: c9c69e31128e4e842b585c576e870477,
+    type: 3}
   spawnTime: 4
   columnMin: -2
 --- !u!1 &109374343
