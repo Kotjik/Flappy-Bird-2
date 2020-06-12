@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject life3White;
     public int life = 2;
     private Menu menuScript;
-
+    private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1.5f;
 
@@ -67,15 +67,18 @@ public class GameController : MonoBehaviour
 
     public void BirdScored()
     {
+        mainMenu = GameObject.Find("ScriptManager").GetComponent<MainMenu>();
+
         if(gameOver == true)
         {
             return;
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
+        mainMenu.setHighscore(score);
 
         //speed up the game
-        if(score % 2 == 0)
+        if (score % 2 == 0)
         {
             ChangeSpeed(-1);
         }

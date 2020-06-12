@@ -1296,6 +1296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 1617602050}
+  savedHighscore: 0
+  highscore: {fileID: 579928226}
 --- !u!4 &1455294446
 Transform:
   m_ObjectHideFlags: 0

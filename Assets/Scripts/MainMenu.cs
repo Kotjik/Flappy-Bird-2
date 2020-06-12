@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
+    public int savedHighscore = 0;
+    public Text highscore;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     public void StartGame()
@@ -21,6 +29,8 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
+        // get savedHighscore and show
+        highscore.text = PlayerPrefs.GetInt("highscore").ToString();
         settingsPanel.SetActive(true);
     }
 
@@ -28,5 +38,15 @@ public class MainMenu : MonoBehaviour
     {
         settingsPanel.SetActive(false);
     }
-      
+
+    public void setHighscore(int score)
+    {
+        if (score > savedHighscore)
+        {
+            savedHighscore = score;
+            PlayerPrefs.SetInt("highscore", savedHighscore);
+            print("score saved: " + savedHighscore);
+        }
+    }
+
 }
