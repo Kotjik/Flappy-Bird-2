@@ -8,7 +8,10 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
     public int savedHighscore = 0;
+    private int savedMusic = 1;
     public Text highscore;
+    public Text music;
+    public bool playMusic = true;
 
     void Awake()
     {
@@ -31,6 +34,16 @@ public class MainMenu : MonoBehaviour
     {
         // get savedHighscore and show
         highscore.text = PlayerPrefs.GetInt("highscore").ToString();
+        // get musicSettings and show
+        savedMusic = PlayerPrefs.GetInt("musicBool");
+        if(savedMusic == 1)
+        {
+            music.text = "on";
+        }
+        else
+        {
+            music.text = "off";
+        }
         settingsPanel.SetActive(true);
     }
 
@@ -47,6 +60,20 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("highscore", savedHighscore);
             print("score saved: " + savedHighscore);
         }
+    }
+
+    public void changeMusicSettings()
+    {
+        if (music.text.Equals("off"))
+        {
+            music.text = "on";
+            playMusic = true;
+        } else
+        {
+            music.text = "off";
+            playMusic = false;
+        }
+        PlayerPrefs.SetInt("musicBool", playMusic ? 1 : 0);
     }
 
 }

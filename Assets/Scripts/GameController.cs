@@ -20,13 +20,13 @@ public class GameController : MonoBehaviour
     private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1.5f;
-
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Awake()
     {
         menuScript = GameObject.Find("GameController").GetComponent<Menu>();
-
+        music = GetComponent<AudioSource>();
         if (instance == null)
         {
             instance = this;
@@ -34,6 +34,17 @@ public class GameController : MonoBehaviour
         else if(instance != this)
         {
             Destroy(gameObject);
+        }
+
+        if (PlayerPrefs.GetInt("musicBool") == 0)
+        {
+            print("stop music");
+            music.Stop();
+        }
+        else
+        {
+            print("play music");
+            music.Play();
         }
     }
 
