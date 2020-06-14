@@ -91,13 +91,13 @@ public class GameController : MonoBehaviour
         //speed up the game
         if (score % 2 == 0)
         {
-            ChangeSpeed(-1);
+            ChangeSpeed(-0.2f);
         }
 
         //distance between obstacles smaller
         if (score % 3 == 0)
         {
-            obstacleSpawnDistance -= 2;
+            obstacleSpawnDistance -= 0.5f;
         }
     }
 
