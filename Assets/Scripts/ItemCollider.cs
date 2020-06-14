@@ -40,13 +40,37 @@ public class ItemCollider : MonoBehaviour
             UnityEngine.Debug.Log("Bounds ItemFlappyNormalise");
 
         }
-        else if (coll.name.StartsWith("ItemPrefab4"))
+        else if (coll.name.StartsWith("ItemAddLife"))
         {
             // Remove the Item
             Destroy(coll.gameObject);
 
             //GameController.instance.BirdScored();
-            UnityEngine.Debug.Log("Bounds Item4");        
+            UnityEngine.Debug.Log("Bounds add life");        
+        }
+        else if (coll.name.StartsWith("ItemInvulnerable"))
+        {
+            // Remove the Item
+            Destroy(coll.gameObject);
+
+            //GameController.instance.BirdScored();
+            UnityEngine.Debug.Log("Bounds invulnerable");
+        }
+        else if (coll.name.StartsWith("ItemSpeedUp"))
+        {
+            // Remove the Item
+            Destroy(coll.gameObject);
+
+            //GameController.instance.BirdScored();
+            UnityEngine.Debug.Log("Bounds speed up");
+        }
+        else if (coll.name.StartsWith("ItemSpeedDown"))
+        {
+            // Remove the Item
+            Destroy(coll.gameObject);
+
+            //GameController.instance.BirdScored();
+            UnityEngine.Debug.Log("Bounds speed down");
         }
     }
 }

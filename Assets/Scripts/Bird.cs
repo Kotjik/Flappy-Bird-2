@@ -110,6 +110,14 @@ public class Bird : MonoBehaviour
         {
             FlappyNormaliseScale();
         }
+        else if (collision.name.StartsWith("ItemInvulnerable"))
+        {
+            StartCoroutine("makeImmortal");
+        }
+        else if (collision.name.StartsWith("ItemAddLife"))
+        {
+            GameController.instance.life++;
+        }
     }
 
 

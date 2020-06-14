@@ -23,7 +23,7 @@ public class ScrollingObject : MonoBehaviour
         //delete unused prefabs
         if (transform.position.x < -screenBounds.x)
         {
-            if (transform.name.StartsWith("ItemPrefab"))
+            if (transform.name.StartsWith("Item"))
             {
                 Destroy(this.gameObject);
             }
