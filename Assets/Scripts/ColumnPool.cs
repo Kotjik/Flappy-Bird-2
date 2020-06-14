@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColumnPool : MonoBehaviour
 {
 
-    public int columnPoolSize = 5;
+    public int columnPoolSize = 15;
     public GameObject columnPrefab;
     public float columnMin = -2f;
     public float columnMax = 2f;
@@ -42,7 +42,7 @@ public class ColumnPool : MonoBehaviour
         int correctIndex;
         if (currentColumn == 0)
         {
-            correctIndex = 4;
+            correctIndex = columnPoolSize-1;
         }
         else
         {
