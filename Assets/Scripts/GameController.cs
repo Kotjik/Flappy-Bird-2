@@ -25,8 +25,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        menuScript = GameObject.Find("GameController").GetComponent<Menu>();
         music = GetComponent<AudioSource>();
+
         if (instance == null)
         {
             instance = this;
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (PlayerPrefs.GetInt("musicBool") == 0)
+        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
         {
             print("stop music");
             music.Stop();
@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        menuScript = GameObject.Find("GameController").GetComponent<Menu>();
         if (menuScript.gamePaused == false)
         {
             if (gameOver == true)

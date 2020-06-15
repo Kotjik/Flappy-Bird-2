@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
-    public int savedHighscore = 0;
+    private int savedHighscore = 0;
     private int savedMusic = 1;
     public Text highscore;
     public Text music;
@@ -32,10 +32,19 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSettings()
     {
-        // get savedHighscore and show
-        highscore.text = PlayerPrefs.GetInt("highscore").ToString();
-        // get musicSettings and show
-        savedMusic = PlayerPrefs.GetInt("musicBool");
+        // get savedHighscore and show. If there is no saved highscore, savedHighscore = 0;
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            savedHighscore = PlayerPrefs.GetInt("highscore");
+        }
+        highscore.text = savedHighscore.ToString();
+
+        // get musicSettings and show. If there is no saved musicBool, saved Music = 1 (music on);
+        if (PlayerPrefs.HasKey("musicBool"))
+        {
+            savedMusic = PlayerPrefs.GetInt("musicBool");
+        }
+        
         if(savedMusic == 1)
         {
             music.text = "on";
@@ -54,6 +63,12 @@ public class MainMenu : MonoBehaviour
 
     public void setHighscore(int score)
     {
+        //checks if there is still a savedHighscore, else it is 0
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            savedHighscore = PlayerPrefs.GetInt("highscore");
+        }
+
         if (score > savedHighscore)
         {
             savedHighscore = score;
