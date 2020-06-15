@@ -12,9 +12,11 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public bool gameOver = false;
     public int score = 0;
-    public GameObject life1White;
-    public GameObject life2White;
-    public GameObject life3White;
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
+    public GameObject life4;
+    public GameObject life5;
     public int life = 2;
     private Menu menuScript;
     private MainMenu mainMenu;
@@ -62,18 +64,42 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+
+        if (life == 5)
+        {
+            life5.SetActive(true);
+        }
+
+
+        if (life == 4)
+        {
+            life4.SetActive(true);
+            life5.SetActive(false);
+        }
+
+        if (life == 3)
+        {
+            life2.SetActive(true);
+            life3.SetActive(true);
+            life4.SetActive(false);
+        }
         if (life == 2)
         {
-            life3White.SetActive(true);
+            life1.SetActive(true);
+            life2.SetActive(true);
+            life3.SetActive(false);
         }
         if (life == 1)
         {
-            life2White.SetActive(true);
+            life1.SetActive(true);
+            life2.SetActive(false);
         }
         if (life == 0)
         {
-            life1White.SetActive(true);
+            life1.SetActive(false);
         }
+
+
 
     }
 

@@ -131,7 +131,15 @@ public class Bird : MonoBehaviour
         }
         else if (collision.name.StartsWith("ItemAddLife"))
         {
-            GameController.instance.life++;
+            if (GameController.instance.life <= 4)
+            {
+                GameController.instance.life++;
+                Debug.Log(GameController.instance.life);
+            }
+            else
+            {
+                Debug.Log("max lifepoints reached");
+            }
         }
     }
 
