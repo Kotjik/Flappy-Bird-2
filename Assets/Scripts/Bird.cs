@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -30,10 +31,21 @@ public class Bird : MonoBehaviour
         {
             if (isDead == false)
             {
+                //Controls
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(new Vector2(0, upForce));
+                    anim.SetTrigger("Flap");
+                }
+                else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+                {
+                    transform.Translate(new Vector2(5f * Time.deltaTime, 0));
+                    anim.SetTrigger("Flap");
+                }
+                else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+                {
+                    transform.Translate(new Vector2(-5f * Time.deltaTime, 0));
                     anim.SetTrigger("Flap");
                 }
             }
@@ -53,8 +65,11 @@ public class Bird : MonoBehaviour
             FlappyNormaliseScale();
         }
 
-        //
-
+        //Keep Flappy within Camera bounds
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        pos.x = Mathf.Clamp(pos.x, 0.05f, 0.95f);
+        pos.y = Mathf.Clamp01(pos.y);
+        transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 
     public void FlappyEnlargeScale()
