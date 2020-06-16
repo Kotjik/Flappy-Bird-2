@@ -49,10 +49,10 @@ public class Bird : MonoBehaviour
                     anim.SetTrigger("Flap");
                 }
                 // for testing
-                else if (Input.GetKey(KeyCode.I))
+               /* else if (Input.GetKey(KeyCode.I))
                 {
                     StartCoroutine("makeImmortal");
-                }
+                }*/
 
             }
         }
