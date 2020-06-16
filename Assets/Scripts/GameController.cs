@@ -64,7 +64,10 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-
+        if (life > 5)
+        {
+            life = 5;
+        }
         if (life == 5)
         {
             life5.SetActive(true);

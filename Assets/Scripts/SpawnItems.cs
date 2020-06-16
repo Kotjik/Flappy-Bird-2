@@ -34,8 +34,10 @@ public class SpawnItems : MonoBehaviour
         prefabList.Add(itemSpeedUp);
         prefabList.Add(itemSpeedDown);
         prefabList.Add(itemInvulnerable);
-        prefabList.Add(itemAddLife);
-
+        if (GameController.instance.life <= 4)
+        {
+            prefabList.Add(itemAddLife);
+        }
         // Spawn items every 4 seconds, starting in 2
         InvokeRepeating("Spawn", 2, spawnTime);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));

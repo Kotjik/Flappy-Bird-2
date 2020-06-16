@@ -48,6 +48,12 @@ public class Bird : MonoBehaviour
                     transform.Translate(new Vector2(-5f * Time.deltaTime, 0));
                     anim.SetTrigger("Flap");
                 }
+                // for testing
+                else if (Input.GetKey(KeyCode.I))
+                {
+                    StartCoroutine("makeImmortal");
+                }
+
             }
         }
 
@@ -146,15 +152,17 @@ public class Bird : MonoBehaviour
 
     private IEnumerator makeImmortal()
     {
-        immortal = true;
-        anim.SetTrigger("Ghost");
-        Debug.Log(immortal);
-        yield return new WaitForSeconds(3f);
-        immortal = false;
-        anim.SetTrigger("Ghost");
-        Debug.Log(immortal);
-        yield return null;
-
+        if (immortal == false)
+        {
+            immortal = true;
+            anim.SetTrigger("Ghost");
+            Debug.Log(immortal);
+            yield return new WaitForSeconds(3f);
+            immortal = false;
+            anim.SetTrigger("Ghost");
+            Debug.Log(immortal);
+            yield return null;
+        }
     }
 
 
