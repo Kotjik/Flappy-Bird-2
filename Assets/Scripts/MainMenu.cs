@@ -9,9 +9,13 @@ public class MainMenu : MonoBehaviour
     public GameObject settingsPanel;
     private int savedHighscore = 0;
     private int savedMusic = 1;
+    private int savedSound = 1;
     public Text highscore;
     public Text music;
+    public Text sound;
     public bool playMusic = true;
+    public bool playSound = true;
+    public AudioSource scoredSound;
 
     void Awake()
     {
@@ -39,19 +43,35 @@ public class MainMenu : MonoBehaviour
         }
         highscore.text = savedHighscore.ToString();
 
-        // get musicSettings and show. If there is no saved musicBool, saved Music = 1 (music on);
+        // get musicSettings and show. If there is no saved musicBool, saved music = 1 (music on);
         if (PlayerPrefs.HasKey("musicBool"))
         {
             savedMusic = PlayerPrefs.GetInt("musicBool");
         }
-        
-        if(savedMusic == 1)
+
+        if (savedMusic == 1)
         {
             music.text = "on";
         }
         else
         {
             music.text = "off";
+        }
+        settingsPanel.SetActive(true);
+
+        // get soundSettings and show. If there is no saved soundBool, saved sound = 1 (sound on);
+        if (PlayerPrefs.HasKey("soundBool"))
+        {
+            savedSound = PlayerPrefs.GetInt("soundBool");
+        }
+
+        if (savedSound == 1)
+        {
+            sound.text = "on";
+        }
+        else
+        {
+            sound.text = "off";
         }
         settingsPanel.SetActive(true);
     }
@@ -63,7 +83,14 @@ public class MainMenu : MonoBehaviour
 
     public void setHighscore(int score)
     {
-        //checks if there is still a savedHighscore, else it is 0
+        scoredSound = GetComponent<AudioSource>();
+
+        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
+        {
+            scoredSound.Play();
+        }
+
+        //checks if there is still a savedHighscore, else it is 0     
         if (PlayerPrefs.HasKey("highscore"))
         {
             savedHighscore = PlayerPrefs.GetInt("highscore");
@@ -83,7 +110,8 @@ public class MainMenu : MonoBehaviour
         {
             music.text = "on";
             playMusic = true;
-        } else
+        }
+        else
         {
             music.text = "off";
             playMusic = false;
@@ -91,4 +119,18 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("musicBool", playMusic ? 1 : 0);
     }
 
+    public void changeSoundSettings()
+    {
+        if (sound.text.Equals("off"))
+        {
+            sound.text = "on";
+            playSound = true;
+        }
+        else
+        {
+            sound.text = "off";
+            playSound = false;
+        }
+        PlayerPrefs.SetInt("soundBool", playSound ? 1 : 0);
+    }
 }
