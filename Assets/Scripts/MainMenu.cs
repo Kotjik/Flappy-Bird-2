@@ -133,4 +133,11 @@ public class MainMenu : MonoBehaviour
         }
         PlayerPrefs.SetInt("soundBool", playSound ? 1 : 0);
     }
+
+    public void resetHighscore()
+    {
+        savedHighscore = 0;
+        PlayerPrefs.SetInt("highscore", savedHighscore);
+        highscore.text = savedHighscore.ToString();
+    }
 }
