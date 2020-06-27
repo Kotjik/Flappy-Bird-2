@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1.5f;
     public AudioSource music;
+    public int sizeState = 2;
+
 
     // Start is called before the first frame update
     void Awake()

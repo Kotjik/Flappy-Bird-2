@@ -100,16 +100,19 @@ public class Bird : MonoBehaviour
     public void FlappyEnlargeScale()
     {
         flappy.transform.localScale = new Vector2(1.2f, 1.2f);
+        GameController.instance.sizeState = 3;
     }
 
     public void FlappyShrinkScale()
     {
         flappy.transform.localScale = new Vector2(0.8f, 0.8f);
+        GameController.instance.sizeState = 1;
     }
 
     public void FlappyNormaliseScale()
     {
         flappy.transform.localScale = new Vector2(1f, 1f);
+        GameController.instance.sizeState = 2;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

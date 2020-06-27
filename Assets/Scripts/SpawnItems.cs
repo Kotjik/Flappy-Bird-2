@@ -34,10 +34,8 @@ public class SpawnItems : MonoBehaviour
         prefabList.Add(itemSpeedUp);
         prefabList.Add(itemSpeedDown);
         prefabList.Add(itemInvulnerable);
-        if (GameController.instance.life <= 4)
-        {
-            prefabList.Add(itemAddLife);
-        }
+        prefabList.Add(itemAddLife);
+        
         // Spawn items every 4 seconds, starting in 2
         InvokeRepeating("Spawn", 2, spawnTime);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -51,6 +49,29 @@ public class SpawnItems : MonoBehaviour
         int prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
     
         // Instantiate the food at (x, y)
+        if(prefabIndex==6 && GameController.instance.life >= 4)
+        {
+            prefabIndex = 5;
+        }
+        if(prefabIndex == 0 && GameController.instance.sizeState == 3)
+        {
+            int newSize = UnityEngine.Random.Range(1, 3);
+            prefabIndex = newSize;
+        }
+        if(prefabIndex == 1 && GameController.instance.sizeState == 1)
+        {
+            int newSize = UnityEngine.Random.Range(2, 4);
+            prefabIndex = newSize;
+        }
+        if (prefabIndex == 2 && GameController.instance.sizeState == 2)
+        {
+            int newSize = UnityEngine.Random.Range(1, 3);
+            if (newSize == 2) {
+                newSize = 3;
+            }
+            prefabIndex = newSize;
+        }
+
         Instantiate(prefabList[prefabIndex],
                     new Vector2(x, y),
                     Quaternion.identity); // default rotation */
