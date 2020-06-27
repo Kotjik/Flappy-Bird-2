@@ -15,6 +15,8 @@ public class ColumnPool : MonoBehaviour
     private float spawXPosition = 10f;
     private int currentColumn = 0;
 
+    private float speedYPosition = 0.5f;
+    private float deltaYPosition = 2f;
     
     private float distanceToLastObstacle;
 
@@ -65,5 +67,14 @@ public class ColumnPool : MonoBehaviour
                 currentColumn = 0;
             }
         }
+
+        /* Idee, wie man die Columns bewegen kann
+        foreach (GameObject column in columns)
+        {
+            float y = Mathf.PingPong(speedYPosition * Time.time, deltaYPosition);
+            UnityEngine.Vector2 pos = new UnityEngine.Vector2(column.transform.position.x, y);
+            column.transform.position = pos;
+        }
+        */
     }
 }

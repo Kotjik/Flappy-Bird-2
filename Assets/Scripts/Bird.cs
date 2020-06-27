@@ -7,12 +7,15 @@ public class Bird : MonoBehaviour
 {
 
     public float upForce = 200f;
+    public float sideForce = 5f;
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
     private GameObject flappy;
     private bool immortal = false;
     private Menu menuScript;
+    private bool pickedUpTimedItem = false;
+    private float itemTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +43,12 @@ public class Bird : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
-                    transform.Translate(new Vector2(5f * Time.deltaTime, 0));
+                    transform.Translate(new Vector2(sideForce * Time.deltaTime, 0));
                     anim.SetTrigger("Flap");
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                 {
-                    transform.Translate(new Vector2(-5f * Time.deltaTime, 0));
+                    transform.Translate(new Vector2(-sideForce * Time.deltaTime, 0));
                     anim.SetTrigger("Flap");
                 }
                 // for testing
@@ -76,6 +79,22 @@ public class Bird : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, 0.05f, 0.95f);
         pos.y = Mathf.Clamp01(pos.y);
         transform.position = Camera.main.ViewportToWorldPoint(pos);
+
+
+        //If picked up timed Item (ex: SpeedUp or SpeedDown), set timer
+        if (pickedUpTimedItem == true)
+        {
+            itemTimer += Time.deltaTime;
+            if(itemTimer > 3f)
+            {
+                upForce = 200f;
+                sideForce = 5f;
+                pickedUpTimedItem = false;
+                itemTimer = 0f;
+            }
+            
+        }
+
     }
 
     public void FlappyEnlargeScale()
@@ -146,6 +165,17 @@ public class Bird : MonoBehaviour
             {
                 Debug.Log("max lifepoints reached");
             }
+        }else if (collision.name.StartsWith("ItemSpeedUp"))
+        {
+            upForce = 250f;
+            sideForce = 7f;
+            pickedUpTimedItem = true;
+
+        }else if (collision.name.StartsWith("ItemSpeedDown"))
+        {
+            upForce = 150f;
+            sideForce = 3f;
+            pickedUpTimedItem = true;
         }
     }
 
