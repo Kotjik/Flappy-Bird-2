@@ -44,12 +44,10 @@ public class Bird : MonoBehaviour
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
                     transform.Translate(new Vector2(sideForce * Time.deltaTime, 0));
-                    anim.SetTrigger("Flap");
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                 {
                     transform.Translate(new Vector2(-sideForce * Time.deltaTime, 0));
-                    anim.SetTrigger("Flap");
                 }
                 // for testing
                /* else if (Input.GetKey(KeyCode.I))

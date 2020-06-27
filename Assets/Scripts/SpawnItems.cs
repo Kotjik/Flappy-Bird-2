@@ -16,7 +16,7 @@ public class SpawnItems : MonoBehaviour
     public GameObject itemInvulnerable;
     public GameObject itemAddLife;
 
-    public float spawnTime = 4.0f;
+    public float spawnTime = 7.0f;
     public float columnMin = -2f;
 
     private Vector2 screenBounds;
@@ -47,34 +47,37 @@ public class SpawnItems : MonoBehaviour
         int y = (int)UnityEngine.Random.Range(columnMin, screenBounds.y);
         int x = (int)screenBounds.x * 2;
         int prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
-    
+        bool usefullItem = true;
+
         // Instantiate the food at (x, y)
-        if(prefabIndex==6 && GameController.instance.life >= 4)
+        if (prefabIndex==6 && GameController.instance.life >= 4)
         {
             prefabIndex = 5;
         }
         if(prefabIndex == 0 && GameController.instance.sizeState == 3)
         {
-            int newSize = UnityEngine.Random.Range(1, 3);
-            prefabIndex = newSize;
+            usefullItem = false;
         }
-        if(prefabIndex == 1 && GameController.instance.sizeState == 1)
+        if (prefabIndex == 1 && GameController.instance.sizeState == 1)
         {
-            int newSize = UnityEngine.Random.Range(2, 4);
-            prefabIndex = newSize;
+            usefullItem = false;
+
         }
         if (prefabIndex == 2 && GameController.instance.sizeState == 2)
         {
-            int newSize = UnityEngine.Random.Range(1, 3);
-            if (newSize == 2) {
-                newSize = 3;
-            }
-            prefabIndex = newSize;
+            usefullItem = false;
+
         }
 
-        Instantiate(prefabList[prefabIndex],
-                    new Vector2(x, y),
-                    Quaternion.identity); // default rotation */
-
+        if (usefullItem)
+        {
+            Instantiate(prefabList[prefabIndex],
+                        new Vector2(x, y),
+                        Quaternion.identity); // default rotation */
+        }
+        else
+        {
+            Debug.Log("item not usefull");
+        }
     }
 }
