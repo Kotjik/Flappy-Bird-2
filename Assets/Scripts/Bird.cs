@@ -160,12 +160,14 @@ public class Bird : MonoBehaviour
         else if (collision.name.StartsWith("ItemInvulnerable"))
         {
             StartCoroutine("makeImmortal");
+            soundHandler.PlayInvulnerable();
         }
         else if (collision.name.StartsWith("ItemAddLife"))
         {
             if (GameController.instance.life <= 4)
             {
                 GameController.instance.life++;
+                soundHandler.PlayLife();
                 Debug.Log(GameController.instance.life);
             }
             else
@@ -177,12 +179,14 @@ public class Bird : MonoBehaviour
             upForce = 250f;
             sideForce = 7f;
             pickedUpTimedItem = true;
+            soundHandler.PlaySpeedUp();
 
         }else if (collision.name.StartsWith("ItemSpeedDown"))
         {
             upForce = 150f;
             sideForce = 3f;
             pickedUpTimedItem = true;
+            soundHandler.PlaySpeedDown();
         }
     }
 
