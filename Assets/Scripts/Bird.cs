@@ -16,6 +16,7 @@ public class Bird : MonoBehaviour
     private Menu menuScript;
     private bool pickedUpTimedItem = false;
     private float itemTimer = 0.0f;
+    private SoundHandler soundHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Bird : MonoBehaviour
         menuScript = GameObject.Find("GameController").GetComponent<Menu>();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundHandler = GetComponent<SoundHandler>();
         flappy = this.gameObject;
         Time.timeScale = 1f;
     }
@@ -130,6 +132,7 @@ public class Bird : MonoBehaviour
             {
                 StartCoroutine("makeImmortal");
                 GameController.instance.life--;
+                soundHandler.PlayCollision();
                 Debug.Log(GameController.instance.life);
                 Debug.Log(immortal);
             }
@@ -142,14 +145,17 @@ public class Bird : MonoBehaviour
         if (collision.name.StartsWith("ItemFlappyEnlarge"))
         {
             FlappyEnlargeScale();
+            soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemFlappyShrink"))
         {
             FlappyShrinkScale();
+            soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemFlappyNormalise"))
         {
             FlappyNormaliseScale();
+            soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemInvulnerable"))
         {
