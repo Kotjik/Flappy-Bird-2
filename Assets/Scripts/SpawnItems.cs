@@ -20,6 +20,7 @@ public class SpawnItems : MonoBehaviour
     public float columnMin = -2f;
 
     private Vector2 screenBounds;
+    private int x, y;
 
     // Rect for Borders
    //public RectTransform canvas;
@@ -44,8 +45,7 @@ public class SpawnItems : MonoBehaviour
     // Spawn one item
     void Spawn()
     {
-        int y = (int)UnityEngine.Random.Range(columnMin, screenBounds.y);
-        int x = (int)screenBounds.x * 2;
+        spawnVector();
         int prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
         bool usefullItem = true;
 
@@ -78,6 +78,21 @@ public class SpawnItems : MonoBehaviour
         else
         {
             Debug.Log("item not usefull");
+        }
+    }
+
+     private void spawnVector()
+    {
+        bool vectorOK = false;
+        while (!vectorOK)
+        {
+            y = (int)UnityEngine.Random.Range(columnMin, screenBounds.y);
+            x = (int)(screenBounds.x * 1.1);
+            // freeze without error after some time
+            //vectorOK = Physics2D.OverlapCircle(new Vector2(x, y), 0.5f) == null;
+            Debug.Log("new vector " + vectorOK);
+            // instead of line 92:
+            vectorOK = true;
         }
     }
 }

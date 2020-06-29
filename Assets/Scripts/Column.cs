@@ -9,6 +9,9 @@ public class Column : MonoBehaviour
         if (collision.GetComponent<Bird>() != null)
         {
             GameController.instance.BirdScored();
+        }else if (collision.name.StartsWith("Item"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

@@ -145,21 +145,25 @@ public class Bird : MonoBehaviour
         if (collision.name.StartsWith("ItemFlappyEnlarge"))
         {
             FlappyEnlargeScale();
+            Destroy(collision.gameObject);
             soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemFlappyShrink"))
         {
             FlappyShrinkScale();
+            Destroy(collision.gameObject);
             soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemFlappyNormalise"))
         {
             FlappyNormaliseScale();
+            Destroy(collision.gameObject);
             soundHandler.PlayScale();
         }
         else if (collision.name.StartsWith("ItemInvulnerable"))
         {
             StartCoroutine("makeImmortal");
+            Destroy(collision.gameObject);
             soundHandler.PlayInvulnerable();
         }
         else if (collision.name.StartsWith("ItemAddLife"))
@@ -167,6 +171,7 @@ public class Bird : MonoBehaviour
             if (GameController.instance.life <= 4)
             {
                 GameController.instance.life++;
+                Destroy(collision.gameObject);
                 soundHandler.PlayLife();
                 Debug.Log(GameController.instance.life);
             }
@@ -179,13 +184,16 @@ public class Bird : MonoBehaviour
             upForce = 250f;
             sideForce = 7f;
             pickedUpTimedItem = true;
+            Destroy(collision.gameObject);
             soundHandler.PlaySpeedUp();
 
-        }else if (collision.name.StartsWith("ItemSpeedDown"))
+        }
+        else if (collision.name.StartsWith("ItemSpeedDown"))
         {
             upForce = 150f;
             sideForce = 3f;
             pickedUpTimedItem = true;
+            Destroy(collision.gameObject);
             soundHandler.PlaySpeedDown();
         }
     }
