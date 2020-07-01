@@ -8,6 +8,9 @@ public class Bird : MonoBehaviour
 
     public float upForce = 200f;
     public float sideForce = 5f;
+    public float downForce= -5f;
+    public float rotationSpeed = 2.0f;
+    public int rotationDegree = -70;
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -37,7 +40,7 @@ public class Bird : MonoBehaviour
             if (isDead == false)
             {
                 //Controls
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(new Vector2(0, upForce));
@@ -45,17 +48,22 @@ public class Bird : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
-                    transform.Translate(new Vector2(sideForce * Time.deltaTime, 0));
+                    transform.Translate(new Vector2(sideForce * Time.deltaTime, 0), Space.World);
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                 {
-                    transform.Translate(new Vector2(-sideForce * Time.deltaTime, 0));
+                    transform.Translate(new Vector2(-sideForce * Time.deltaTime, 0), Space.World);
+                }
+                else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+                {
+                    //transform.Translate(new Vector2(0, downForce * Time.deltaTime), Space.World);
+                    rb2d.AddForce(new Vector2(0, downForce));
                 }
                 // for testing
-               /* else if (Input.GetKey(KeyCode.I))
+                else if (Input.GetKey(KeyCode.T))
                 {
-                    StartCoroutine("makeImmortal");
-                }*/
+                    //StartCoroutine("makeImmortal");
+                }
 
             }
         }
@@ -75,27 +83,57 @@ public class Bird : MonoBehaviour
         }
 
         //Keep Flappy within Camera bounds
+        KeepWithinCameraBounds();
+
+        //If picked up timed Items (SpeedUp or SpeedDown), set timer
+        SetItemTimer(3f);
+        
+        //if flappy is falling, rotate flappy 
+        RotateOnFall(rotationDegree, rotationSpeed);
+               
+    }
+
+    private void SetItemTimer(float time)
+    {
+        if (pickedUpTimedItem == true)
+        {
+            itemTimer += Time.deltaTime;
+            if (itemTimer > time)
+            {
+                ResetForceValues();
+                pickedUpTimedItem = false;
+                itemTimer = 0f;
+            }
+
+        }
+    }
+
+    private void KeepWithinCameraBounds()
+    {
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
         pos.x = Mathf.Clamp(pos.x, 0.05f, 0.95f);
         pos.y = Mathf.Clamp01(pos.y);
         transform.position = Camera.main.ViewportToWorldPoint(pos);
-
-
-        //If picked up timed Item (ex: SpeedUp or SpeedDown), set timer
-        if (pickedUpTimedItem == true)
-        {
-            itemTimer += Time.deltaTime;
-            if(itemTimer > 3f)
-            {
-                upForce = 200f;
-                sideForce = 5f;
-                pickedUpTimedItem = false;
-                itemTimer = 0f;
-            }
-            
-        }
-
     }
+
+    private void RotateOnFall(int degree, float speed) {
+        if (rb2d.velocity.y < -0.1)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, degree), Time.deltaTime * speed);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+    
+    private void ResetForceValues()
+    {
+        upForce = 200f;
+        sideForce = 5f;
+        downForce = -5f;
+    }
+
 
     public void FlappyEnlargeScale()
     {
@@ -183,6 +221,7 @@ public class Bird : MonoBehaviour
         {
             upForce = 250f;
             sideForce = 7f;
+
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);
             soundHandler.PlaySpeedUp();
@@ -192,6 +231,8 @@ public class Bird : MonoBehaviour
         {
             upForce = 150f;
             sideForce = 3f;
+            downForce = -7f;
+            
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);
             soundHandler.PlaySpeedDown();
