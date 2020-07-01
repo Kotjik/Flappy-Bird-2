@@ -139,6 +139,8 @@ public class GameController : MonoBehaviour
         gameOver = true;
         ResetSpeed();
         obstacleSpawnDistance = 10;
+
+        // higher life item spawn rate if low life
     }
 
     private void ChangeSpeed(float value)

@@ -26,7 +26,7 @@ public class SpawnItems : MonoBehaviour
     float[] SpeedUpFrequency = { 10f, 25f };
     float[] SpeedDownFrequency = { 7f, 13f };
     float[] InvulnerableFrequency = { 5f, 10f };
-    float[] AddLifeFrequency = { 10f, 25f };
+    public static float[] AddLifeFrequency = { 10f, 25f };
 
     private Vector2 screenBounds;
     private int x, y;
@@ -60,13 +60,8 @@ public class SpawnItems : MonoBehaviour
         prefabList.Add(itemInvulnerable);
         prefabList.Add(itemAddLife);
 
-        float[] BirdIncreaseFrequency = { 4f, 14f };
-        float[] BirdDecreaseFrequency = { 5f, 15f };
-        float[] BirdNormaliseFrequency = { 6f, 16f };
-        float[] SpeedUpFrequency = { 10f, 25f };
-        float[] SpeedDownFrequency = { 2f, 5f };
-        float[] InvulnerableFrequency = { 5f, 10f };
-        float[] AddLifeFrequency = { 10f, 25f };
+
+        // change spawn frequencies
 
 
         // Spawn items every 4 seconds, starting in 2
@@ -161,7 +156,7 @@ public class SpawnItems : MonoBehaviour
     {
         spawnVector();
         int prefabIndex = 5;
-        if (justSpawned == false)
+        if (justSpawned == false  && Bird.immortal == false)
         {
             StartCoroutine(itemJustSpawned());
             Instantiate(prefabList[prefabIndex], new Vector2(x, y), Quaternion.identity); // default rotation */  
