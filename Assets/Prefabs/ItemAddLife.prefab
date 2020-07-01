@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9043238144361330350}
   - component: {fileID: 7215772393831476732}
   - component: {fileID: 956772541926567656}
-  - component: {fileID: 2898138674415537112}
   m_Layer: 0
   m_Name: ItemAddLife
   m_TagString: Untagged
@@ -144,16 +143,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82e61975dbbfb74e9dbb8d36bcee241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2898138674415537112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8625283567144934829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb8b2e56b73cac4fa0bea664c13ea59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flappy: {fileID: 0}

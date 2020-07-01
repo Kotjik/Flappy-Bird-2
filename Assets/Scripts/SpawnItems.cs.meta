@@ -3,7 +3,21 @@ guid: 179a4d82dbf19684f877419f327f7963
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - itemBirdIncrease: {fileID: 6604669683161724089, guid: 2d40ef70b6b7cc549abd404d9d69fca1,
+      type: 3}
+  - itemBirdDecrease: {fileID: 2563900569715431140, guid: d11c013130c6eeb40a6c8fa22bbf6883,
+      type: 3}
+  - itemBirdNormalise: {fileID: 744275069707120992, guid: f843d49e1f7d0c84083659c73cb2450a,
+      type: 3}
+  - itemSpeedUp: {fileID: 2487700559304374022, guid: da8ead786528dc342bef3b302e1f6501,
+      type: 3}
+  - itemSpeedDown: {fileID: 3296276899368645895, guid: 2ad3e7a80e6df4d49bf8313817d5b9cd,
+      type: 3}
+  - itemInvulnerable: {fileID: 849815779658681352, guid: 93a92ed873cdb0b49a64e71c77d9f3d9,
+      type: 3}
+  - itemAddLife: {fileID: 8625283567144934829, guid: 9e8cfe47aad4d1e43b195c552aaeaac6,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
