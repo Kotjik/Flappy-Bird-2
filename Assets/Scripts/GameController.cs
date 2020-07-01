@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
-        mainMenu.setHighscore(score);
+        mainMenu.SetHighscore(score);
 
         //speed up the game
         if (score % 2 == 0)
