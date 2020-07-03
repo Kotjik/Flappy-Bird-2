@@ -8,11 +8,28 @@ public class Menu : MonoBehaviour
 
     public GameObject menuPanel;
     public bool gamePaused = false;
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void Awake()
+    {
+        music = GetComponent<AudioSource>();
+
+        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
+        {
+            print("stop music");
+            music.Stop();
+        }
+        else
+        {
+            print("play music");
+            music.Play();
+        }
     }
 
     // Update is called once per frame
@@ -32,12 +49,21 @@ public class Menu : MonoBehaviour
             Time.timeScale = 1f;
             gamePaused = false;
             menuPanel.SetActive(false);
+            if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
+            {
+                music.Play();
+            }
         }
         else
         {
             Time.timeScale = 0f;
             gamePaused = true;
             menuPanel.SetActive(true);
+            music.Pause();
+            if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
+            {
+                music.Pause();
+            }
         }
     }
 

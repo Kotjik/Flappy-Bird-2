@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public Text highscore;
     public Text music;
     public Text sound;
+    public Text controls;
     public bool playMusic = true;
     public bool playSound = true;
     private bool controlsActive = false;
@@ -148,11 +149,13 @@ public class MainMenu : MonoBehaviour
         {
             controlsPanel.SetActive(false);
             controlsActive = false;
+            controls.text = "controls";
         }
         else
         {
             controlsPanel.SetActive(true);
             controlsActive = true;
+            controls.text = "back";
         }
     }
 

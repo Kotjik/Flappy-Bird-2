@@ -22,15 +22,13 @@ public class GameController : MonoBehaviour
     private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1.5f;
-    public AudioSource music;
+    
     public int sizeState = 2;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        music = GetComponent<AudioSource>();
-
         if (instance == null)
         {
             instance = this;
@@ -38,17 +36,6 @@ public class GameController : MonoBehaviour
         else if(instance != this)
         {
             Destroy(gameObject);
-        }
-
-        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
-        {
-            print("stop music");
-            music.Stop();
-        }
-        else
-        {
-            print("play music");
-            music.Play();
         }
     }
 
@@ -103,9 +90,6 @@ public class GameController : MonoBehaviour
         {
             life1.SetActive(false);
         }
-
-
-
     }
 
     public void BirdScored()
