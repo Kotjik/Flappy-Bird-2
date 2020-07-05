@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColumnPool : MonoBehaviour
 {
 
-    public int columnPoolSize = 15;
+    public int columnPoolSize = 150;
     public GameObject columnPrefab;
     public float columnMin = -2f;
     public float columnMax = 2f;
@@ -20,7 +20,7 @@ public class ColumnPool : MonoBehaviour
     
     private float distanceToLastObstacle;
 
-    private float defaultGapSize = 1.76f;
+ 
     private float minGapSize = 0.5f;
     private float maxGapSize = 1f;
 
@@ -70,9 +70,6 @@ public class ColumnPool : MonoBehaviour
 
 
             //change Gap between obstacle
-
-            //float rndGap = Random.Range(minGapSize, maxGapSize);
-          
 
             float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
             var randomSmaller = Random.Range(0, 2);
