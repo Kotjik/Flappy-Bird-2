@@ -21,7 +21,7 @@ public class ColumnPool : MonoBehaviour
     private float distanceToLastObstacle;
 
  
-    private float minGapSize = 0.5f;
+    private float minGapSize = 0.3f;
     private float maxGapSize = 1f;
 
 
@@ -86,7 +86,8 @@ public class ColumnPool : MonoBehaviour
             }
 
 
-
+            //to activate the up and down movement
+        
 
 
 
@@ -105,6 +106,8 @@ public class ColumnPool : MonoBehaviour
             column.transform.position = pos;
         }
         */
+
+        
     }
 
 

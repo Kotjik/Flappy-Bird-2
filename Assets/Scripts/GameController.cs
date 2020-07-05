@@ -105,13 +105,13 @@ public class GameController : MonoBehaviour
         mainMenu.SetHighscore(score);
 
         //speed up the game
-        if (score % 2 == 0)
+        if (score % 2 == 0 && score < 35)
         {
             ChangeSpeed(-0.2f);
         }
 
         //distance between obstacles smaller
-        if (score % 3 == 0)
+        if (score % 3 == 0 && obstacleSpawnDistance >2)
         {
             obstacleSpawnDistance -= 0.5f;
         }

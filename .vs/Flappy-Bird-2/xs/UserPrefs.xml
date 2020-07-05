@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{B58713C2-0933-3E2F-5653-0359CBB36E29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ColumnPool.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Column.cs">
     <Files>
       <File FileName="Assets/Scripts/GameController.cs" Line="81" Column="6" />
-      <File FileName="Assets/Scripts/ColumnPool.cs" Line="85" Column="53" />
-      <File FileName="Assets/Scripts/Bird.cs" Line="167" Column="1" />
+      <File FileName="Assets/Scripts/ColumnPool.cs" Line="90" Column="80" />
+      <File FileName="Assets/Scripts/Column.cs" Line="10" Column="30" />
+      <File FileName="Assets/Scripts/ScrollingObject.cs" Line="8" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,7 @@
           <Node name="Flappy-Bird-2" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ColumnPool.cs" selected="True" />
+                <Node name="Column.cs" selected="True" />
               </Node>
             </Node>
           </Node>
