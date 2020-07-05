@@ -47,7 +47,7 @@ public class SpawnItems : MonoBehaviour
         for (int i = 0; i < startTimes.Length; i++)
         {
             startTimes[i] = UnityEngine.Random.Range(Min, Max);
-            Debug.Log("Start " + i + ": " + startTimes[i]);
+            //Debug.Log("Start " + i + ": " + startTimes[i]);
 
         }
 
@@ -201,7 +201,7 @@ public class SpawnItems : MonoBehaviour
             x = (int)(screenBounds.x * 1.1);
             // freeze without error after some time
             //vectorOK = Physics2D.OverlapCircle(new Vector2(x, y), 0.5f) == null;
-            Debug.Log("new vector " + vectorOK);
+//            Debug.Log("new vector " + vectorOK);
             // instead of line 92:
             vectorOK = true;
         }

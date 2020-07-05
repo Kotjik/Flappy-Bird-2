@@ -20,7 +20,11 @@ public class ColumnPool : MonoBehaviour
     
     private float distanceToLastObstacle;
 
-    
+    private float defaultGapSize = 1.76f;
+    private float minGapSize = 0.5f;
+    private float maxGapSize = 1f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,10 +61,38 @@ public class ColumnPool : MonoBehaviour
 
         if(GameController.instance.gameOver == false && distanceToLastObstacle > GameController.instance.obstacleSpawnDistance)
         {
-            Debug.Log("spawn");
+           // Debug.Log("spawn");
            
             float spawnYPosition = Random.Range(columnMin, columnMax);
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
+
+
+
+
+            //change Gap between obstacle
+
+            //float rndGap = Random.Range(minGapSize, maxGapSize);
+          
+
+            float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
+            var randomSmaller = Random.Range(0, 2);
+
+            if( randomSmaller == 0)
+            {
+                float rndGap = Random.Range(0,minGapSize+1);
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
+            }
+            else
+            {
+                float rndGap = Random.Range(0, maxGapSize + 1);
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+            }
+
+
+
+
+
+
             currentColumn++;
             if (currentColumn >= columnPoolSize)
             {
@@ -77,4 +109,8 @@ public class ColumnPool : MonoBehaviour
         }
         */
     }
+
+
+
+
 }

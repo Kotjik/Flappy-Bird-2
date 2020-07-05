@@ -171,8 +171,8 @@ public class Bird : MonoBehaviour
                 StartCoroutine("makeImmortal");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
-                Debug.Log(GameController.instance.life);
-                Debug.Log(immortal);
+//                Debug.Log(GameController.instance.life);
+               // Debug.Log(immortal);
             }
         }
     }
@@ -246,11 +246,11 @@ public class Bird : MonoBehaviour
         {
             immortal = true;
             anim.SetTrigger("Ghost");
-            Debug.Log(immortal);
+//            Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
             immortal = false;
             anim.SetTrigger("Ghost");
-            Debug.Log(immortal);
+       //     Debug.Log(immortal);
             yield return null;
         }
     }

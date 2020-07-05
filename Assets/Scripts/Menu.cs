@@ -27,7 +27,7 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            print("play music");
+           // print("play music");
             music.Play();
         }
     }
