@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Column : MonoBehaviour
 {
+
+
+   
+    
+
+
+ 
+
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Bird>() != null)
         {
             GameController.instance.BirdScored();
-        }else if (collision.name.StartsWith("Item"))
+        }
+        else if (collision.name.StartsWith("Item"))
         {
             Destroy(collision.gameObject);
         }

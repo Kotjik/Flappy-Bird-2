@@ -22,15 +22,13 @@ public class GameController : MonoBehaviour
     private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1.5f;
-    public AudioSource music;
+    
     public int sizeState = 2;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        music = GetComponent<AudioSource>();
-
         if (instance == null)
         {
             instance = this;
@@ -38,17 +36,6 @@ public class GameController : MonoBehaviour
         else if(instance != this)
         {
             Destroy(gameObject);
-        }
-
-        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
-        {
-            print("stop music");
-            music.Stop();
-        }
-        else
-        {
-            print("play music");
-            music.Play();
         }
     }
 
@@ -103,9 +90,6 @@ public class GameController : MonoBehaviour
         {
             life1.SetActive(false);
         }
-
-
-
     }
 
     public void BirdScored()
@@ -118,16 +102,16 @@ public class GameController : MonoBehaviour
         }
         score++;
         scoreText.text = "Score: " + score.ToString();
-        mainMenu.setHighscore(score);
+        mainMenu.SetHighscore(score);
 
         //speed up the game
-        if (score % 2 == 0)
+        if (score % 2 == 0 && score < 35)
         {
             ChangeSpeed(-0.2f);
         }
 
         //distance between obstacles smaller
-        if (score % 3 == 0)
+        if (score % 3 == 0 && obstacleSpawnDistance >2)
         {
             obstacleSpawnDistance -= 0.5f;
         }
@@ -139,8 +123,6 @@ public class GameController : MonoBehaviour
         gameOver = true;
         ResetSpeed();
         obstacleSpawnDistance = 10;
-
-        // higher life item spawn rate if low life
     }
 
     private void ChangeSpeed(float value)

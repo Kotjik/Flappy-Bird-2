@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+
     public float upForce = 200f;
     public float sideForce = 5f;
     public float downForce= -5f;
@@ -15,7 +15,7 @@ public class Bird : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator anim;
     private GameObject flappy;
-    public static bool immortal = false;
+    private bool immortal = false;
     private Menu menuScript;
     private bool pickedUpTimedItem = false;
     private float itemTimer = 0.0f;
@@ -164,21 +164,17 @@ public class Bird : MonoBehaviour
                 isDead = true;
                 anim.SetTrigger("Die");
                 GameController.instance.BirdDied();
-                UnityEngine.Debug.Log(GameController.instance.life);
+                Debug.Log(GameController.instance.life);
             }
             else
             {
                 StartCoroutine("makeImmortal");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
-                UnityEngine.Debug.Log(GameController.instance.life);
-                UnityEngine.Debug.Log(immortal);
+//                Debug.Log(GameController.instance.life);
+               // Debug.Log(immortal);
             }
         }
-      /*  else
-        {
-            StartCoroutine("longerImmortal");
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -215,11 +211,11 @@ public class Bird : MonoBehaviour
                 GameController.instance.life++;
                 Destroy(collision.gameObject);
                 soundHandler.PlayLife();
-                UnityEngine.Debug.Log(GameController.instance.life);
+                Debug.Log(GameController.instance.life);
             }
             else
             {
-                UnityEngine.Debug.Log("max lifepoints reached");
+                Debug.Log("max lifepoints reached");
             }
         }else if (collision.name.StartsWith("ItemSpeedUp"))
         {
@@ -250,25 +246,14 @@ public class Bird : MonoBehaviour
         {
             immortal = true;
             anim.SetTrigger("Ghost");
-            UnityEngine.Debug.Log(immortal);
+//            Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
             immortal = false;
             anim.SetTrigger("Ghost");
-            UnityEngine.Debug.Log(immortal);
+       //     Debug.Log(immortal);
             yield return null;
         }
     }
-
-  /*  not working yet:
-   *  private IEnumerator longerImmortal()
-    {
-        immortal = true;
-        UnityEngine.Debug.Log("Longer immortal");
-        yield return new WaitForSeconds(3f);
-        immortal = false;
-        anim.SetTrigger("Ghost");
-        yield return null;
-    }*/
 
 
 

@@ -26,7 +26,7 @@ public class SpawnItems : MonoBehaviour
     float[] SpeedUpFrequency = { 10f, 25f };
     float[] SpeedDownFrequency = { 7f, 13f };
     float[] InvulnerableFrequency = { 5f, 10f };
-    public static float[] AddLifeFrequency = { 10f, 25f };
+    float[] AddLifeFrequency = { 10f, 25f };
 
     private Vector2 screenBounds;
     private int x, y;
@@ -47,7 +47,7 @@ public class SpawnItems : MonoBehaviour
         for (int i = 0; i < startTimes.Length; i++)
         {
             startTimes[i] = UnityEngine.Random.Range(Min, Max);
-            Debug.Log("Start " + i + ": " + startTimes[i]);
+            //Debug.Log("Start " + i + ": " + startTimes[i]);
 
         }
 
@@ -59,9 +59,6 @@ public class SpawnItems : MonoBehaviour
         prefabList.Add(itemSpeedDown);
         prefabList.Add(itemInvulnerable);
         prefabList.Add(itemAddLife);
-
-
-        // change spawn frequencies
 
 
         // Spawn items every 4 seconds, starting in 2
@@ -156,7 +153,7 @@ public class SpawnItems : MonoBehaviour
     {
         spawnVector();
         int prefabIndex = 5;
-        if (justSpawned == false  && Bird.immortal == false)
+        if (justSpawned == false)
         {
             StartCoroutine(itemJustSpawned());
             Instantiate(prefabList[prefabIndex], new Vector2(x, y), Quaternion.identity); // default rotation */  
@@ -171,14 +168,18 @@ public class SpawnItems : MonoBehaviour
     {
         spawnVector();
         int prefabIndex = 6;
-        if (GameController.instance.life >= 4)
+        if (GameController.instance.life >= 5)
         {
             prefabIndex = 5;
         }
         if (justSpawned == false)
         {
+            if (prefabIndex == 5)
+            {
+                Debug.Log("Max Life - Schild statt Leben");
+            }
             StartCoroutine(itemJustSpawned());
-            Instantiate(prefabList[prefabIndex], new Vector2(x, y), Quaternion.identity); // default rotation */   
+            Instantiate(prefabList[prefabIndex], new Vector2(x, y), Quaternion.identity); // default rotation */  
         }
         else
         {
@@ -196,7 +197,7 @@ public class SpawnItems : MonoBehaviour
             x = (int)(screenBounds.x * 1.1);
             // freeze without error after some time
             //vectorOK = Physics2D.OverlapCircle(new Vector2(x, y), 0.5f) == null;
-            Debug.Log("new vector " + vectorOK);
+//            Debug.Log("new vector " + vectorOK);
             // instead of line 92:
             vectorOK = true;
         }

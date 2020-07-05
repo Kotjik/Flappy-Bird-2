@@ -7,14 +7,17 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
+    public GameObject controlsPanel;
     private int savedHighscore = 0;
     private int savedMusic = 1;
     private int savedSound = 1;
     public Text highscore;
     public Text music;
     public Text sound;
+    public Text controls;
     public bool playMusic = true;
     public bool playSound = true;
+    private bool controlsActive = false;
     public AudioSource scoredSound;
 
     void Awake()
@@ -57,8 +60,7 @@ public class MainMenu : MonoBehaviour
         {
             music.text = "off";
         }
-        settingsPanel.SetActive(true);
-
+        
         // get soundSettings and show. If there is no saved soundBool, saved sound = 1 (sound on);
         if (PlayerPrefs.HasKey("soundBool"))
         {
@@ -81,7 +83,7 @@ public class MainMenu : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
-    public void setHighscore(int score)
+    public void SetHighscore(int score)
     {
         scoredSound = GetComponent<AudioSource>();
 
@@ -104,7 +106,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void changeMusicSettings()
+    public void ChangeMusicSettings()
     {
         if (music.text.Equals("off"))
         {
@@ -119,7 +121,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("musicBool", playMusic ? 1 : 0);
     }
 
-    public void changeSoundSettings()
+    public void ChangeSoundSettings()
     {
         if (sound.text.Equals("off"))
         {
@@ -134,10 +136,27 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("soundBool", playSound ? 1 : 0);
     }
 
-    public void resetHighscore()
+    public void ResetHighscore()
     {
         savedHighscore = 0;
         PlayerPrefs.SetInt("highscore", savedHighscore);
         highscore.text = savedHighscore.ToString();
     }
+
+    public void ShowControls()
+    {
+        if (controlsActive)
+        {
+            controlsPanel.SetActive(false);
+            controlsActive = false;
+            controls.text = "controls";
+        }
+        else
+        {
+            controlsPanel.SetActive(true);
+            controlsActive = true;
+            controls.text = "back";
+        }
+    }
+
 }

@@ -166,7 +166,6 @@ MonoBehaviour:
   life: 3
   obstacleSpawnDistance: 10
   scrollSpeed: -1.5
-  music: {fileID: 45338454}
   sizeState: 2
 --- !u!4 &45338450
 Transform:
@@ -213,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 562270466}
   gamePaused: 0
+  music: {fileID: 45338454}
 --- !u!114 &45338453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +239,6 @@ MonoBehaviour:
     type: 3}
   itemAddLife: {fileID: 8625283567144934829, guid: 9e8cfe47aad4d1e43b195c552aaeaac6,
     type: 3}
-  spawnTime: 2
   columnMin: -2
 --- !u!82 &45338454
 AudioSource:
@@ -665,8 +664,8 @@ RectTransform:
   m_Father: {fileID: 2016493987}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.10017965, y: 0.12687571}
-  m_AnchorMax: {x: 0.8998204, y: 0.8953503}
+  m_AnchorMin: {x: 0.1, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2234,6 +2233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 200
   sideForce: 5
+  downForce: -5
+  rotationSpeed: 2
+  rotationDegree: -70
 --- !u!95 &1563440565
 Animator:
   serializedVersion: 3
