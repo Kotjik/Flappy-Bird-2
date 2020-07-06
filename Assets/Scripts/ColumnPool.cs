@@ -21,7 +21,7 @@ public class ColumnPool : MonoBehaviour
     private float distanceToLastObstacle;
 
  
-    private float minGapSize = 0.3f;
+    private float minGapSize = 0.2f;
     private float maxGapSize = 1f;
 
 
