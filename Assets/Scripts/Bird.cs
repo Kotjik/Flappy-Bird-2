@@ -159,7 +159,7 @@ public class Bird : MonoBehaviour
         //rb2d.velocity = Vector2.zero;
         if (immortal == false)
         {
-            
+           
             if (GameController.instance.life == 0)
             {
                 
@@ -167,7 +167,7 @@ public class Bird : MonoBehaviour
                 anim.SetTrigger("Die");
                 GameController.instance.BirdDied();
 //                Debug.Log(GameController.instance.life);
-
+    
             }
             else
             {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColumnPool : MonoBehaviour
 {
 
-    public int columnPoolSize = 150;
+    private int columnPoolSize = 15;
     public GameObject columnPrefab;
     public float columnMin = -1.5f;
     public float columnMax = 2f;
@@ -28,10 +28,18 @@ public class ColumnPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+       
         columns = new GameObject[columnPoolSize];
         for(int i = 0; i < columnPoolSize; i++)
         {
             columns[i] = (GameObject)Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity);
+
+           
+        }
+
+        for (int i = 0; i < columnPoolSize; i++) {
+         
         }
 
         float spawnYPosition = Random.Range(columnMin, columnMax);
@@ -78,17 +86,13 @@ public class ColumnPool : MonoBehaviour
      
             if( randomSmaller == 0)
             {
-                Debug.Log("Gapsize before " + GapSize(columns[currentColumn]));
+                
                 float rndGap = Random.Range(0f, minGapSize);
-                Debug.Log("subtract" + rndGap);
-
-
-
-           
+             
 
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
 
-                Debug.Log("new gap is " + GapSize(columns[currentColumn]));
+               
 
 
             }
@@ -110,6 +114,8 @@ public class ColumnPool : MonoBehaviour
             {
                 currentColumn = 0;
             }
+
+            Debug.Log("current col "+currentColumn);
         }
 
 
