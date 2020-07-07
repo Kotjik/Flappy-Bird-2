@@ -7,7 +7,7 @@ public class ColumnPool : MonoBehaviour
 
     public int columnPoolSize = 150;
     public GameObject columnPrefab;
-    public float columnMin = -2f;
+    public float columnMin = -1.5f;
     public float columnMax = 2f;
 
     private GameObject[] columns;
@@ -21,8 +21,8 @@ public class ColumnPool : MonoBehaviour
     private float distanceToLastObstacle;
 
  
-    private float minGapSize = 0.2f;
-    private float maxGapSize = 1f;
+    private float minGapSize = 0.5f;
+    private float maxGapSize = 1.0f;
 
 
     // Start is called before the first frame update
@@ -74,20 +74,34 @@ public class ColumnPool : MonoBehaviour
             float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
             var randomSmaller = Random.Range(0, 2);
 
+           
+     
             if( randomSmaller == 0)
             {
-                float rndGap = Random.Range(0,minGapSize+1);
+                Debug.Log("Gapsize before " + GapSize(columns[currentColumn]));
+                float rndGap = Random.Range(0f, minGapSize);
+                Debug.Log("subtract" + rndGap);
+
+
+
+           
+
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
-            }
-            else
-            {
-                float rndGap = Random.Range(0, maxGapSize + 1);
-                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
-            }
+
+                Debug.Log("new gap is " + GapSize(columns[currentColumn]));
 
 
-            //to activate the up and down movement
-        
+            }
+                        else
+                        {
+                            float rndGap = Random.Range(0f, maxGapSize);
+                            columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+                        }
+
+
+                       
+                    
+
 
 
 
@@ -97,6 +111,8 @@ public class ColumnPool : MonoBehaviour
                 currentColumn = 0;
             }
         }
+
+
 
         /* Idee, wie man die Columns bewegen kann
         foreach (GameObject column in columns)
@@ -110,6 +126,18 @@ public class ColumnPool : MonoBehaviour
         
     }
 
+    private float GapSize(GameObject current)
+    {
+        float gapsize;
+
+        float lowerColumY = current.transform.GetChild(0).transform.position.y;
+      
+        float upperColY = current.transform.GetChild(1).transform.position.y - 10.24f;
+
+        gapsize = Mathf.Abs(lowerColumY - upperColY);
+
+        return gapsize;
+    }
 
 
 

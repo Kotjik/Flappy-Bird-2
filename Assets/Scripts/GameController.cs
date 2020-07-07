@@ -108,6 +108,7 @@ public class GameController : MonoBehaviour
         if (score % 2 == 0 && score < 35)
         {
             ChangeSpeed(-0.2f);
+          
         }
 
         //distance between obstacles smaller

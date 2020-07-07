@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{B58713C2-0933-3E2F-5653-0359CBB36E29}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Column.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bird.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameController.cs" Line="81" Column="6" />
-      <File FileName="Assets/Scripts/ColumnPool.cs" Line="90" Column="80" />
-      <File FileName="Assets/Scripts/Column.cs" Line="10" Column="30" />
-      <File FileName="Assets/Scripts/ScrollingObject.cs" Line="8" Column="3" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="111" Column="33" />
+      <File FileName="Assets/Scripts/Bird.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ColumnPool.cs" Line="85" Column="26" />
+      <File FileName="Assets/Scripts/Column.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/ScrollingObject.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,7 @@
           <Node name="Flappy-Bird-2" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Column.cs" selected="True" />
+                <Node name="Bird.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="698d934b-ab9a-44e5-b37d-43ccf86cbef9" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cb295e6f-57ae-439e-aa8f-d0be0fb4c1d8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
