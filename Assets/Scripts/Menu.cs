@@ -8,28 +8,11 @@ public class Menu : MonoBehaviour
 
     public GameObject menuPanel;
     public bool gamePaused = false;
-    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
     {
         
-    }
-
-    private void Awake()
-    {
-        music = GetComponent<AudioSource>();
-
-        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
-        {
-            print("stop music");
-            music.Stop();
-        }
-        else
-        {
-           // print("play music");
-            music.Play();
-        }
     }
 
     // Update is called once per frame
@@ -51,7 +34,7 @@ public class Menu : MonoBehaviour
             menuPanel.SetActive(false);
             if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
             {
-                music.Play();
+                GameController.instance.music.Play();
             }
         }
         else
@@ -59,21 +42,30 @@ public class Menu : MonoBehaviour
             Time.timeScale = 0f;
             gamePaused = true;
             menuPanel.SetActive(true);
-            music.Pause();
             if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
             {
-                music.Pause();
+                GameController.instance.music.Pause();
             }
         }
     }
 
     public void RestartGame()
     {
+        PlayClickSound();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadMainMenu()
     {
+        PlayClickSound();
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void PlayClickSound()
+    {
+        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
+        {
+            GameController.instance.click.Play();
+        }
     }
 }

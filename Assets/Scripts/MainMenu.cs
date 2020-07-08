@@ -18,26 +18,46 @@ public class MainMenu : MonoBehaviour
     public bool playMusic = true;
     public bool playSound = true;
     private bool controlsActive = false;
+    private AudioSource[] sounds;
+    private AudioSource backgroundMusic;
+    private AudioSource click;
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
+        sounds = GetComponents<AudioSource>();
+        backgroundMusic = sounds[0];
+        click = sounds[1];
+
+        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
+        {
+            backgroundMusic.Stop();
+        }
+        else
+        {
+            backgroundMusic.Play();
+        }
     }
 
     // Start is called before the first frame update
     public void StartGame()
     {
+        PlayClickSound();
         SceneManager.LoadScene("Main");
+        backgroundMusic.Stop();
     }
 
     public void QuitGame()
     {
+        PlayClickSound();
         Application.Quit();
         print("quit game");
     }
 
     public void OpenSettings()
     {
+        PlayClickSound();
         // get savedHighscore and show. If there is no saved highscore, savedHighscore = 0;
         if (PlayerPrefs.HasKey("highscore"))
         {
@@ -79,6 +99,7 @@ public class MainMenu : MonoBehaviour
 
     public void CloseSettings()
     {
+        PlayClickSound();
         settingsPanel.SetActive(false);
     }
 
@@ -103,14 +124,17 @@ public class MainMenu : MonoBehaviour
         if (music.text.Equals("off"))
         {
             music.text = "on";
+            backgroundMusic.Play();
             playMusic = true;
         }
         else
         {
             music.text = "off";
+            backgroundMusic.Stop();
             playMusic = false;
         }
         PlayerPrefs.SetInt("musicBool", playMusic ? 1 : 0);
+        PlayClickSound();
     }
 
     public void ChangeSoundSettings()
@@ -125,11 +149,14 @@ public class MainMenu : MonoBehaviour
             sound.text = "off";
             playSound = false;
         }
+        
         PlayerPrefs.SetInt("soundBool", playSound ? 1 : 0);
+        PlayClickSound();
     }
 
     public void ResetHighscore()
     {
+        PlayClickSound();
         savedHighscore = 0;
         PlayerPrefs.SetInt("highscore", savedHighscore);
         highscore.text = savedHighscore.ToString();
@@ -148,6 +175,15 @@ public class MainMenu : MonoBehaviour
             controlsPanel.SetActive(true);
             controlsActive = true;
             controls.text = "back";
+        }
+        PlayClickSound();
+    }
+
+    private void PlayClickSound()
+    {
+        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
+        {
+            click.Play();
         }
     }
 

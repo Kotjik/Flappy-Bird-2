@@ -25,8 +25,9 @@ public class GameController : MonoBehaviour
     public float scrollSpeed = -1f;
     public int sizeState = 2;
     private AudioSource[] sounds;
-    private AudioSource music;
+    public AudioSource music;
     private AudioSource scored;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Awake()
@@ -39,13 +40,22 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void Start()
-    {
         sounds = GetComponents<AudioSource>();
         music = sounds[0];
         scored = sounds[1];
+        click = sounds[2];
+
+        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
+        {
+            //print("stop music");
+            music.Stop();
+        }
+        else
+        {
+            //print("play music");
+            music.Play();
+        }
     }
 
     // Update is called once per frame
