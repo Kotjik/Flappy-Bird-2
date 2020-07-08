@@ -72,6 +72,8 @@ public class ColumnPool : MonoBehaviour
            // Debug.Log("spawn");
            
             float spawnYPosition = Random.Range(columnMin, columnMax);
+
+
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
 
 
@@ -83,28 +85,18 @@ public class ColumnPool : MonoBehaviour
             var randomSmaller = Random.Range(0, 2);
 
            
-     
             if( randomSmaller == 0)
             {
                 
                 float rndGap = Random.Range(0f, minGapSize);
-             
-
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
 
-               
-
-
             }
-                        else
-                        {
-                            float rndGap = Random.Range(0f, maxGapSize);
-                            columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
-                        }
-
-
-                       
-                    
+            else
+            {
+                float rndGap = Random.Range(0f, maxGapSize);
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+            }
 
 
 
@@ -115,7 +107,7 @@ public class ColumnPool : MonoBehaviour
                 currentColumn = 0;
             }
 
-            Debug.Log("current col "+currentColumn);
+         
         }
 
 
@@ -132,6 +124,7 @@ public class ColumnPool : MonoBehaviour
         
     }
 
+    //for testing pls do not remove
     private float GapSize(GameObject current)
     {
         float gapsize;
