@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
     public bool playMusic = true;
     public bool playSound = true;
     private bool controlsActive = false;
-    public AudioSource scoredSound;
 
     void Awake()
     {
@@ -85,13 +84,6 @@ public class MainMenu : MonoBehaviour
 
     public void SetHighscore(int score)
     {
-        scoredSound = GetComponent<AudioSource>();
-
-        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
-        {
-            scoredSound.Play();
-        }
-
         //checks if there is still a savedHighscore, else it is 0     
         if (PlayerPrefs.HasKey("highscore"))
         {

@@ -23,9 +23,10 @@ public class GameController : MonoBehaviour
     private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
     public float scrollSpeed = -1f;
-    
     public int sizeState = 2;
-
+    private AudioSource[] sounds;
+    private AudioSource music;
+    private AudioSource scored;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,6 +39,13 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        sounds = GetComponents<AudioSource>();
+        music = sounds[0];
+        scored = sounds[1];
     }
 
     // Update is called once per frame
@@ -96,11 +104,17 @@ public class GameController : MonoBehaviour
     public void BirdScored()
     {
         mainMenu = GameObject.Find("ScriptManager").GetComponent<MainMenu>();
-
-        if(gameOver == true)
+                
+        if (gameOver == true)
         {
             return;
         }
+
+        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
+        {
+            scored.Play();
+        }
+
         score++;
         scoreText.text = "Score: " + score.ToString();
         mainMenu.SetHighscore(score);
@@ -120,6 +134,7 @@ public class GameController : MonoBehaviour
         gameOver = true;
         ResetSpeed();
         obstacleSpawnDistance = 10;
+        music.Stop();
     }
 
     private void ChangeSpeed(float score)
