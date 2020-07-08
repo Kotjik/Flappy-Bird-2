@@ -8,9 +8,9 @@ public class Bird : MonoBehaviour
 
     public float upForce = 200f;
     public float sideForce = 5f;
-    public float downForce= -5f;
-    public float rotationSpeed = 2.0f;
-    public int rotationDegree = -70;
+    public float downForce= 7f;
+    public float rotationSpeed = 1.3f;
+    public int rotationDegree = -60;
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -43,26 +43,38 @@ public class Bird : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     rb2d.velocity = Vector2.zero;
-                    rb2d.AddForce(new Vector2(0, upForce));
+                    rb2d.AddForce(Vector2.up * upForce);
                     anim.SetTrigger("Flap");
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
-                    transform.Translate(new Vector2(sideForce * Time.deltaTime, 0), Space.World);
+                    //transform.Translate(new Vector2(sideForce * Time.deltaTime, 0), Space.World);
+                    transform.Translate(Vector2.right * sideForce * Time.deltaTime);
+
+                    if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+                    {
+                        rb2d.AddForce(Vector2.down * downForce);
+                    }
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                 {
-                    transform.Translate(new Vector2(-sideForce * Time.deltaTime, 0), Space.World);
+                    transform.Translate(Vector2.left * sideForce * Time.deltaTime);
+
+                    if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+                    {
+                        rb2d.AddForce(Vector2.down * downForce);
+                    }
                 }
                 else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
                 {
-                    //transform.Translate(new Vector2(0, downForce * Time.deltaTime), Space.World);
-                    rb2d.AddForce(new Vector2(0, downForce));
+                    rb2d.AddForce(Vector2.down * downForce);
                 }
                 // for testing
                 else if (Input.GetKey(KeyCode.T))
                 {
                     //StartCoroutine("makeImmortal");
+                    GameController.instance.score = 30;
+
                 }
 
             }
@@ -131,7 +143,7 @@ public class Bird : MonoBehaviour
     {
         upForce = 200f;
         sideForce = 5f;
-        downForce = -5f;
+        downForce = 7f;
     }
 
 
@@ -234,7 +246,7 @@ public class Bird : MonoBehaviour
         {
             upForce = 150f;
             sideForce = 3f;
-            downForce = -7f;
+            downForce = 9f;
             
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);

@@ -109,18 +109,6 @@ public class ColumnPool : MonoBehaviour
 
          
         }
-
-
-
-        /* Idee, wie man die Columns bewegen kann
-        foreach (GameObject column in columns)
-        {
-            float y = Mathf.PingPong(speedYPosition * Time.time, deltaYPosition);
-            UnityEngine.Vector2 pos = new UnityEngine.Vector2(column.transform.position.x, y);
-            column.transform.position = pos;
-        }
-        */
-
         
     }
 

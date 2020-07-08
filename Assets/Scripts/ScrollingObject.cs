@@ -11,9 +11,7 @@ public class ScrollingObject : MonoBehaviour
     private int movedir = 1;
     private int upMovementBorder = -1;
     private int downMovementBorder = -6;
-    
-
-
+    private bool moveObstacles = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +20,6 @@ public class ScrollingObject : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-     
     }
 
     // Update is called once per frame
@@ -31,28 +28,33 @@ public class ScrollingObject : MonoBehaviour
         rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, 0);
 
 
-        //moves the object up and down
-        if(gameObject.tag == "Column")
+        //Change ObstacleMovement according to random generated Integer
+        if (GameController.instance.score > 24)
         {
-            if ( transform.GetChild(1).transform.position.y -10.24f > upMovementBorder && moveUp == true )
-            {
-                movedir *= -1;
-                moveUp = false;
-            }
-
-             if (transform.GetChild(0).transform.position.y < downMovementBorder && moveUp == false) 
-             {
-                 movedir *= -1;
-                 moveUp = true;
-             }
-
-            rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
+            moveObstacles = true;
         }
+        
 
+        //moves the object up and down
+        if (moveObstacles == true)
+        {
+            if (gameObject.tag == "Column")
+            {
+                if (transform.GetChild(1).transform.position.y - 10.24f > upMovementBorder && moveUp == true)
+                {
+                    movedir *= -1;
+                    moveUp = false;
+                }
 
+                if (transform.GetChild(0).transform.position.y < downMovementBorder && moveUp == false)
+                {
+                    movedir *= -1;
+                    moveUp = true;
+                }
 
-
-
+                rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
+            }
+        }
 
         //delete unused prefabs
         if (transform.position.x < -screenBounds.x)
