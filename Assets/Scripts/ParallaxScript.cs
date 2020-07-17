@@ -31,6 +31,13 @@ public class ParallaxScript : MonoBehaviour
         {
             RepositionBackground();
         }
+
+
+
+        if (GameController.instance.gameOver == true)
+        {
+            rb2d.velocity = Vector2.zero;
+        }
     }
 
     private void RepositionBackground()
