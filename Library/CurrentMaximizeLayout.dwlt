@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 705
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 879, y: 471}
+  m_MaxSize: {x: 16004, y: 14021}
   vertical: 1
-  controlID: 63122
+  controlID: 64227
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 705
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 879, y: 471}
+  m_MaxSize: {x: 16004, y: 14021}
   vertical: 0
-  controlID: 63123
+  controlID: 64228
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1004
     height: 705
-  m_MinSize: {x: 605, y: 492}
-  m_MaxSize: {x: 12005, y: 14042}
+  m_MinSize: {x: 603, y: 471}
+  m_MaxSize: {x: 12003, y: 14021}
   vertical: 1
-  controlID: 63124
+  controlID: 64205
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,10 +188,10 @@ MonoBehaviour:
     y: 0
     width: 1004
     height: 434
-  m_MinSize: {x: 605, y: 221}
-  m_MaxSize: {x: 12005, y: 4021}
+  m_MinSize: {x: 603, y: 221}
+  m_MaxSize: {x: 12003, y: 4021}
   vertical: 0
-  controlID: 63125
+  controlID: 64206
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 54b6feffead5ffff38f6ffffac3a0000a4c20000
+      m_ExpandedIDs: 54b6feffead5ffff38f6ffffac3a0000fec20000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -335,9 +335,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.417769, y: 1.4842358, z: -10.564969}
+    m_Target: {x: -4.584661, y: 3.5665982, z: -11.925876}
     speed: 2
-    m_Value: {x: -6.417769, y: 1.4842358, z: -10.564969}
+    m_Value: {x: -4.584661, y: 3.5665982, z: -11.925876}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -387,9 +387,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.555652
+    m_Target: 17.936459
     speed: 2
-    m_Value: 8.555652
+    m_Value: 17.936459
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -433,8 +433,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 434
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -506,20 +506,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/NewAssets/Sprites/world
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/NewAssets/Sprites/world
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/admin/dev/Flappy-Bird-2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e03b0000
-    m_LastClickedID: 15328
-    m_ExpandedIDs: 00000000e03b0000e23b00002a3c0000
+    m_SelectedIDs: 6aa20000
+    m_LastClickedID: 41578
+    m_ExpandedIDs: 00000000e03b0000e23b0000243c00002a3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -572,8 +572,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 3023feff
+    m_LastClickedInstanceID: -122064
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009839000066d70000
     m_RenameOverlay:
@@ -648,8 +648,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 705
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -691,5 +691,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: -122064
   m_LastVerticalScrollValue: 0
