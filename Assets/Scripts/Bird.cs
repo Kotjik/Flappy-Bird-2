@@ -20,7 +20,7 @@ public class Bird : MonoBehaviour
     private bool pickedUpTimedItem = false;
     private float itemTimer = 0.0f;
     private SoundHandler soundHandler;
-
+    public GameObject shield;
     // Start is called before the first frame update
     void Start()
     {
@@ -215,7 +215,7 @@ public class Bird : MonoBehaviour
         }
         else if (collision.name.StartsWith("ItemInvulnerable"))
         {
-            StartCoroutine("makeImmortal");
+            StartCoroutine("makeShield");
             Destroy(collision.gameObject);
             soundHandler.PlayInvulnerable();
         }
@@ -266,6 +266,21 @@ public class Bird : MonoBehaviour
             immortal = false;
             anim.SetTrigger("Ghost");
        //     Debug.Log(immortal);
+            yield return null;
+        }
+    }
+
+
+
+    private IEnumerator makeShield()
+    {
+        if (immortal == false)
+        {
+            immortal = true;
+            shield.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            immortal = false;
+            shield.SetActive(false);
             yield return null;
         }
     }
