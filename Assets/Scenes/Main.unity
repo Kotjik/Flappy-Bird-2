@@ -199,8 +199,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columnPrefab: {fileID: 2535264263235590770, guid: f12ea8dfa1add124bb1174d99f9bb5a4,
     type: 3}
+  treeObstacle: {fileID: 1994738713183373790, guid: 6134680dff346436ba23848bad29e64a,
+    type: 3}
+  cageObstacle: {fileID: 1040579478587935128, guid: fad17614a547243e1be24d5aa4d459bd,
+    type: 3}
+  pileObstacle: {fileID: 9180540633250327324, guid: b4571e8191bd347a4a68e6c94c575bb3,
+    type: 3}
+  pile1Obstacle: {fileID: 2197366954787038383, guid: c189f6b18b7dd40dda74079015d2e0f3,
+    type: 3}
   columnMin: 2
-  columnMax: -2
+  columnMax: 0
 --- !u!114 &45338452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3129,7 +3137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308830826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 8.24, z: 0}
+  m_LocalPosition: {x: 0, y: 8.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 950023122}
@@ -3509,7 +3517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388762289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 8.24, z: 0}
+  m_LocalPosition: {x: 0, y: 8.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 497058647}
