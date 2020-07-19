@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 877, y: 492}
   m_MaxSize: {x: 16002, y: 14042}
   vertical: 1
-  controlID: 95752
+  controlID: 101379
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 877, y: 492}
   m_MaxSize: {x: 16002, y: 14042}
   vertical: 0
-  controlID: 95753
+  controlID: 101380
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 492}
   m_MaxSize: {x: 12002, y: 14042}
   vertical: 1
-  controlID: 95754
+  controlID: 101340
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 221}
   m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 95728
+  controlID: 101341
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7a49fdff724ffdff804ffdff7858fdff305bfdffca5efdffc463fdff1264fdff9e6dfdffa26dfdff126efdff7892fdff2495fdff069ffdff229ffdff3e9ffdff8ca5fdffeaaefdffa8b7fdffdcbbfdffccc3fdff0cdafdff98e2fdff54b6feffead5ffff38f6ffffac3a000068c20000a4c20000fec2000054c30000722a0100dc2a01000e42010018420100524d0100
+      m_ExpandedIDs: 7a49fdff724ffdff804ffdff7858fdff305bfdffca5efdffc463fdff1264fdff9e6dfdffa26dfdff126efdff7892fdff2495fdff069ffdff229ffdff3e9ffdff8ca5fdffeaaefdffa8b7fdffdcbbfdffccc3fdff0cdafdff98e2fdff54b6feffead5ffff38f6ffffac3a000068c20000a4c20000fec2000054c30000722a0100dc2a01000e42010018420100524d0100a84d0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -335,9 +335,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.7206125, y: -1.3226134, z: -0.4106642}
+    m_Target: {x: 3.8053164, y: 0.6272076, z: -11.886831}
     speed: 2
-    m_Value: {x: 2.7206125, y: -1.3226134, z: -0.4106642}
+    m_Value: {x: 3.8053164, y: 0.6272076, z: -11.886831}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -387,9 +387,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.12882
+    m_Target: 9.705248
     speed: 2
-    m_Value: 10.12882
+    m_Value: 9.705248
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -433,8 +433,8 @@ MonoBehaviour:
     y: 0
     width: 346
     height: 434
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -459,8 +459,8 @@ MonoBehaviour:
     y: 434
     width: 1004
     height: 271
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -506,20 +506,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/NewAssets/Sprites
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/NewAssets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/admin/dev/Flappy-Bird-2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 14}
-    m_SelectedIDs: ec3b0000
-    m_LastClickedID: 15340
-    m_ExpandedIDs: 00000000e03b0000e23b00002a3c0000
+    m_SelectedIDs: 2a3c0000
+    m_LastClickedID: 15402
+    m_ExpandedIDs: 00000000e03b0000e23b0000243c00002a3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -572,8 +572,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 104d0100
-    m_LastClickedInstanceID: 85264
+    m_SelectedInstanceIDs: d03dfdff
+    m_LastClickedInstanceID: -180784
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009839000066d700006ad70000
     m_RenameOverlay:
@@ -691,5 +691,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 85264
-  m_LastVerticalScrollValue: 0
+  m_LastInspectedObjectInstanceID: -180784
+  m_LastVerticalScrollValue: 120
