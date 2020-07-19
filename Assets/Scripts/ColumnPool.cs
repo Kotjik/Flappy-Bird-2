@@ -59,7 +59,7 @@ public class ColumnPool : MonoBehaviour
         columns = new GameObject[columnPoolSize];
         for(int i = 0; i < columnPoolSize; i++)
         {
-            if (i%2 == 0)
+            if (i%3 == 0)
             {
                 columns[i] = (GameObject)Instantiate(pile1Obstacle, objectPoolPosition, Quaternion.identity);
             }
