@@ -34,9 +34,15 @@ public class ColumnPool : MonoBehaviour
     private float colMinPile1 = 1f;
     private float colMaxPile1 = 4f;
 
+    private float colMinPile0 = 1f;
+    private float colMaxPile0 = 4f;
+
     //gapsize min and max
     private float pile1MinGapSize = 0.5f;
     private float pile1MaxGapSize = 0.8f;
+
+    private float pile0MinGapSize = 0.5f;
+    private float pile0MaxGapSize = 1.0f;
 
     private float rndGap;
 
@@ -53,7 +59,15 @@ public class ColumnPool : MonoBehaviour
         columns = new GameObject[columnPoolSize];
         for(int i = 0; i < columnPoolSize; i++)
         {
-            columns[i] = (GameObject)Instantiate(pile1Obstacle, objectPoolPosition, Quaternion.identity);
+            if (i%2 == 0)
+            {
+                columns[i] = (GameObject)Instantiate(pile1Obstacle, objectPoolPosition, Quaternion.identity);
+            }
+            else
+            {
+                columns[i] = (GameObject)Instantiate(pileObstacle, objectPoolPosition, Quaternion.identity);
+            }
+         
 
            
         }
@@ -62,6 +76,9 @@ public class ColumnPool : MonoBehaviour
         if(columns[currentColumn].tag == "1")
         {
             spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+        }else if (columns[currentColumn].tag == "0")
+        {
+            spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
         }
    
         columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
@@ -94,9 +111,14 @@ public class ColumnPool : MonoBehaviour
 
             // float spawnYPosition = Random.Range(columnMin, columnMax);
 
+
             if (columns[currentColumn].tag == "1")
             {
                 spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+            }
+            else if (columns[currentColumn].tag == "0")
+            {
+                spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
             }
 
 
@@ -116,6 +138,9 @@ public class ColumnPool : MonoBehaviour
                 if(columns[currentColumn].tag == "1")
                 {
                     rndGap = Random.Range(0f, pile1MinGapSize);
+                } else if(columns[currentColumn].tag == "0")
+                {
+                    rndGap = Random.Range(0f, pile0MinGapSize);
                 }
               
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
@@ -126,6 +151,10 @@ public class ColumnPool : MonoBehaviour
                 if (columns[currentColumn].tag == "1")
                 {
                      rndGap = Random.Range(0f, pile1MaxGapSize);
+                }else if(columns[currentColumn].tag == "0")
+                {
+
+                    rndGap = Random.Range(0f, pile0MaxGapSize);
                 }
                 
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
