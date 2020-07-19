@@ -5,10 +5,19 @@ using UnityEngine;
 public class ColumnPool : MonoBehaviour
 {
 
-    public int columnPoolSize = 150;
+    private int columnPoolSize = 15;
     public GameObject columnPrefab;
-    public float columnMin = -2f;
-    public float columnMax = 2f;
+
+    public GameObject treeObstacle;
+    public GameObject cageObstacle;
+    public GameObject pileObstacle;
+    public GameObject pile1Obstacle;
+
+
+    //public float columnMin = -1.5f;
+    //public float columnMax = 2f;
+
+
 
     private GameObject[] columns;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
@@ -20,21 +29,58 @@ public class ColumnPool : MonoBehaviour
     
     private float distanceToLastObstacle;
 
- 
-    private float minGapSize = 0.3f;
-    private float maxGapSize = 1f;
+
+    //y position
+    private float colMinPile1 = 1f;
+    private float colMaxPile1 = 4f;
+
+    private float colMinPile0 = 1f;
+    private float colMaxPile0 = 4f;
+
+    //gapsize min and max
+    private float pile1MinGapSize = 0.5f;
+    private float pile1MaxGapSize = 0.8f;
+
+    private float pile0MinGapSize = 0.5f;
+    private float pile0MaxGapSize = 1.0f;
+
+    private float rndGap;
+
+    private float spawnYPosition;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+       
         columns = new GameObject[columnPoolSize];
         for(int i = 0; i < columnPoolSize; i++)
         {
-            columns[i] = (GameObject)Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity);
+            if (i%3 == 0)
+            {
+                columns[i] = (GameObject)Instantiate(pile1Obstacle, objectPoolPosition, Quaternion.identity);
+            }
+            else
+            {
+                columns[i] = (GameObject)Instantiate(pileObstacle, objectPoolPosition, Quaternion.identity);
+            }
+         
+
+           
         }
 
-        float spawnYPosition = Random.Range(columnMin, columnMax);
+    
+        if(columns[currentColumn].tag == "1")
+        {
+            spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+        }else if (columns[currentColumn].tag == "0")
+        {
+            spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
+        }
+   
         columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
         currentColumn++;
 
@@ -61,9 +107,21 @@ public class ColumnPool : MonoBehaviour
 
         if(GameController.instance.gameOver == false && distanceToLastObstacle > GameController.instance.obstacleSpawnDistance)
         {
-           // Debug.Log("spawn");
-           
-            float spawnYPosition = Random.Range(columnMin, columnMax);
+            // Debug.Log("spawn");
+
+            // float spawnYPosition = Random.Range(columnMin, columnMax);
+
+
+            if (columns[currentColumn].tag == "1")
+            {
+                spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+            }
+            else if (columns[currentColumn].tag == "0")
+            {
+                spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
+            }
+
+
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
 
 
@@ -74,20 +132,34 @@ public class ColumnPool : MonoBehaviour
             float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
             var randomSmaller = Random.Range(0, 2);
 
+           
             if( randomSmaller == 0)
             {
-                float rndGap = Random.Range(0,minGapSize+1);
+                if(columns[currentColumn].tag == "1")
+                {
+                    rndGap = Random.Range(0f, pile1MinGapSize);
+                } else if(columns[currentColumn].tag == "0")
+                {
+                    rndGap = Random.Range(0f, pile0MinGapSize);
+                }
+              
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
+
             }
             else
             {
-                float rndGap = Random.Range(0, maxGapSize + 1);
+                if (columns[currentColumn].tag == "1")
+                {
+                     rndGap = Random.Range(0f, pile1MaxGapSize);
+                }else if(columns[currentColumn].tag == "0")
+                {
+
+                    rndGap = Random.Range(0f, pile0MaxGapSize);
+                }
+                
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
             }
 
-
-            //to activate the up and down movement
-        
 
 
 
@@ -96,20 +168,25 @@ public class ColumnPool : MonoBehaviour
             {
                 currentColumn = 0;
             }
-        }
 
-        /* Idee, wie man die Columns bewegen kann
-        foreach (GameObject column in columns)
-        {
-            float y = Mathf.PingPong(speedYPosition * Time.time, deltaYPosition);
-            UnityEngine.Vector2 pos = new UnityEngine.Vector2(column.transform.position.x, y);
-            column.transform.position = pos;
+         
         }
-        */
-
         
     }
 
+    //for testing pls do not remove
+    private float GapSize(GameObject current)
+    {
+        float gapsize;
+
+        float lowerColumY = current.transform.GetChild(0).transform.position.y;
+      
+        float upperColY = current.transform.GetChild(1).transform.position.y - 10.24f;
+
+        gapsize = Mathf.Abs(lowerColumY - upperColY);
+
+        return gapsize;
+    }
 
 
 

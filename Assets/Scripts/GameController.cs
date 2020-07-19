@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -21,10 +22,12 @@ public class GameController : MonoBehaviour
     private Menu menuScript;
     private MainMenu mainMenu;
     public float obstacleSpawnDistance = 10f;
-    public float scrollSpeed = -1.5f;
-    
+    public float scrollSpeed = -1f;
     public int sizeState = 2;
-
+    private AudioSource[] sounds;
+    public AudioSource music;
+    private AudioSource scored;
+    public AudioSource click;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +39,22 @@ public class GameController : MonoBehaviour
         else if(instance != this)
         {
             Destroy(gameObject);
+        }
+
+        sounds = GetComponents<AudioSource>();
+        music = sounds[0];
+        scored = sounds[1];
+        click = sounds[2];
+
+        if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
+        {
+            //print("stop music");
+            music.Stop();
+        }
+        else
+        {
+            //print("play music");
+            music.Play();
         }
     }
 
@@ -95,26 +114,28 @@ public class GameController : MonoBehaviour
     public void BirdScored()
     {
         mainMenu = GameObject.Find("ScriptManager").GetComponent<MainMenu>();
-
-        if(gameOver == true)
+                
+        if (gameOver == true)
         {
             return;
         }
+
+        if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
+        {
+            scored.Play();
+        }
+
         score++;
         scoreText.text = "Score: " + score.ToString();
         mainMenu.SetHighscore(score);
 
         //speed up the game
-        if (score % 2 == 0 && score < 35)
-        {
-            ChangeSpeed(-0.2f);
-        }
+        ChangeSpeed(score);
+        Debug.Log("ScrollSpeed = " + scrollSpeed);
 
         //distance between obstacles smaller
-        if (score % 3 == 0 && obstacleSpawnDistance >2)
-        {
-            obstacleSpawnDistance -= 0.5f;
-        }
+        ChangeObstacleSpawnDistance(score);
+        Debug.Log("ObstaceSpawnDistance = " + obstacleSpawnDistance);
     }
 
     public void BirdDied()
@@ -123,11 +144,21 @@ public class GameController : MonoBehaviour
         gameOver = true;
         ResetSpeed();
         obstacleSpawnDistance = 10;
+        music.Stop();
     }
 
-    private void ChangeSpeed(float value)
+    private void ChangeSpeed(float score)
     {
-        scrollSpeed += value;
+        scrollSpeed = (1 + Mathf.Sqrt(score) / (2.8f)) * -1;
+    }
+
+    private void ChangeObstacleSpawnDistance(float score)
+    {
+        if(10 - Mathf.Sqrt(score) / 2 > 2)
+        {
+            obstacleSpawnDistance = 10 - Mathf.Sqrt(score) / 2;
+        }
+
     }
 
     private void ResetSpeed()
