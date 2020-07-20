@@ -208,7 +208,6 @@ public class Bird : MonoBehaviour
             {
                
                 StartCoroutine("makeImmortal");
-                StartCoroutine("setOverlay");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
                 //Debug.Log(GameController.instance.life);

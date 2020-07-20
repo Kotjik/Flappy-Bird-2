@@ -1,36 +1,75 @@
-# Flappy Bird 2
+# Flappy Dragon
 
 ## Beschreibung des Spiels (inhaltlich/Spielziel; Genre und sonstige Eckdaten/Klassifizierungen)
 
-Flappy Bird 2 ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run hineinfällt. Es wurde in einem schlichtem und ästhetischem 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
+Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
-Es gibt es keine Sieg-Bedingung - das Ziel ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erstellen. Auf dem Weg zum Highscore muss man jedoch in der Luft bleiben und verschiedenen Hindernissen ausweichen, die einem entgegen kommen. Das schafft man, indem man durch Flügelschläge in die Höhe flattert und sich gekonnt in jede zweidimensionale Richtung bewegt, um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann man sich dabei das Leben erleichtern und sich zur Hölle machen.
+<p align=center>
+<img src="ReadMe_Assets/start.gif" width="400">
+</p>
+
+Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder sich zur Hölle machen.
 
 
 ## Spielmechaniken
 
-Beim Starten jedes Versuchs hat man 3 Leben. Durch das Sammeln des "Leben"-Items kann man die Anzahl seiner Leben erhöhen, jedoch kann man maximal nur 5 Leben haben. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder auf den Boden fliegt, verliert man ein Leben. Nach jedem Lebensverlust ist man für ein paar Sekunden unverwundbar, damit man sich wieder aufraffen kann. Hat man keine übrigen Leben mehr, heißt es beim nächsten Schadenerlitt Game Over.
+Beim Starten jedes Versuchs hat man 3 Leben. 
 
-Im Verlauf des Spiels kann man unterschiedlichste Items sammeln:
-<li>Leben: Man erhält ein zusätzliches Leben
-<li>Feder: Man wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher kommen und sich schneller nach links oder rechts bewegen
-<li>Eisenkugel: Man wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und man beweget sich langsamer nach links und rechts
-<li>Schild: Man wird für kurze Zeit unverwundbar
-<li>Kleiner Trank: Man wird permanent kleiner und passt leichter durch die Lücken der Hindernisse
-<li>Mittlerer Trank: Man versetzt sich in die ursprüngliche Größe
-<li>Großer Trank: Man wird signifikant größer und es wird schwerer durch die Lücken zu passen
+Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
 
-Aktuelle Lebensanzeige und aktueller Score wird unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen, wo man auch Sound und Musik aus, bzw. anmachen kann.
+<p align=center>
+<img src="ReadMe_Assets/lostLife.gif?raw=true" width="400">
+</p>
 
-Die Figur steuert man über WASD oder die Pfeiltasten. Mit W oder Pfeiltaste nach oben kann man einen Flügelschlag machen und kann sich somit in der Höhe halten. Die Schwerkfrat zieht den Charakter automatisch Richtung Boden, allerdings kann man auch schneller gen Boden mittels "S" oder Pfeiltaste nach unten kommen. Mit "A", "D", Pfeiltasten nach rechts und links kann man sich seitlich bewegen. Während des Spiels kann man über "P" oder Escape kann man das Spiel pausieren und gegebenenfalls beenden und ins Hauptmenü zurückkehren.
+Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte sammeln. 
+<p align=center>
+<img src="ReadMe_Assets/point.gif" width="400">
+</p>
 
-Je weiter man kommt, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei spawnenden Hindernissen verringern sich, die Geschwindigkeit mit der sie auf dich zukommen wird höher und die Größe der Lücke ist ebenfalls variabel. Nach einem bestimmtem Zeitpunkt bewegen sich die Hindernisse nicht nur von links nach rechts sondern auch von oben nach unten (beziehungsweise umgekehrt).
+Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden Game Over.
+<p align=center>
+<img alt="Game Over" src="ReadMe_Assets/gameOver.PNG" width="400"/>
+</p>
+
+Schafft der Spieler es nicht rechtzeitig durch ein Hindernis und droht aus dem Fenster zu steuern, wird er vom linken Rand durch die nächsten Hindernisse geschofen - verliert allerdings dadurch auch immer ein Leben.
+<p align=center>
+<img src="ReadMe_Assets/hindernis.gif" width="400">
+</p>
+
+Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktionen sammeln:
+
+| Bild | Aussehen | Funktion|
+| :------: | :------: | ----- | 
+| <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.png" height="30" />| Herz | Spieler erhält ein zusätzliches Leben. |
+| <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.png" height="30" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
+| <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.png" height="25" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
+| <img alt="Schild" src="Assets\NewAssets\Sprites\Items\shield.png" height="30" /> | Schild | Spieler wird für kurze Zeit unverwundbar. |
+| <img alt="Kleiner Trank" src="Assets\NewAssets\Sprites\Items\smaler.png" height="30" /> | Kleiner Trank | Spieler wird permanent kleiner und passt so leichter durch die Lücken der Hindernisse. |
+| <img alt="Mittlerer Trank" src="Assets\NewAssets\Sprites\Items\normal.png" height="30" /> | Mittlerer Trank | Spieler bekommt wieder die ursprüngliche Größe. |
+| <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" height="30" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
+
+
+Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen. Dort kann man auch Sound und Musik aus, bzw. anmachen kann.
+
+<p align=center>
+<img alt="Game Over" src="ReadMe_Assets/settings.PNG" width="400" style="align:center"/>
+</p>
+
+Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen. 
+<p align=center>
+<img alt="Game Over" src="ReadMe_Assets/controls.PNG" width="400" style="align:center"/>
+</p>
+Während des Spiels kann dieses über "P" oder Escape pausieren bzw. gegebenenfalls beenden und ins Hauptmenü zurückkehren werden.
+<p align=center>
+<img alt="Game Over" src="ReadMe_Assets/pause.PNG" width="400" style="align:center"/>
+</p>
+Je mehr Punkte der Spieler erreicht, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei Hindernissen verringern sich, die Geschwindigkeit mit der sie auf den Spieler zukommen wird erhöht und die Größe der Lücke zum durchfliegen variiert. Ab einem bestimmten Score fange die Hindernisse an sich neben links und rechts auch von oben nach unten (beziehungsweise umgekehrt) zu bewegen.
 
 
 
 ## Technische Features
 
-Im folgenden werden die technischen Features aufgezählt und dazu geschrieben, welche Person diese implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V).
+Im folgenden werden die technischen Features aufgezählt und beschrieben, welche Person dies implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V).
 
 <li> Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
 <li> Änderung der Größe der Spielfigur bei Aufnehmen von unterschiedlichen Items (K)
