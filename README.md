@@ -9,33 +9,46 @@
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
+![](ReadMe Assets/start.gif)
+
 Es gibt es keine Sieg-Bedingung - das Ziel ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder sich zur Hölle machen.
 
 
 ## Spielmechaniken
 
 Beim Starten jedes Versuchs hat man 3 Leben. Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
-->video 
+
+![](ReadMe Assets/lost life.gif)
+
 Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden Game Over.
--> Video
+
+<img alt="Game Over" src="ReadMe Assets/game over.PNG" width="400" style="align:center"/>
 
 
 Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktionen sammeln:
 
 | Bild | Aussehen | Funktion|
 | :------: | :------: | ----- | 
-| <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.PNG" width="250" />| Herz | Spieler erhält ein zusätzliches Leben. |
-| <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.PNG" width="250" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
-| <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.PNG" width="250" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
-| <img alt="Schild" src="Assets\NewAssets\Sprites\Items\shield.PNG" width="250" /> | Schild | Spieler wird für kurze Zeit unverwundbar. |
-| <img alt="Kleiner Trank" src="Assets\NewAssets\Sprites\Items\smaler.PNG" width="250" /> | Kleiner Trank | Spieler wird permanent kleiner und passt so leichter durch die Lücken der Hindernisse. |
-| <img alt="Mittlerer Trank" src="Assets\NewAssets\Sprites\Items\normal.PNG" width="250" /> | Mittlerer Trank | Spieler bekommt wieder die ursprüngliche Größe. |
-| <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.PNG" width="250" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
+| <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.png" width="250" />| Herz | Spieler erhält ein zusätzliches Leben. |
+| <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.png" width="250" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
+| <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.png" width="250" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
+| <img alt="Schild" src="Assets\NewAssets\Sprites\Items\shield.png" width="250" /> | Schild | Spieler wird für kurze Zeit unverwundbar. |
+| <img alt="Kleiner Trank" src="Assets\NewAssets\Sprites\Items\smaler.png" width="250" /> | Kleiner Trank | Spieler wird permanent kleiner und passt so leichter durch die Lücken der Hindernisse. |
+| <img alt="Mittlerer Trank" src="Assets\NewAssets\Sprites\Items\normal.png" width="250" /> | Mittlerer Trank | Spieler bekommt wieder die ursprüngliche Größe. |
+| <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" width="250" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
 
 
 Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen. Dort kann man auch Sound und Musik aus, bzw. anmachen kann.
 
-Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen. Während des Spiels kann dieses über "P" oder Escape pausieren bzw. gegebenenfalls beenden und ins Hauptmenü zurückkehren werden.
+<img alt="Game Over" src="ReadMe Assets/settings.PNG" width="400" style="align:center"/>
+
+Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen. 
+
+<img alt="Game Over" src="ReadMe Assets/controls.PNG" width="400" style="align:center"/>
+
+Während des Spiels kann dieses über "P" oder Escape pausieren bzw. gegebenenfalls beenden und ins Hauptmenü zurückkehren werden.
+
+<img alt="Game Over" src="ReadMe Assets/pause.PNG" width="400" style="align:center"/>
 
 Je mehr Punkte der Spieler erreicht, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei Hindernissen verringern sich, die Geschwindigkeit mit der sie auf den Spieler zukommen wird erhöht und die Größe der Lücke zum durchfliegen variiert. Ab einem bestimmten Score fange die Hindernisse an sich neben links und rechts auch von oben nach unten (beziehungsweise umgekehrt) zu bewegen.
 
