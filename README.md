@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-# Flappy Bird 2
- 
-=======
-
 # Flappy Dragon
 
 ## Beschreibung des Spiels (inhaltlich/Spielziel; Genre und sonstige Eckdaten/Klassifizierungen)
