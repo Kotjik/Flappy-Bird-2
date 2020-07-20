@@ -4,7 +4,7 @@
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
-![Start](ReadMe Assets/start.gif)
+<img src="ReadMe_Assets/start.gif">
 
 Es gibt es keine Sieg-Bedingung - das Ziel ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder sich zur Hölle machen.
 
@@ -15,16 +15,22 @@ Beim Starten jedes Versuchs hat man 3 Leben.
 
 Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
 
-![Leben verlieren](ReadMe Assets/lost life.gif)
+
+<img src="ReadMe_Assets/lostLife.gif?raw=true">
+
 
 Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte sammeln. 
 
-![Score erhöhen](ReadMe Assets/point.gif)
+<img src="ReadMe_Assets/point.gif">
 
 Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden Game Over.
 <p align=center>
-<img alt="Game Over" src="ReadMe Assets/game over.PNG" width="400" style="align:center"/>
+<img alt="Game Over" src="ReadMe_Assets/game over.PNG" width="400" style="align:center"/>
 </p>
+
+Schafft der Spieler es nicht rechtzeitig durch ein Hindernis und droht aus dem Fenster zu steuern, wird er vom linken Rand durch die nächsten Hindernisse geschofen - verliert allerdings dadurch auch immer ein Leben.
+<img src="ReadMe_Assets/hindernis.gif">
+
 
 Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktionen sammeln:
 
@@ -42,16 +48,16 @@ Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktion
 Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen. Dort kann man auch Sound und Musik aus, bzw. anmachen kann.
 
 <p align=center>
-<img alt="Game Over" src="ReadMe Assets/settings.PNG" width="400" style="align:center"/>
+<img alt="Game Over" src="ReadMe_Assets/settings.PNG" width="400" style="align:center"/>
 </p>
 
 Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen. 
 <p align=center>
-<img alt="Game Over" src="ReadMe Assets/controls.PNG" width="400" style="align:center"/>
+<img alt="Game Over" src="ReadMe_Assets/controls.PNG" width="400" style="align:center"/>
 </p>
 Während des Spiels kann dieses über "P" oder Escape pausieren bzw. gegebenenfalls beenden und ins Hauptmenü zurückkehren werden.
 <p align=center>
-<img alt="Game Over" src="ReadMe Assets/pause.PNG" width="400" style="align:center"/>
+<img alt="Game Over" src="ReadMe_Assets/pause.PNG" width="400" style="align:center"/>
 </p>
 Je mehr Punkte der Spieler erreicht, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei Hindernissen verringern sich, die Geschwindigkeit mit der sie auf den Spieler zukommen wird erhöht und die Größe der Lücke zum durchfliegen variiert. Ab einem bestimmten Score fange die Hindernisse an sich neben links und rechts auch von oben nach unten (beziehungsweise umgekehrt) zu bewegen.
 
@@ -88,4 +94,3 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Asseterstellung & Grafikstil (M)
 <li> Parallax Effekt (M)
 <li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund
->>>>>>> Stashed changes
