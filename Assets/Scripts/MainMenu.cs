@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject settingsPanel;
     public GameObject controlsPanel;
+    public GameObject mainPanel;
     private int savedHighscore = 0;
     private int savedMusic = 1;
     private int savedSound = 1;
@@ -95,12 +96,14 @@ public class MainMenu : MonoBehaviour
             sound.text = "off";
         }
         settingsPanel.SetActive(true);
+        mainPanel.SetActive(false);
     }
 
     public void CloseSettings()
     {
         PlayClickSound();
         settingsPanel.SetActive(false);
+        mainPanel.SetActive(true);
     }
 
     public void SetHighscore(int score)
@@ -167,12 +170,14 @@ public class MainMenu : MonoBehaviour
         if (controlsActive)
         {
             controlsPanel.SetActive(false);
+            mainPanel.SetActive(true);
             controlsActive = false;
             controls.text = "controls";
         }
         else
         {
             controlsPanel.SetActive(true);
+            mainPanel.SetActive(false);
             controlsActive = true;
             controls.text = "back";
         }
