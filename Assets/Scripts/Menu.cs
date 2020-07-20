@@ -7,17 +7,33 @@ public class Menu : MonoBehaviour
 {
 
     public GameObject menuPanel;
+    public GameObject startText;
     public bool gamePaused = false;
+    private bool gameStarted;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameStarted = false;
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if (gameStarted == false)
+        {
+            Time.timeScale = 0f;
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                gameStarted = true;
+                Time.timeScale = 1f;
+                startText.SetActive(false);
+
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             PauseOrResume();

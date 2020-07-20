@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
         {
             if (gameOver == true)
             {
-                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
@@ -136,6 +136,7 @@ public class GameController : MonoBehaviour
         //distance between obstacles smaller
         ChangeObstacleSpawnDistance(score);
         Debug.Log("ObstaceSpawnDistance = " + obstacleSpawnDistance);
+
     }
 
     public void BirdDied()

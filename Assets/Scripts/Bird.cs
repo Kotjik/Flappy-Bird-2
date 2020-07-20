@@ -6,11 +6,11 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
 
-    public float upForce = 200f;
-    public float sideForce = 5f;
-    public float downForce= 7f;
-    public float rotationSpeed = 1.3f;
-    public int rotationDegree = -60;
+    private float upForce = 200f;
+    private float sideForce = 5f;
+    private float downForce= 7f;
+    const float rotationSpeed = 1.1f;
+    const int rotationDegree = -50;
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -43,6 +43,10 @@ public class Bird : MonoBehaviour
                 //Controls
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
+                    //reset rotation from collision
+                    transform.rotation = Quaternion.identity;
+
+
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(Vector2.up * upForce);
                     if (immortal == false)
@@ -53,7 +57,7 @@ public class Bird : MonoBehaviour
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
                     //transform.Translate(new Vector2(sideForce * Time.deltaTime, 0), Space.World);
-                    transform.Translate(Vector2.right * sideForce * Time.deltaTime);
+                    transform.Translate(Vector2.right * sideForce * Time.deltaTime, Space.World);
 
                     if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
                     {
@@ -62,7 +66,7 @@ public class Bird : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
                 {
-                    transform.Translate(Vector2.left * sideForce * Time.deltaTime);
+                    transform.Translate(Vector2.left * sideForce * Time.deltaTime, Space.World);
 
                     if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
                     {
@@ -183,8 +187,11 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // On Die --> Bird standsStill
+        //On Collision --> Reset Bird physics (so it doesn't mess with rotation speed etc): rb2d.Sleep(); does that
         //rb2d.velocity = Vector2.zero;
+        //rb2d.angularVelocity = 0.0f;
+        rb2d.Sleep();
+
         if (immortal == false)
         {
            
@@ -194,17 +201,18 @@ public class Bird : MonoBehaviour
                 isDead = true;
                 anim.SetTrigger("Die");
                 GameController.instance.BirdDied();
-//                Debug.Log(GameController.instance.life);
+                //Debug.Log(GameController.instance.life);
     
             }
             else
             {
+               
                 StartCoroutine("makeImmortal");
                 StartCoroutine("setOverlay");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
-//                Debug.Log(GameController.instance.life);
-               // Debug.Log(immortal);
+                //Debug.Log(GameController.instance.life);
+                //Debug.Log(immortal);
             }
         }
     }
@@ -278,12 +286,12 @@ public class Bird : MonoBehaviour
         {
             immortal = true;
             anim.SetTrigger("Ghost");
-            //    Debug.Log(immortal);
+            //Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
             Debug.Log("wieder normal");
             immortal = false;
             anim.SetTrigger("Ghost");
-       //     Debug.Log(immortal);
+            //Debug.Log(immortal);
             yield return null;
         }
     }

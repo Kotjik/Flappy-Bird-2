@@ -8,9 +8,11 @@ public class ScrollingObject : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 screenBounds;
     private bool moveUp;
-    private int movedir = 1;
-    private int upMovementBorder = -1;
-    private int downMovementBorder = -6;
+    private float movedir = 1f;
+    private float upMovementBorderSharp = -2f;
+    private float downMovementBorderSharp = -7f;
+    private float upMovementBorderDull = -13.2f;
+    private float downMovementBorderDull = 4.2f;
     private bool moveObstacles = false;
 
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class ScrollingObject : MonoBehaviour
 
 
         //Change ObstacleMovement according to random generated Integer
-        if (GameController.instance.score > 24)
+        if (GameController.instance.score > 0)
         {
             moveObstacles = true;
         }
@@ -38,22 +40,43 @@ public class ScrollingObject : MonoBehaviour
         //moves the object up and down
         if (moveObstacles == true)
         {
-            if (gameObject.tag == "Column")
+            //fette Pfahle
+            if (gameObject.name.StartsWith("Pile("))
             {
-                if (transform.GetChild(1).transform.position.y - 10.24f > upMovementBorder && moveUp == true)
+                if (transform.GetChild(1).transform.position.y - 10.24f > upMovementBorderDull && moveUp == true)
                 {
                     movedir *= -1;
                     moveUp = false;
                 }
 
-                if (transform.GetChild(0).transform.position.y < downMovementBorder && moveUp == false)
+                if (transform.GetChild(0).transform.position.y < downMovementBorderDull && moveUp == false)
                 {
                     movedir *= -1;
                     moveUp = true;
                 }
 
+                ChangeMovementSpeed(100);
                 rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
             }
+
+            //stumpfe Pfahle
+            if (gameObject.name.StartsWith("Pile1("))
+            {
+                if (transform.GetChild(1).transform.position.y - 10.24f > upMovementBorderSharp && moveUp == true)
+                {
+                    movedir *= -1;
+                    moveUp = false;
+                }
+
+                if (transform.GetChild(0).transform.position.y < downMovementBorderSharp && moveUp == false)
+                {
+                    movedir *= -1;
+                    moveUp = true;
+                }
+                ChangeMovementSpeed(100);
+                rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
+            }
+            
         }
 
         //delete unused prefabs
@@ -82,5 +105,18 @@ public class ScrollingObject : MonoBehaviour
         gapsize = Mathf.Abs(lowerColumY - upperColY);
 
         return gapsize;
+    }
+
+    private void ChangeMovementSpeed(float score)
+    {
+        if(movedir < 0)
+        {
+            movedir = -1 * (float)((Mathf.Sqrt(score) / 2) * 0.3);
+        }
+        else if(movedir > 0)
+        {
+            movedir = (float)((Mathf.Sqrt(score) / 2) * 0.3);
+        }
+        
     }
 }

@@ -74,6 +74,16 @@ public class SpawnItems : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
+    //if GameOver, stop Spawning
+    void Update()
+    {
+        // Cancel all Invoke calls
+        if (GameController.instance.gameOver == true)
+        {
+            CancelInvoke();
+        }
+    }
+
     // Spawn one item
     void SpawnBirdIncrease()
     {
