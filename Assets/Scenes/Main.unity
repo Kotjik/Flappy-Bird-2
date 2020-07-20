@@ -4308,7 +4308,7 @@ MonoBehaviour:
   downForce: 5
   rotationSpeed: 1.3
   rotationDegree: -60
-  shield: {fileID: 0}
+  shield: {fileID: 1027213740}
 --- !u!95 &1563440565
 Animator:
   serializedVersion: 3

@@ -21,6 +21,7 @@ public class Bird : MonoBehaviour
     private float itemTimer = 0.0f;
     private SoundHandler soundHandler;
     public GameObject shield;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,10 @@ public class Bird : MonoBehaviour
                 {
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(Vector2.up * upForce);
-                    anim.SetTrigger("Flap");
+                    if (immortal == false)
+                    {
+                        anim.SetTrigger("Flap");
+                    }
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
@@ -78,7 +82,19 @@ public class Bird : MonoBehaviour
                 }
 
             }
+
         }
+
+      /*  For shield when u lose a lifepoint + item
+       *  if (immortal == true)
+        {
+            shield.SetActive(true);
+        }
+        else
+        {
+            shield.SetActive(false);
+        }*/
+
 
         //if(GameController.instance.score % 2 == 1)
         if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
@@ -184,6 +200,7 @@ public class Bird : MonoBehaviour
             else
             {
                 StartCoroutine("makeImmortal");
+                StartCoroutine("setOverlay");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
 //                Debug.Log(GameController.instance.life);
@@ -261,8 +278,9 @@ public class Bird : MonoBehaviour
         {
             immortal = true;
             anim.SetTrigger("Ghost");
-//            Debug.Log(immortal);
+            //    Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
+            Debug.Log("wieder normal");
             immortal = false;
             anim.SetTrigger("Ghost");
        //     Debug.Log(immortal);
@@ -272,17 +290,15 @@ public class Bird : MonoBehaviour
 
 
 
+
     private IEnumerator makeShield()
     {
-        if (immortal == false)
-        {
             immortal = true;
-            shield.SetActive(true);
+           shield.SetActive(true);
             yield return new WaitForSeconds(3f);
             immortal = false;
             shield.SetActive(false);
             yield return null;
-        }
     }
 
 
