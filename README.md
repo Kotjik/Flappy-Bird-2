@@ -4,16 +4,22 @@
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
-![](ReadMe Assets/start.gif)
+![Start](ReadMe Assets/start.GIF)
 
 Es gibt es keine Sieg-Bedingung - das Ziel ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder sich zur Hölle machen.
 
 
 ## Spielmechaniken
 
-Beim Starten jedes Versuchs hat man 3 Leben. Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
+Beim Starten jedes Versuchs hat man 3 Leben. 
 
-![](ReadMe Assets/lost life.gif)
+Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
+
+![Leben verlieren](ReadMe Assets/lost life.GIF)
+
+Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte sammeln. 
+
+![Score erhöhen](ReadMe Assets/point.GIF)
 
 Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden Game Over.
 
@@ -24,13 +30,13 @@ Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktion
 
 | Bild | Aussehen | Funktion|
 | :------: | :------: | ----- | 
-| <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.png" width="250" />| Herz | Spieler erhält ein zusätzliches Leben. |
-| <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.png" width="250" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
-| <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.png" width="250" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
-| <img alt="Schild" src="Assets\NewAssets\Sprites\Items\shield.png" width="250" /> | Schild | Spieler wird für kurze Zeit unverwundbar. |
-| <img alt="Kleiner Trank" src="Assets\NewAssets\Sprites\Items\smaler.png" width="250" /> | Kleiner Trank | Spieler wird permanent kleiner und passt so leichter durch die Lücken der Hindernisse. |
-| <img alt="Mittlerer Trank" src="Assets\NewAssets\Sprites\Items\normal.png" width="250" /> | Mittlerer Trank | Spieler bekommt wieder die ursprüngliche Größe. |
-| <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" width="250" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
+| <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.png" height="100" />| Herz | Spieler erhält ein zusätzliches Leben. |
+| <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.png"height="100" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
+| <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.png" height="100" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
+| <img alt="Schild" src="Assets\NewAssets\Sprites\Items\shield.png" height="100" /> | Schild | Spieler wird für kurze Zeit unverwundbar. |
+| <img alt="Kleiner Trank" src="Assets\NewAssets\Sprites\Items\smaler.png" height="100" /> | Kleiner Trank | Spieler wird permanent kleiner und passt so leichter durch die Lücken der Hindernisse. |
+| <img alt="Mittlerer Trank" src="Assets\NewAssets\Sprites\Items\normal.png" height="100" /> | Mittlerer Trank | Spieler bekommt wieder die ursprüngliche Größe. |
+| <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" height="100" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
 
 
 Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen. Dort kann man auch Sound und Musik aus, bzw. anmachen kann.
