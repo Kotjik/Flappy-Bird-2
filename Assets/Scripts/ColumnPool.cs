@@ -126,7 +126,7 @@ public class ColumnPool : MonoBehaviour
 
 
 
-
+            /*
             //change Gap between obstacle
 
             float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
@@ -159,6 +159,7 @@ public class ColumnPool : MonoBehaviour
                 
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
             }
+            */
 
 
 

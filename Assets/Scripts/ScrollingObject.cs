@@ -31,7 +31,7 @@ public class ScrollingObject : MonoBehaviour
 
 
         //Change ObstacleMovement according to random generated Integer
-        if (GameController.instance.score > 0)
+        if (GameController.instance.score > 24)
         {
             moveObstacles = true;
         }
@@ -55,7 +55,7 @@ public class ScrollingObject : MonoBehaviour
                     moveUp = true;
                 }
 
-                ChangeMovementSpeed(100);
+                ChangeMovementSpeed(GameController.instance.score);
                 rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
             }
 
@@ -73,7 +73,7 @@ public class ScrollingObject : MonoBehaviour
                     movedir *= -1;
                     moveUp = true;
                 }
-                ChangeMovementSpeed(100);
+                ChangeMovementSpeed(GameController.instance.score);
                 rb2d.velocity = new Vector2(GameController.instance.scrollSpeed, movedir);
             }
             

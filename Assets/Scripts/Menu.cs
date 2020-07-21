@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     void Update()
     {
         
-        if (gameStarted == false)
+        if (gameStarted == false && gamePaused == false)
         {
             Time.timeScale = 0f;
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
@@ -48,6 +48,7 @@ public class Menu : MonoBehaviour
             Time.timeScale = 1f;
             gamePaused = false;
             menuPanel.SetActive(false);
+            startText.SetActive(true);
             if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
             {
                 GameController.instance.music.Play();
@@ -57,6 +58,7 @@ public class Menu : MonoBehaviour
         {
             Time.timeScale = 0f;
             gamePaused = true;
+            gameStarted = false;
             menuPanel.SetActive(true);
             if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
             {

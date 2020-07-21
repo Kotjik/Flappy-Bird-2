@@ -44,7 +44,7 @@ public class Bird : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
                 {
                     //reset rotation from collision
-                    transform.rotation = Quaternion.identity;
+                    rb2d.Sleep();
 
 
                     rb2d.velocity = Vector2.zero;
@@ -190,7 +190,7 @@ public class Bird : MonoBehaviour
         //On Collision --> Reset Bird physics (so it doesn't mess with rotation speed etc): rb2d.Sleep(); does that
         //rb2d.velocity = Vector2.zero;
         //rb2d.angularVelocity = 0.0f;
-        rb2d.Sleep();
+        
 
         if (immortal == false)
         {
