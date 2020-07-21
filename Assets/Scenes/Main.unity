@@ -1219,6 +1219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1027213740}
+  collisionParticlePrefab: {fileID: 198330214428362902, guid: a97415c6b57076f41a6621a7b51d63a3,
+    type: 3}
 --- !u!82 &339847273
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4394,6 +4396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 1027213740}
+  collisionParticlePrefab: {fileID: 0}
 --- !u!95 &1563440565
 Animator:
   serializedVersion: 3

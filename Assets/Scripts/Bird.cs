@@ -21,6 +21,8 @@ public class Bird : MonoBehaviour
     private float itemTimer = 0.0f;
     private SoundHandler soundHandler;
     public GameObject shield;
+    public ParticleSystem collisionParticlePrefab; //Assign the Particle from the Editor (You can do this from code too)
+    private ParticleSystem tempCollisionParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -210,6 +212,8 @@ public class Bird : MonoBehaviour
                 StartCoroutine("makeImmortal");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
+                tempCollisionParticle = Instantiate(collisionParticlePrefab, transform.position, Quaternion.identity) as ParticleSystem;
+                tempCollisionParticle.Play();
                 //Debug.Log(GameController.instance.life);
                 //Debug.Log(immortal);
             }
