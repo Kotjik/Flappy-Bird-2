@@ -13,15 +13,15 @@ Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte zu 
 
 ## Spielmechaniken
 
-Beim Starten jedes Versuchs hat man 3 Leben. 
+Beim Starten jedes Versuchs hat man 3 Leben.
 
-Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben. 
+Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben.
 
 <p align=center>
 <img src="ReadMe_Assets/lostLife.gif?raw=true" width="400">
 </p>
 
-Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte sammeln. 
+Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte sammeln.
 <p align=center>
 <img src="ReadMe_Assets/point.gif" width="400">
 </p>
@@ -39,7 +39,7 @@ Schafft der Spieler es nicht rechtzeitig durch ein Hindernis und droht aus dem F
 Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktionen sammeln:
 
 | Bild | Aussehen | Funktion|
-| :------: | :------: | ----- | 
+| :------: | :------: | ----- |
 | <img alt="Herz" src="Assets\NewAssets\Sprites\Items\Herz item.png" height="30" />| Herz | Spieler erhält ein zusätzliches Leben. |
 | <img alt="Feder" src="Assets\NewAssets\Sprites\Items\Feather.png" height="30" /> | Feder| Spieler wird für kurze Zeit leichter und kann somit mit einem Flügelschlag höher fliegen und sich schneller nach links oder rechts bewegen. |
 | <img alt="Eisenkugel" src="Assets\NewAssets\Sprites\Items\Kette.png" height="25" /> | Eisenkugel | Spieler wird für kurze Zeit schwerer und muss somit häufiger mit dem Flügel schlagen, um hoch zu kommen. Zudem fällt man schneller auf den Boden und er bewegt sich langsamer nach links und rechts. |
@@ -55,7 +55,7 @@ Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel an
 <img alt="Game Over" src="ReadMe_Assets/settings.PNG" width="400" style="align:center"/>
 </p>
 
-Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen. 
+Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑ macht der Dragon einen Flügelschlag und kann sich somit in der Höhe halten. Die Schwerkraft zieht den Charakter automatisch Richtung Boden, allerdings kann der Spieler auch schneller gen Boden mittels "S" / ↓ steuern. Mit "A" / ← und "D" / → kann sich der Spieler seitlich bewegen.
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/controls.PNG" width="400" style="align:center"/>
 </p>
@@ -97,4 +97,4 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Spawnalgorithmus der Items (B)(S)
 <li> Asseterstellung & Grafikstil (M)
 <li> Parallax Effekt (M)
-<li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund
+<li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund(M)
