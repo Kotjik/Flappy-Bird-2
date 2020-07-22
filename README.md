@@ -49,8 +49,12 @@ Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktion
 | <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" height="30" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
 
 
-Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Hauptmenü unter Optionen einsehen. Das Spiel selbst wird ebenfalls über das Hauptmenü gestartet. Dort kann man auch Einstellungen zu Highscore, Sound und Musik vornehmen, die Steuerung einsehen oder das Spiel beenden.
+Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Hauptmenü unter Optionen einsehen. Das Spiel selbst wird ebenfalls über das Hauptmenü gestartet. 
+<p align=center>
+<img alt="Game Over" src="ReadMe_Assets/start.PNG" width="400" style="align:center"/>
+</p>
 
+Dort kann man auch Einstellungen zu Highscore, Sound und Musik vornehmen, die Steuerung einsehen oder das Spiel beenden.
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/settings.PNG" width="400" style="align:center"/>
 </p>
@@ -108,6 +112,7 @@ Für die Entwicklung des Spiels wurden die folgenden Quellen verwendet:
 
 | Inhalt | Quelle |
 | ------ | ------ |
+| Font | https://fonts.google.com/ |
 | Musik | https://www.bensound.com/ |
 | Sounds | https://www.noiseforfun.com/ |
 
