@@ -1,5 +1,11 @@
 # Flappy Dragon
 
+## Team
+
+| <img alt="Portrait von Sabrina" src="Images/Teamfotos/Sabrina-Hartl.JPG" width="150" /> | <img alt="Portrait von Konstantin" src="Images/Teamfotos/Konstantin-Kulik_quadrat.jpg" width="150" /> | <img alt="Portrait von Kloß" src="Images/Teamfotos/melanie-kloss.jpg" width="150" /> | <img alt="Portrait von Burak" src="Images/Teamfotos/burak-sahan.jpg" width="150" /> | <img alt="Portrait von Vera" src="Images/Teamfotos/vera-wittmann.jpg" width="150" /> |
+|:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
+| **Sabrina Hartl**<br/> E-Mail: sabrina1.hartl@stud.uni-regensburg.de <br/>Github-Nutzer: 96Sabiii | **Konstantin Kulik**<br/> E-Mail: konstantin.kulik@stud.uni-regensburg.de <br/>Github-Nutzer: Kotjik | **Melanie Kloss** <br/> E-Mail: melanie.kloss@stud.uni-regensburg.de <br/>Github-Nutzer: AboutWhite | **Burak Sahan**  <br/> E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 || **Vera Wittmann**  <br/> E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
+
 ## Beschreibung des Spiels (inhaltlich/Spielziel; Genre und sonstige Eckdaten/Klassifizierungen)
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
@@ -49,7 +55,7 @@ Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktion
 | <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" height="30" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
 
 
-Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Hauptmenü unter Optionen einsehen. Das Spiel selbst wird ebenfalls über das Hauptmenü gestartet. 
+Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Hauptmenü unter Optionen einsehen. Das Spiel selbst wird ebenfalls über das Hauptmenü gestartet.
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/start.PNG" width="400" style="align:center"/>
 </p>
@@ -104,8 +110,8 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Asseterstellung & Grafikstil (M)
 <li> Parallax Effekt (M)
 <li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
-  
-  
+
+
 ## Quellen
 
 Für die Entwicklung des Spiels wurden die folgenden Quellen verwendet:
@@ -115,4 +121,3 @@ Für die Entwicklung des Spiels wurden die folgenden Quellen verwendet:
 | Font | https://fonts.google.com/ |
 | Musik | https://www.bensound.com/ |
 | Sounds | https://www.noiseforfun.com/ |
-
