@@ -2,12 +2,12 @@
 
 ## Team
 
-| <img alt="Portrait von Sabrina" src="Images/Teamfotos/Sabrina-Hartl.jpg" width="100" /> | <img alt="Portrait von Konstantin" src="Images/Teamfotos/Konstantin-Kulik_quadrat.jpg" width="100" /> | <img alt="Portrait von Melanie" src="Images/Teamfotos/melanie-kloss.jpg" width="150" /> |
+| <img alt="Portrait von Sabrina" src="Images/Teamfotos/Sabrina-Hartl.jpg" width="200" /> | <img alt="Portrait von Konstantin" src="Images/Teamfotos/Konstantin-Kulik_quadrat.jpg" width="200" /> | <img alt="Portrait von Melanie" src="Images/Teamfotos/melanie-kloss.jpg" width="200" /> |
 |:-----------------:|:-----------------:|:-----------------:|
 | **Sabrina Hartl**<br/> E-Mail: sabrina1.hartl@stud.uni-regensburg.de <br/>Github-Nutzer: 96Sabiii | **Konstantin Kulik**<br/> E-Mail: konstantin.kulik@stud.uni-regensburg.de <br/>Github-Nutzer: Kotjik | **Melanie Kloss** <br/> E-Mail: melanie.kloss@stud.uni-regensburg.de <br/>Github-Nutzer: AboutWhite |
 
 
-| <img alt="Portrait von Burak" src="Images/Teamfotos/burak-sahan.jpg" width="100" /> | <img alt="Portrait von Vera" src="Images/Teamfotos/vera-wittmann.jpg" width="100" /> |
+| <img alt="Portrait von Burak" src="Images/Teamfotos/burak-sahan.jpg" width="200" /> | <img alt="Portrait von Vera" src="Images/Teamfotos/vera-wittmann.jpg" width="200" /> |
 |:-----------------:|:-----------------:|
 | **Burak Sahan**  <br/> E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 | **Vera Wittmann**  <br/> E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
 
