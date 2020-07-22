@@ -8,14 +8,14 @@ Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Gesc
 <img src="ReadMe_Assets/start.gif" width="400">
 </p>
 
-Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte zu sammeln wie man kann und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder sich zur Hölle machen.
+Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte wie möglich zu sammeln und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegen kommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschläge in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder zur Hölle machen.
 
 
 ## Spielmechaniken
 
-Beim Starten jedes Versuchs hat man 3 Leben.
+Zu Beginn des Spiels hat man 3 Leben.
 
-Durch das Sammeln des "Herz"-Items kann man die Anzahl seiner Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben.
+Durch das Sammeln des "Herz"-Items kann man die Anzahl der Leben erhöhen, jedoch ist die maximale Anzahl an Leben auf 5 begrenzt. Fliegt man gegen ein Hindernis oder erleidet Schaden indem man gegen die Decke oder den Boden fliegt, verliert man ein Leben.
 
 <p align=center>
 <img src="ReadMe_Assets/lostLife.gif?raw=true" width="400">
@@ -26,12 +26,12 @@ Durch erfolgreiches Durchfliegen eines Hinernisses kann der Spieler Scorepunkte 
 <img src="ReadMe_Assets/point.gif" width="400">
 </p>
 
-Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden Game Over.
+Nach jedem Lebensverlust ist der Spieler für ein paar Sekunden unverwundbar. Hat er keine Leben mehr übrig, heißt es beim nächsten Schaden "Game Over".
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/gameOver.PNG" width="400"/>
 </p>
 
-Schafft der Spieler es nicht rechtzeitig durch ein Hindernis und droht aus dem Fenster zu steuern, wird er vom linken Rand durch die nächsten Hindernisse geschofen - verliert allerdings dadurch auch immer ein Leben.
+Schafft der Spieler es nicht rechtzeitig durch ein Hindernis und droht aus dem Fenster zu steuern, wird er vom linken Rand durch die nächsten Hindernisse geschoben - verliert allerdings dadurch auch immer ein Leben.
 <p align=center>
 <img src="ReadMe_Assets/hindernis.gif" width="400">
 </p>
@@ -49,7 +49,7 @@ Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktion
 | <img alt="Großer Trank" src="Assets\NewAssets\Sprites\Items\bigger.png" height="30" /> | Großer Trank | Spieler wird signifikant größer und es wird schwerer durch die Lücken der Hindernisse zu passen. |
 
 
-Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Menü unter Optionen einsehen. Dort kann man auch Sound und Musik aus, bzw. anmachen kann.
+Die Anzeige der aktuellen Leben und der aktueller Score werden unten im Spiel angezeigt. Den Highscore kann man im Hauptmenü unter Optionen einsehen. Das Spiel selbst wird ebenfalls über das Hauptmenü gestartet. Dort kann man auch Einstellungen zu Highscore, Sound und Musik vornehmen, die Steuerung einsehen oder das Spiel beenden.
 
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/settings.PNG" width="400" style="align:center"/>
@@ -59,17 +59,18 @@ Der Dragon kann über WASD oder die Pfeiltasten gesteuert werden . Mit "W" / ↑
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/controls.PNG" width="400" style="align:center"/>
 </p>
-Während des Spiels kann dieses über "P" oder Escape pausieren bzw. gegebenenfalls beenden und ins Hauptmenü zurückkehren werden.
+
+Während des Spiels kann man dieses über "P" oder "Escape" pausieren. Dabei wird das Pause-Menü aufgerufen. Das laufende Spiel wird zum aktuellen Zeitpunkt eingefroren und kann vom Spieler manuel wieder gestartet werden bzw. gegebenenfalls beendet werden um ins Hauptmenü zurück zu kehren. Außerdem ist es möglich, dass Spiel imm Pause-Menü neu zu starten.
 <p align=center>
 <img alt="Game Over" src="ReadMe_Assets/pause.PNG" width="400" style="align:center"/>
 </p>
-Je mehr Punkte der Spieler erreicht, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei Hindernissen verringern sich, die Geschwindigkeit mit der sie auf den Spieler zukommen wird erhöht und die Größe der Lücke zum durchfliegen variiert. Ab einem bestimmten Score fange die Hindernisse an sich neben links und rechts auch von oben nach unten (beziehungsweise umgekehrt) zu bewegen.
 
+Je mehr Punkte der Spieler erreicht, desto schwieriger wird es den Hindernissen auszuweichen. Die Abstände zwischen zwei Hindernissen verringern sich, die Geschwindigkeit, mit der sie auf den Spieler zukommen, wird erhöht und die Größe der Lücke zum Durchfliegen variiert. Ab einem bestimmten Score fangen die Hindernisse an, sich neben links und rechts auch von oben nach unten (beziehungsweise umgekehrt) zu bewegen.
 
 
 ## Technische Features
 
-Im folgenden werden die technischen Features aufgezählt und beschrieben, welche Person dies implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V).
+Im folgenden werden die technischen Features aufgezählt und beschrieben, welche Person diese implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V).
 
 <li> Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
 <li> Änderung der Größe der Spielfigur bei Aufnehmen von unterschiedlichen Items (K)
@@ -82,7 +83,6 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Pausemenü inklusive Pausieren des Spiels im Hintergrund (V)(K)
 <li> Einfügen aller Items (S)
 <li> Spielfigur bleibt innerhalb der Kamera (K)
-<li> Hindernisspwan (V)
 <li> Hindernisse werden mit der Zeit nach einer bestimmtem Funktion schneller (K)
 <li> Abstand zwischen Hindernissen werden mit der Zeit nach einer bestimmtem Funktion kleiner (K)
 <li> Hindernisse bewegen sich nach einer bestimmten Zeit zusätzlich von oben nach unten und umgekehrt (M)(K)
@@ -91,10 +91,23 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Speichern des Highscores (V)
 <li> Resetten des Highscores (V)
 <li> Einfügen der Musik und Soundeffekte (V)
+<li> Einstellungen zu Musik und Soundeffekten (V)
+<li> Steuerungshinweis (V)
 <li> Erhöhung des Hindernispools (M)
 <li> Steuerung der Spielfigur (K)
 <li> Neigung der Spielfigur gen Boden beim Fallen (K)
 <li> Spawnalgorithmus der Items (B)(S)
 <li> Asseterstellung & Grafikstil (M)
 <li> Parallax Effekt (M)
-<li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund(M)
+<li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
+  
+  
+## Quellen
+
+Für die Entwicklung des Spiels wurden die folgenden Quellen verwendet:
+
+| Inhalt | Quelle |
+| ------ | ------ |
+| Musik | https://www.bensound.com/ |
+| Sounds | https://www.noiseforfun.com/ |
+

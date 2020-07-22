@@ -49,7 +49,7 @@ public class Menu : MonoBehaviour
             gamePaused = false;
             menuPanel.SetActive(false);
             startText.SetActive(true);
-            if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1)
+            if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 1 && GameController.instance.gameOver == false)
             {
                 GameController.instance.music.Play();
             }
