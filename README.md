@@ -75,7 +75,7 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
 <li> Änderung der Größe der Spielfigur bei Aufnehmen von unterschiedlichen Items (K)
 <li> Figur kann nicht über die Obstacles hinaus fliegen (K)
-<li> Randomisiertes Spawnen von Items (S)
+<li> Randomisiertes Spawnen von Items (S, B)
 <li> Spielfiguranimationen (B)(M)
 <li> Lebensanzeige (B)
 <li> Lebenszähler bei Verlust oder Erhalt von Leben (B)
