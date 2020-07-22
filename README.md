@@ -115,6 +115,7 @@ Im folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
 <li> Partikeleffekt: Splittern von Steinen wenn der Spieler mit einem Hindernis kollidiert (S)
 <li> Partikeleffekt: Vulkanrauch (S)
+<li> Partikeleffekt: Vulkanausbruch bei neuem Highscore (S)
 
 
 ## Quellen

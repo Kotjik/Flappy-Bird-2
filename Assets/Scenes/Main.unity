@@ -171,6 +171,8 @@ MonoBehaviour:
   sizeState: 2
   music: {fileID: 0}
   click: {fileID: 0}
+  vulcanoExplosionPrefab: {fileID: 198039942544698878, guid: b4029850245ce9c4798283a0f35f57e8,
+    type: 3}
 --- !u!4 &45338450
 Transform:
   m_ObjectHideFlags: 0

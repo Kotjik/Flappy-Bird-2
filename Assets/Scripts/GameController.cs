@@ -28,6 +28,10 @@ public class GameController : MonoBehaviour
     public AudioSource music;
     private AudioSource scored;
     public AudioSource click;
+    private int currentHighscore;
+    public ParticleSystem vulcanoExplosionPrefab;
+    private ParticleSystem vulcanoExplosionParticle;
+    private Vector2 explosionPosition = new Vector2(0.25f, -0.6f);
 
     // Start is called before the first frame update
     void Awake()
@@ -45,6 +49,8 @@ public class GameController : MonoBehaviour
         music = sounds[0];
         scored = sounds[1];
         click = sounds[2];
+
+        currentHighscore = PlayerPrefs.GetInt("highscore");
 
         if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
         {
@@ -128,6 +134,14 @@ public class GameController : MonoBehaviour
         score++;
         scoreText.text = "Score: " + score.ToString();
         mainMenu.SetHighscore(score);
+
+        Debug.Log("high: " + currentHighscore + " - aktuell: " + score);
+        if (currentHighscore < score)
+        {
+            Debug.Log("particle");
+            vulcanoExplosionParticle = Instantiate(vulcanoExplosionPrefab, explosionPosition, Quaternion.identity) as ParticleSystem;
+            vulcanoExplosionPrefab.Play();
+        }
 
         //speed up the game
         ChangeSpeed(score);
