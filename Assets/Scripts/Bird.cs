@@ -103,6 +103,7 @@ public class Bird : MonoBehaviour
 
 
         //if(GameController.instance.score % 2 == 1)
+        /*
         if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
         {
             FlappyShrinkScale();
@@ -114,7 +115,7 @@ public class Bird : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
         {
             FlappyNormaliseScale();
-        }
+        }*/
 
         //Keep Flappy within Camera bounds
         KeepWithinCameraBounds();
