@@ -119,6 +119,7 @@ public class MainMenu : MonoBehaviour
             savedHighscore = score;
             PlayerPrefs.SetInt("highscore", savedHighscore);
             print("score saved: " + savedHighscore);
+            GameController.instance.makeExplotion();
         }
     }
 

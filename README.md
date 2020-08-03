@@ -11,7 +11,7 @@
 |:-----------------:|:-----------------:|
 | **Burak Sahan**  <br/> Matrikelnummer: XXX <br/> E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 | **Vera Wittmann**  <br/> Matrikelnummer: XXX <br/> E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
 
-## Beschreibung des Spiels (inhaltlich/Spielziel; Genre und sonstige Eckdaten/Klassifizierungen)
+## Beschreibung des Spiels 
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
@@ -115,7 +115,7 @@ Im Folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
 <li> Partikeleffekt: Splittern von Steinen, wenn der Spieler mit einem Hindernis kollidiert (S)
 <li> Partikeleffekt: Vulkanrauch (S)
-<li> Partikeleffekt: Vulkanausbruch bei neuem Highscore (S)
+<li> Partikeleffekt: Vulkanausbruch bei erstmaligen neuem Highscore (S)(V)
 
 
 ## Verwendete Quellen
