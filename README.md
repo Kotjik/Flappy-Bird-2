@@ -2,14 +2,9 @@
 
 ## Team
 
-| <img alt="Portrait von Sabrina" src="Images/Teamfotos/Sabrina-Hartl.jpg" width="200" /> | <img alt="Portrait von Melanie" src="Images/Teamfotos/melanie-kloss.jpg" width="200" /> | <img alt="Portrait von Konstantin" src="Images/Teamfotos/Konstantin-Kulik_quadrat.jpg" width="200" /> |
-|:-----------------:|:-----------------:|:-----------------:|
-| **Sabrina Hartl**<br/> Matrikelnummer: XXX <br/> E-Mail: sabrina1.hartl@stud.uni-regensburg.de <br/>Github-Nutzer: 96Sabiii |  **Melanie Kloss** <br/> Matrikelnummer: XXX <br/> E-Mail: melanie.kloss@stud.uni-regensburg.de <br/>Github-Nutzer: AboutWhite | **Konstantin Kulik**<br/> Matrikelnummer: 1866957 <br/> E-Mail: konstantin.kulik@stud.uni-regensburg.de <br/>Github-Nutzer: Kotjik |
-
-
-| <img alt="Portrait von Burak" src="Images/Teamfotos/burak-sahan.jpg" width="200" /> | <img alt="Portrait von Vera" src="Images/Teamfotos/vera-wittmann.jpg" width="200" /> |
-|:-----------------:|:-----------------:|
-| **Burak Sahan**  <br/> Matrikelnummer: XXX <br/> E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 | **Vera Wittmann**  <br/> Matrikelnummer: XXX <br/> E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
+| **Sabrina Hartl** | **Melanie Kloss** | **Konstantin Kulik** | **Burak Sahan** | **Vera Wittmann** |
+|:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
+| E-Mail: sabrina1.hartl@stud.uni-regensburg.de <br/>Github-Nutzer: 96Sabiii |  E-Mail: melanie.kloss@stud.uni-regensburg.de <br/>Github-Nutzer: AboutWhite | E-Mail: konstantin.kulik@stud.uni-regensburg.de <br/>Github-Nutzer: Kotjik | E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 | E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
 
 ## Beschreibung des Spiels 
 
