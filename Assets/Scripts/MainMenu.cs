@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject controlsPanel;
     public GameObject mainPanel;
+    public GameObject itemsPanel;
     private int savedHighscore = 0;
     private int savedMusic = 1;
     private int savedSound = 1;
@@ -19,6 +20,7 @@ public class MainMenu : MonoBehaviour
     public bool playMusic = true;
     public bool playSound = true;
     private bool controlsActive = false;
+    private bool itemsActive = false;
     private AudioSource[] sounds;
     private AudioSource backgroundMusic;
     private AudioSource click;
@@ -168,19 +170,27 @@ public class MainMenu : MonoBehaviour
 
     public void ShowControls()
     {
-        if (controlsActive)
-        {
-            controlsPanel.SetActive(false);
-            mainPanel.SetActive(true);
-            controlsActive = false;
-            controls.text = "controls";
-        }
-        else
+        if (!controlsActive && !itemsActive)
         {
             controlsPanel.SetActive(true);
             mainPanel.SetActive(false);
             controlsActive = true;
-            controls.text = "back";
+            controls.text = "next";
+        }
+        else if (controlsActive)
+        {
+            controlsPanel.SetActive(false);
+            itemsPanel.SetActive(true);
+            controlsActive = false;
+            itemsActive = true;
+            controls.text = "close";
+        }
+        else
+        {
+            itemsPanel.SetActive(false);
+            mainPanel.SetActive(true);
+            itemsActive = false;
+            controls.text = "controls";
         }
         PlayClickSound();
     }
