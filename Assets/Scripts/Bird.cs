@@ -21,6 +21,8 @@ public class Bird : MonoBehaviour
     private float itemTimer = 0.0f;
     private SoundHandler soundHandler;
     public GameObject shield;
+    public GameObject blueEyes;
+    public GameObject purpleEyes;
     public ParticleSystem collisionParticlePrefab; //Assign the Particle from the Editor (You can do this from code too)
     private ParticleSystem tempCollisionParticle;
 
@@ -136,6 +138,8 @@ public class Bird : MonoBehaviour
             if (itemTimer > time)
             {
                 ResetForceValues();
+                purpleEyes.SetActive(false);
+                blueEyes.SetActive(false);
                 pickedUpTimedItem = false;
                 itemTimer = 0f;
             }
@@ -265,7 +269,7 @@ public class Bird : MonoBehaviour
         {
             upForce = 250f;
             sideForce = 7f;
-
+            blueEyes.SetActive(true);
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);
             soundHandler.PlaySpeedUp();
@@ -276,6 +280,7 @@ public class Bird : MonoBehaviour
             upForce = 150f;
             sideForce = 3f;
             downForce = 9f;
+            purpleEyes.SetActive(true);
             
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);
