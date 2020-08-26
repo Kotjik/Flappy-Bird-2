@@ -213,7 +213,8 @@ public class Bird : MonoBehaviour
             }
             else
             {
-               
+                purpleEyes.SetActive(false);
+                blueEyes.SetActive(false);
                 StartCoroutine("makeImmortal");
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
