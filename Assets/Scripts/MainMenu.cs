@@ -10,17 +10,17 @@ public class MainMenu : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject mainPanel;
     public GameObject itemsPanel;
+    public GameObject creditsPanel;
     private int savedHighscore = 0;
     private int savedMusic = 1;
     private int savedSound = 1;
     public Text highscore;
     public Text music;
     public Text sound;
-    public Text controls;
     public bool playMusic = true;
     public bool playSound = true;
     private bool controlsActive = false;
-    private bool itemsActive = false;
+    private bool creditsActive = false;
     private AudioSource[] sounds;
     private AudioSource backgroundMusic;
     private AudioSource click;
@@ -170,29 +170,56 @@ public class MainMenu : MonoBehaviour
 
     public void ShowControls()
     {
-        if (!controlsActive && !itemsActive)
-        {
-            controlsPanel.SetActive(true);
-            mainPanel.SetActive(false);
-            controlsActive = true;
-            controls.text = "next";
-        }
-        else if (controlsActive)
+        controlsPanel.SetActive(true);
+        mainPanel.SetActive(false);
+        controlsActive = true;
+        PlayClickSound();
+    }
+
+    public void OpenNext()
+    {
+        if (controlsActive)
         {
             controlsPanel.SetActive(false);
             itemsPanel.SetActive(true);
             controlsActive = false;
-            itemsActive = true;
-            controls.text = "close";
         }
         else
         {
             itemsPanel.SetActive(false);
             mainPanel.SetActive(true);
-            itemsActive = false;
-            controls.text = "controls";
         }
         PlayClickSound();
+    }
+
+    public void CloseControls()
+    {
+        PlayClickSound();
+        itemsPanel.SetActive(false);
+        mainPanel.SetActive(true);
+    }
+
+    public void ShowCredits()
+    {
+        if (creditsActive)
+        {
+            creditsPanel.SetActive(false);
+            mainPanel.SetActive(true);
+        } 
+        else
+        {
+            creditsPanel.SetActive(true);
+            mainPanel.SetActive(false);
+        }
+        PlayClickSound();
+    }
+
+    public void CloseCredits()
+    {
+        PlayClickSound();
+        creditsPanel.SetActive(false);
+        mainPanel.SetActive(true);
+        creditsActive = false;
     }
 
     private void PlayClickSound()
