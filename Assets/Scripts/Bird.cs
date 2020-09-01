@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -23,10 +21,12 @@ public class Bird : MonoBehaviour
     public GameObject shield;
     public GameObject blueEyes;
     public GameObject purpleEyes;
-    public ParticleSystem collisionParticlePrefab; //Assign the Particle from the Editor (You can do this from code too)
+
+    //Assign the Particle from the Editor (You can do this from code too)
+    public ParticleSystem collisionParticlePrefab;
+
     private ParticleSystem tempCollisionParticle;
 
-    // Start is called before the first frame update
     void Start()
     {
         menuScript = GameObject.Find("GameController").GetComponent<Menu>();
@@ -37,7 +37,6 @@ public class Bird : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (menuScript.gamePaused == false)
@@ -60,7 +59,7 @@ public class Bird : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
-                    //transform.Translate(new Vector2(sideForce * Time.deltaTime, 0), Space.World);
+                  
                     transform.Translate(Vector2.right * sideForce * Time.deltaTime, Space.World);
 
                     if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
@@ -93,31 +92,7 @@ public class Bird : MonoBehaviour
 
         }
 
-      /*  For shield when u lose a lifepoint + item
-       *  if (immortal == true)
-        {
-            shield.SetActive(true);
-        }
-        else
-        {
-            shield.SetActive(false);
-        }*/
-
-
-        //if(GameController.instance.score % 2 == 1)
-        /*
-        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            FlappyShrinkScale();
-        }
-        else if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            FlappyEnlargeScale();
-        }
-        else if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            FlappyNormaliseScale();
-        }*/
+ 
 
         //Keep Flappy within Camera bounds
         KeepWithinCameraBounds();
@@ -194,10 +169,6 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //On Collision --> Reset Bird physics (so it doesn't mess with rotation speed etc): rb2d.Sleep(); does that
-        //rb2d.velocity = Vector2.zero;
-        //rb2d.angularVelocity = 0.0f;
-        
 
         if (immortal == false)
         {
@@ -208,7 +179,7 @@ public class Bird : MonoBehaviour
                 isDead = true;
                 anim.SetTrigger("Die");
                 GameController.instance.BirdDied();
-                //Debug.Log(GameController.instance.life);
+               
     
             }
             else
@@ -220,8 +191,7 @@ public class Bird : MonoBehaviour
                 soundHandler.PlayCollision();
                 tempCollisionParticle = Instantiate(collisionParticlePrefab, transform.position, Quaternion.identity) as ParticleSystem;
                 tempCollisionParticle.Play();
-                //Debug.Log(GameController.instance.life);
-                //Debug.Log(immortal);
+                
             }
         }
     }
@@ -260,11 +230,11 @@ public class Bird : MonoBehaviour
                 GameController.instance.life++;
                 Destroy(collision.gameObject);
                 soundHandler.PlayLife();
-//                Debug.Log(GameController.instance.life);
+              
             }
             else
             {
-                Debug.Log("max lifepoints reached");
+                
             }
         }else if (collision.name.StartsWith("ItemSpeedUp"))
         {
@@ -296,9 +266,7 @@ public class Bird : MonoBehaviour
         {
             immortal = true;
             anim.SetTrigger("Ghost");
-            //Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
-           // Debug.Log("wieder normal");
             immortal = false;
             anim.SetTrigger("Ghost");
             //Debug.Log(immortal);
