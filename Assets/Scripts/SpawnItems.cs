@@ -231,7 +231,7 @@ public class SpawnItems : MonoBehaviour
         }
         else
         {
-            Debug.Log("Item zerstört");
+            //Debug.Log("Item zerstört");
         }
         yield return null;
     }

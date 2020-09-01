@@ -298,7 +298,7 @@ public class Bird : MonoBehaviour
             anim.SetTrigger("Ghost");
             //Debug.Log(immortal);
             yield return new WaitForSeconds(3f);
-            Debug.Log("wieder normal");
+           // Debug.Log("wieder normal");
             immortal = false;
             anim.SetTrigger("Ghost");
             //Debug.Log(immortal);

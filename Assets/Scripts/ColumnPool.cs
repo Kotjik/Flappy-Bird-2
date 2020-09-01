@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ColumnPool : MonoBehaviour
 {
@@ -13,20 +11,11 @@ public class ColumnPool : MonoBehaviour
     public GameObject pileObstacle;
     public GameObject pile1Obstacle;
 
-
-    //public float columnMin = -1.5f;
-    //public float columnMax = 2f;
-
-
-
     private GameObject[] columns;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
     private float spawXPosition = 10f;
-    private int currentColumn = 0;
+    private int currentColumn;
 
-    private float speedYPosition = 0.5f;
-    private float deltaYPosition = 2f;
-    
     private float distanceToLastObstacle;
 
 
@@ -36,15 +25,6 @@ public class ColumnPool : MonoBehaviour
 
     private float colMinPile0 = 1f;
     private float colMaxPile0 = 4f;
-
-    //gapsize min and max
-    private float pile1MinGapSize = 0.5f;
-    private float pile1MaxGapSize = 0.8f;
-
-    private float pile0MinGapSize = 0.5f;
-    private float pile0MaxGapSize = 1.0f;
-
-    private float rndGap;
 
     private float spawnYPosition;
 
@@ -87,7 +67,7 @@ public class ColumnPool : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
        
@@ -107,9 +87,7 @@ public class ColumnPool : MonoBehaviour
 
         if(GameController.instance.gameOver == false && distanceToLastObstacle > GameController.instance.obstacleSpawnDistance)
         {
-            // Debug.Log("spawn");
-
-            // float spawnYPosition = Random.Range(columnMin, columnMax);
+  
 
 
             if (columns[currentColumn].tag == "1")
@@ -125,43 +103,46 @@ public class ColumnPool : MonoBehaviour
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
 
 
-
-            /*
             //change Gap between obstacle
-
             float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
-            var randomSmaller = Random.Range(0, 2);
-
            
-            if( randomSmaller == 0)
-            {
-                if(columns[currentColumn].tag == "1")
-                {
-                    rndGap = Random.Range(0f, pile1MinGapSize);
-                } else if(columns[currentColumn].tag == "0")
-                {
-                    rndGap = Random.Range(0f, pile0MinGapSize);
-                }
-              
-                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY + rndGap);
 
-            }
-            else
+            if(columns[currentColumn].tag == "0")
             {
-                if (columns[currentColumn].tag == "1")
-                {
-                     rndGap = Random.Range(0f, pile1MaxGapSize);
-                }else if(columns[currentColumn].tag == "0")
-                {
+                var randomSmaller = Random.Range(0, 2);
+                float rndGap;
 
-                    rndGap = Random.Range(0f, pile0MaxGapSize);
+                if (randomSmaller == 1)
+                {
+                    //make gap bigger
+                    rndGap = Random.Range(0.0f, -2.0f);
+                }   
+                else {
+                    //make gap smaller
+                    rndGap = Random.Range(0f, 0.7f);
                 }
-                
+
                 columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
             }
-            */
 
+            if (columns[currentColumn].tag == "1")
+            {
+                var randomSmaller = Random.Range(0, 2);
+                float rndGap;
 
+                if (randomSmaller == 1)
+                {
+                    //make bigger
+                    rndGap = Random.Range(0.0f, 2.0f);
+                }
+                else
+                {
+                    //make smaller
+                    rndGap = Random.Range(0f, -0.7f);
+
+                }
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+            }
 
 
             currentColumn++;
@@ -170,25 +151,6 @@ public class ColumnPool : MonoBehaviour
                 currentColumn = 0;
             }
 
-         
-        }
-        
+        }  
     }
-
-    //for testing pls do not remove
-    private float GapSize(GameObject current)
-    {
-        float gapsize;
-
-        float lowerColumY = current.transform.GetChild(0).transform.position.y;
-      
-        float upperColY = current.transform.GetChild(1).transform.position.y - 10.24f;
-
-        gapsize = Mathf.Abs(lowerColumY - upperColY);
-
-        return gapsize;
-    }
-
-
-
 }
