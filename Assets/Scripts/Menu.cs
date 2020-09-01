@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //starts game after pressing specific keys (UpArrow and W)
         if (gameStarted == false && gamePaused == false)
         {
             Time.timeScale = 0f;
@@ -30,10 +30,10 @@ public class Menu : MonoBehaviour
                 gameStarted = true;
                 Time.timeScale = 1f;
                 startText.SetActive(false);
-
             }
         }
 
+        //pauses the game when pressing P or Escape
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             PauseOrResume();
@@ -44,7 +44,7 @@ public class Menu : MonoBehaviour
     {
         if (gamePaused)
         {
-            //hier gegebenenfalls Geschwindigkeit anpassen
+            //adapt timeScale after resuming game
             Time.timeScale = 1f;
             gamePaused = false;
             menuPanel.SetActive(false);

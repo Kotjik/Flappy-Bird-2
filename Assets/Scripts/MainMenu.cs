@@ -33,6 +33,7 @@ public class MainMenu : MonoBehaviour
         backgroundMusic = sounds[0];
         click = sounds[1];
 
+        //plays music if music is switched on
         if (PlayerPrefs.HasKey("musicBool") && PlayerPrefs.GetInt("musicBool") == 0)
         {
             backgroundMusic.Stop();
@@ -61,6 +62,7 @@ public class MainMenu : MonoBehaviour
     public void OpenSettings()
     {
         PlayClickSound();
+
         // get savedHighscore and show. If there is no saved highscore, savedHighscore = 0;
         if (PlayerPrefs.HasKey("highscore"))
         {
@@ -97,6 +99,7 @@ public class MainMenu : MonoBehaviour
         {
             sound.text = "off";
         }
+
         settingsPanel.SetActive(true);
         mainPanel.SetActive(false);
     }
@@ -116,11 +119,11 @@ public class MainMenu : MonoBehaviour
             savedHighscore = PlayerPrefs.GetInt("highscore");
         }
 
+        //saves new score if it is higher than the savedHighscore
         if (score > savedHighscore)
         {
             savedHighscore = score;
             PlayerPrefs.SetInt("highscore", savedHighscore);
-            print("score saved: " + savedHighscore);
             GameController.instance.makeExplotion();
         }
     }

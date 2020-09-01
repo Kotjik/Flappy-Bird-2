@@ -86,8 +86,6 @@ public class GameController : MonoBehaviour
         {
             life5.SetActive(true);
         }
-
-
         if (life == 4)
         {
             life4.SetActive(true);
@@ -126,6 +124,7 @@ public class GameController : MonoBehaviour
             return;
         }
 
+        //plays sound if sound is switched on
         if (!PlayerPrefs.HasKey("soundBool") || PlayerPrefs.GetInt("soundBool") == 1)
         {
             scored.Play();
@@ -184,7 +183,6 @@ public class GameController : MonoBehaviour
         {
             obstacleSpawnDistance = 10 - Mathf.Sqrt(score) / 2;
         }
-
     }
 
     private void ResetSpeed()

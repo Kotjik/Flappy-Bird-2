@@ -24,7 +24,6 @@ public class Bird : MonoBehaviour
 
     //Assign the Particle from the Editor (You can do this from code too)
     public ParticleSystem collisionParticlePrefab;
-
     private ParticleSystem tempCollisionParticle;
 
     void Start()
@@ -49,7 +48,6 @@ public class Bird : MonoBehaviour
                     //reset rotation from collision
                     rb2d.Sleep();
 
-
                     rb2d.velocity = Vector2.zero;
                     rb2d.AddForce(Vector2.up * upForce);
                     if (immortal == false)
@@ -59,7 +57,6 @@ public class Bird : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
                 {
-                  
                     transform.Translate(Vector2.right * sideForce * Time.deltaTime, Space.World);
 
                     if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
@@ -85,15 +82,9 @@ public class Bird : MonoBehaviour
                 {
                     //StartCoroutine("makeImmortal");
                     GameController.instance.score = 30;
-
                 }
-
             }
-
         }
-
- 
-
         //Keep Flappy within Camera bounds
         KeepWithinCameraBounds();
 
@@ -101,8 +92,7 @@ public class Bird : MonoBehaviour
         SetItemTimer(3f);
         
         //if flappy is falling, rotate flappy 
-        RotateOnFall(rotationDegree, rotationSpeed);
-               
+        RotateOnFall(rotationDegree, rotationSpeed);              
     }
 
     private void SetItemTimer(float time)
@@ -118,7 +108,6 @@ public class Bird : MonoBehaviour
                 pickedUpTimedItem = false;
                 itemTimer = 0f;
             }
-
         }
     }
 
@@ -148,7 +137,6 @@ public class Bird : MonoBehaviour
         downForce = 7f;
     }
 
-
     public void FlappyEnlargeScale()
     {
         flappy.transform.localScale = new Vector2(1.2f, 1.2f);
@@ -169,18 +157,13 @@ public class Bird : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (immortal == false)
-        {
-           
+        {          
             if (GameController.instance.life == 0)
-            {
-                
+            {                
                 isDead = true;
                 anim.SetTrigger("Die");
-                GameController.instance.BirdDied();
-               
-    
+                GameController.instance.BirdDied();  
             }
             else
             {
@@ -190,15 +173,14 @@ public class Bird : MonoBehaviour
                 GameController.instance.life--;
                 soundHandler.PlayCollision();
                 tempCollisionParticle = Instantiate(collisionParticlePrefab, transform.position, Quaternion.identity) as ParticleSystem;
-                tempCollisionParticle.Play();
-                
+                tempCollisionParticle.Play();              
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Item Collision
+        //Item Collision + play specific sound
         if (collision.name.StartsWith("ItemFlappyEnlarge"))
         {
             FlappyEnlargeScale();
@@ -229,8 +211,7 @@ public class Bird : MonoBehaviour
             {
                 GameController.instance.life++;
                 Destroy(collision.gameObject);
-                soundHandler.PlayLife();
-              
+                soundHandler.PlayLife();           
             }
             else
             {
@@ -244,7 +225,6 @@ public class Bird : MonoBehaviour
             pickedUpTimedItem = true;
             Destroy(collision.gameObject);
             soundHandler.PlaySpeedUp();
-
         }
         else if (collision.name.StartsWith("ItemSpeedDown"))
         {
@@ -258,7 +238,6 @@ public class Bird : MonoBehaviour
             soundHandler.PlaySpeedDown();
         }
     }
-
 
     private IEnumerator makeImmortal()
     {
@@ -274,9 +253,6 @@ public class Bird : MonoBehaviour
         }
     }
 
-
-
-
     private IEnumerator makeShield()
     {
             immortal = true;
@@ -286,7 +262,5 @@ public class Bird : MonoBehaviour
             shield.SetActive(false);
             yield return null;
     }
-
-
 
 }
