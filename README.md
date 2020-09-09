@@ -12,6 +12,8 @@ Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Gesc
 
 Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte wie möglich zu sammeln und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegenkommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschlägen in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen, um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder zur Hölle machen.
 
+Eine im Browser spielbare Version findet man unter: kotjik.github.io/Flappy-Dragon/app/index.html [Link einfügen]
+
 <p align=center>
 <img src="Readme/menu.png" width="400">
 </p>
@@ -66,7 +68,7 @@ Während des Spiels kann man dieses über "P" oder "Escape" pausieren. Dabei wir
 
 ## Technische Features und Verteilung der Aufgaben
 
-Im Folgenden werden die technischen Features aufgezählt und beschrieben, welche Person diese implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V). Eine genauere Auflistung sämtlicher Features ist in den Issues zu finden.
+Im Folgenden werden die technischen Features aufgezählt und beschrieben. Daneben wird aufgezählt, welche Person das Feature implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V). Eine genauere Auflistung sämtlicher Features ist in den Issues auf GitHub zu finden. 
 <ul>
 <li> Grundspiel: Erstellen der Hindernisse, sich wiederholender Hintergrund, Grundbewegung des Spielers (B)(K)(M)(S)(V)
 <li> Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
@@ -88,7 +90,7 @@ Im Folgenden werden die technischen Features aufgezählt und beschrieben, welche
 <li> Spielfigur bleibt innerhalb der Kamera (K)
 <li> Hindernisse werden mit der Zeit nach einer bestimmten Funktion schneller (K)(M)
   <ul>
-    <li> Trägt der endlosen Spielschwierigkeit bei. Je weiter man kommt, desto schwieriger ist es den Hindernissen auszuweichen. Es besteht aber gleichzeitig keine Endschwierigkeit und das Spiel stellt somit auch für die besten Spieler eine Herausforderung dar.
+    <li> Trägt der endlosen Spielschwierigkeit bei. Je weiter man kommt, desto schwieriger ist es den Hindernissen auszuweichen. Es besteht aber gleichzeitig keine Endschwierigkeit und das Spiel stellt somit auch für die besten Spieler eine Herausforderung dar. Anfangs erhöht sich die Schwierigkeit etwas schneller, im späteren Spielverlauf wird die Schwierigkeit nur langsam erhöht.
   </ul>
 <li> Abstand zwischen Hindernissen werden mit der Zeit nach einer bestimmten Funktion kleiner (K)(M)
   <ul>
