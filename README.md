@@ -28,18 +28,6 @@ Zu Beginn des Spiels hat man 3 Leben. Durch das Sammeln des "Herz"-Items kann ma
 <img alt="gameover" src="Readme/gameover.png" width="400"/>
 </p>
 
-<p align=center>
-<img src="ReadMe_Assets/lostLife.gif?raw=true" width="400">
-</p>
-
-<p align=center>
-<img src="ReadMe_Assets/point.gif" width="400">
-</p>
-
-<p align=center>
-<img src="ReadMe_Assets/hindernis.gif" width="400">
-</p>
-
 Im Verlauf des Spiels kann man verschiedene Items mit unterschiedlichen Funktionen sammeln:
 
 | Bild | Aussehen | Funktion|
@@ -158,6 +146,7 @@ verwendete Assets:
 | Font | https://fonts.google.com/ |
 | Musik | https://www.bensound.com/ |
 | Sounds | https://www.noiseforfun.com/ |
+| Effects | https://jeanmoreno.com/unity/cartoonfxfree/ |
 
 Tutorials:
 
