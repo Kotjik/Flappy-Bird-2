@@ -69,70 +69,47 @@ Während des Spiels kann man dieses über "P" oder "Escape" pausieren. Dabei wir
 ## Technische Features und Verteilung der Aufgaben
 
 Im Folgenden werden die technischen Features aufgezählt und beschrieben. Daneben wird aufgezählt, welche Person das Feature implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V). Eine genauere Auflistung sämtlicher Features ist in den Issues auf GitHub zu finden. 
-<ul>
-<li> Grundspiel: Erstellen der Hindernisse, sich wiederholender Hintergrund, Grundbewegung des Spielers (B)(K)(M)(S)(V)
-<li> Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
-<li> Änderung der Größe der Spielfigur bei Aufnehmen von unterschiedlichen Items (K)
-  <ul>
-      <li> Stellt eine weitere abwechslungsreiche Spielmechanik dar: der Spieler muss den Items ausweichen oder extra zu ihnen hinfliegen, damit das durchfliegen der Obstacles erleichtert oder nicht erschwert wird.</li>
-  </ul>
-<li> Figur kann nicht über die Obstacles hinausfliegen (K)
-<li> Randomisiertes Spawnen von Items (S)(B)
-<li> Spielfiguranimationen (B)(M)
-<li> Lebensanzeige (B)
-<li> Lebenszähler bei Verlust oder Erhalt von Leben (B)
-<li> Startmenü (V)
-<li> Pausemenü inklusive Pausieren des Spiels im Hintergrund (V)(K)
-  <ul>
-    <li> Beim Starten des Spiels muss der Spieler vorerst extra einen Flügelschlag ausführen, bevor das Spiel beginnt. Somit wird er nicht ohne Vorwarnung in das Spielgeschehen geworfen.
-  </ul>
-<li> Einfügen aller Items und Zerstörung beim Verlassen der Kamera (S)
-<li> Spielfigur bleibt innerhalb der Kamera (K)
-<li> Hindernisse werden mit der Zeit nach einer bestimmten Funktion schneller (K)(M)
-  <ul>
-    <li> Trägt der endlosen Spielschwierigkeit bei. Je weiter man kommt, desto schwieriger ist es den Hindernissen auszuweichen. Es besteht aber gleichzeitig keine Endschwierigkeit und das Spiel stellt somit auch für die besten Spieler eine Herausforderung dar. Anfangs erhöht sich die Schwierigkeit etwas schneller, im späteren Spielverlauf wird die Schwierigkeit nur langsam erhöht.
-  </ul>
-<li> Abstand zwischen Hindernissen werden mit der Zeit nach einer bestimmten Funktion kleiner (K)(M)
-  <ul>
-    <li> Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
-  </ul>
-<li> Hindernisse bewegen sich nach einer bestimmten Zeit zusätzlich von oben nach unten und umgekehrt (M)(K)
-  <ul>
-    <li> Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
-  </ul>
-<li> Bewegung der Hindernisse von oben nach unten und umgekehrt wird mit der Zeit schneller (K)
-  <ul>
-    <li> Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
-  </ul>
-<li> Lücke bei Hindernissen variiert (M)
-<li> Speichern und Resetten des Highscores (V)
-  <ul>
-    <li> Der Spieler sieht seinen individuellen Highscore. Dieser dient als Anreiz - der Spieler kann immer wieder versuchen sich selbst zu übertreffen. Wenn er wieder von “0” Starten möchte, kann der Highscore einfach zurückgesetzt werden.
-  </ul>
-<li> Einfügen der Musik und Soundeffekte (V)
-<li> Einstellungen zu Musik und Soundeffekten (V)
-  <ul>
-    <li> Musik und Soundeffekte können ein- und ausgeschaltet werden, je nachdem, wo sich der Spieler gerade befindet (z. B. ruhige Umgebung - kein Ton, zu Hause - mit Sound und Musik) bzw. wenn er lieber ohne Musik und Sound spielt, können diese einfach abgestellt werden.
-  </ul>
-<li> Steuerungshinweis (V)
-  <ul>
-    <li> Um dem Spieler den Einstieg in das Spiel zu erleichtern, hat er die Möglichkeit die Steuerungsmöglichkeiten einzusehen und erhält Informationen zu den unterschiedlichen Items.
-  </ul>
-<li> Steuerung der Spielfigur (K)
-  <ul>
-    <li> Für mehr Spielerfreiheit und Kontrolle besteht neben der Bewegung nach oben zusätzlich noch die Bewegung nach rechts, links und nach unten. Bei höherer Schwierigkeit kann man somit die Figur gezielter bewegen.
-  </ul>
-<li> Neigung der Spielfigur gen Boden beim Fallen (K)
-<li> Asseterstellung & Grafikstil (M)
-<li> Parallax Effekt (M)
-<li> Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
-<li> Partikeleffekt: Splittern von Steinen, wenn der Spieler mit einem Hindernis kollidiert (S)
-<li> Partikeleffekt: Vulkanrauch (S)
-<li> Partikeleffekt: Vulkanausbruch bei erstmaligen neuen Highscore (S)(V)
-  <ul>
-    <li> Der Spieler erhält dadurch ein visuelles Feedback, wenn er seinen alten Highscore übertroffen hat.
-  </ul>
-</ul>
+
+- Grundspiel: Erstellen der Hindernisse, sich wiederholender Hintergrund, Grundbewegung des Spielers (B)(K)(M)(S)(V)
+- Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
+- Änderung der Größe der Spielfigur bei Aufnehmen von unterschiedlichen Items (K)
+  - Stellt eine weitere abwechslungsreiche Spielmechanik dar: der Spieler muss den Items ausweichen oder extra zu ihnen hinfliegen, damit das durchfliegen der Obstacles erleichtert oder nicht erschwert wird.</li>
+- Figur kann nicht über die Obstacles hinausfliegen (K)
+- Randomisiertes Spawnen von Items (S)(B)
+- Spielfiguranimationen (B)(M)
+- Lebensanzeige (B)
+- Lebenszähler bei Verlust oder Erhalt von Leben (B)
+- Startmenü (V)
+- Pausemenü inklusive Pausieren des Spiels im Hintergrund (V)(K)
+  - Beim Starten des Spiels muss der Spieler vorerst extra einen Flügelschlag ausführen, bevor das Spiel beginnt. Somit wird er nicht ohne Vorwarnung in das Spielgeschehen geworfen.
+- Einfügen aller Items und Zerstörung beim Verlassen der Kamera (S)
+- Spielfigur bleibt innerhalb der Kamera (K)
+- Hindernisse werden mit der Zeit nach einer bestimmten Funktion schneller (K)(M)
+  - Trägt der endlosen Spielschwierigkeit bei. Je weiter man kommt, desto schwieriger ist es den Hindernissen auszuweichen. Es besteht aber gleichzeitig keine Endschwierigkeit und das Spiel stellt somit auch für die besten Spieler eine Herausforderung dar. Anfangs erhöht sich die Schwierigkeit etwas schneller, im späteren Spielverlauf wird die Schwierigkeit nur langsam erhöht.
+- Abstand zwischen Hindernissen werden mit der Zeit nach einer bestimmten Funktion kleiner (K)(M)
+  - Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
+- Hindernisse bewegen sich nach einer bestimmten Zeit zusätzlich von oben nach unten und umgekehrt (M)(K)
+  - Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
+- Bewegung der Hindernisse von oben nach unten und umgekehrt wird mit der Zeit schneller (K)
+  - Trägt der endlosen Spielschwierigkeit bei (Ausführung siehe oben).
+- Lücke bei Hindernissen variiert (M)
+- Speichern und Resetten des Highscores (V)
+  - Der Spieler sieht seinen individuellen Highscore. Dieser dient als Anreiz - der Spieler kann immer wieder versuchen sich selbst zu übertreffen. Wenn er wieder von “0” Starten möchte, kann der Highscore einfach zurückgesetzt werden.
+- Einfügen der Musik und Soundeffekte (V)
+- Einstellungen zu Musik und Soundeffekten (V)
+  - Musik und Soundeffekte können ein- und ausgeschaltet werden, je nachdem, wo sich der Spieler gerade befindet (z. B. ruhige Umgebung - kein Ton, zu Hause - mit Sound und Musik) bzw. wenn er lieber ohne Musik und Sound spielt, können diese einfach abgestellt werden.
+- Steuerungshinweis (V)
+  - Um dem Spieler den Einstieg in das Spiel zu erleichtern, hat er die Möglichkeit die Steuerungsmöglichkeiten einzusehen und erhält Informationen zu den unterschiedlichen Items.
+- Steuerung der Spielfigur (K)
+  - Für mehr Spielerfreiheit und Kontrolle besteht neben der Bewegung nach oben zusätzlich noch die Bewegung nach rechts, links und nach unten. Bei höherer Schwierigkeit kann man somit die Figur gezielter bewegen.
+- Neigung der Spielfigur gen Boden beim Fallen (K)
+- Asseterstellung & Grafikstil (M)
+- Parallax Effekt (M)
+- Partikeleffekt: Leichter Ascheregen angelehnt an die Vulkanlandschaft im Hintergrund (M)
+- Partikeleffekt: Splittern von Steinen, wenn der Spieler mit einem Hindernis kollidiert (S)
+- Partikeleffekt: Vulkanrauch (S)
+- Partikeleffekt: Vulkanausbruch bei erstmaligen neuen Highscore (S)(V)
+  - Der Spieler erhält dadurch ein visuelles Feedback, wenn er seinen alten Highscore übertroffen hat.
 
 ## Feedback von Testspielern
 Im Verlauf der Entwicklung gab es zwei große Feedbackschleifen mit jeweils ca. 10 bis 20 Testern. Das erhaltene Feedback wurde dann möglichst umgesetzt. Bei der ersten Feedbackschleife wurde der erste Prototyp (“Alpha-Version”) des Spiels getestet, während bei der zweiten Feedbackschleife eine weiterentwickelte Version des Spiels (“Beta-Version”) getestet wurde. Im Feedback-Dokument konnten die Tester ihre Gedanken unter den Oberbegriffen “Gut”, “Schlecht”, “Könnte besser sein”, “Nützliche Features”, “Weitere Ideen” und “Andere Kommentare” kategorisieren. Das Feedback wurde anonym abgegeben. In der Dokumentation des Projekts wird das Feedback beider Feedbackrunden wortgenau (ggfs. vom Englischen ins Deutsche übersetzt) aufgelistet. Zusätzlich wurden in unterschiedlichen Entwicklungsphasen weitere Tester beim Spielen der Prototypen nach Unregelmäßigkeiten oder Auffälligkeiten während des Spiels befragt, um mögliche Bugs zu beseitigen und ein optimales Spielerlebnis zu liefern.
