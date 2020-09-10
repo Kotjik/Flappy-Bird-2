@@ -1,47 +1,156 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ColumnPool : MonoBehaviour
 {
 
-    public int columnPoolSize = 5;
+    private int columnPoolSize = 15;
     public GameObject columnPrefab;
-    public float spawnRate = 4f;
-    public float columnMin = -2f;
-    public float columnMax = 2f;
+
+    public GameObject treeObstacle;
+    public GameObject cageObstacle;
+    public GameObject pileObstacle;
+    public GameObject pile1Obstacle;
 
     private GameObject[] columns;
     private Vector2 objectPoolPosition = new Vector2(-15f, -25f);
-    private float timeSinceLastSpawned;
     private float spawXPosition = 10f;
-    private int currentColumn = 0;
-    
+    private int currentColumn;
+
+    private float distanceToLastObstacle;
+
+
+    //y position
+    private float colMinPile1 = 1f;
+    private float colMaxPile1 = 4f;
+
+    private float colMinPile0 = 1f;
+    private float colMaxPile0 = 4f;
+
+    private float spawnYPosition;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+
+       
         columns = new GameObject[columnPoolSize];
         for(int i = 0; i < columnPoolSize; i++)
         {
-            columns[i] = (GameObject)Instantiate(columnPrefab, objectPoolPosition, Quaternion.identity);
+            if (i%3 == 0)
+            {
+                columns[i] = (GameObject)Instantiate(pile1Obstacle, objectPoolPosition, Quaternion.identity);
+            }
+            else
+            {
+                columns[i] = (GameObject)Instantiate(pileObstacle, objectPoolPosition, Quaternion.identity);
+            }
+         
+
+           
         }
+
+    
+        if(columns[currentColumn].tag == "1")
+        {
+            spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+        }else if (columns[currentColumn].tag == "0")
+        {
+            spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
+        }
+   
+        columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
+        currentColumn++;
+
+        
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
-        timeSinceLastSpawned += Time.deltaTime;
-
-        if (GameController.instance.gameOver == false && timeSinceLastSpawned >= spawnRate)
+       
+        int correctIndex;
+        if (currentColumn == 0)
         {
-            timeSinceLastSpawned = 0;
-            float spawnYPosition = Random.Range(columnMin, columnMax);
+            correctIndex = columnPoolSize-1;
+        }
+        else
+        {
+            correctIndex = currentColumn - 1;
+        }
+
+        distanceToLastObstacle = spawXPosition - columns[correctIndex].transform.position.x;
+      
+      
+
+        if(GameController.instance.gameOver == false && distanceToLastObstacle > GameController.instance.obstacleSpawnDistance)
+        {
+  
+
+
+            if (columns[currentColumn].tag == "1")
+            {
+                spawnYPosition = Random.Range(colMinPile1, colMaxPile1);
+            }
+            else if (columns[currentColumn].tag == "0")
+            {
+                spawnYPosition = Random.Range(colMinPile0, colMaxPile0);
+            }
+
+
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
+
+
+            //change Gap between obstacle
+            float curLocalY = columns[currentColumn].transform.GetChild(0).transform.localPosition.y;
+           
+
+            if(columns[currentColumn].tag == "0")
+            {
+                var randomSmaller = Random.Range(0, 2);
+                float rndGap;
+
+                if (randomSmaller == 1)
+                {
+                    //make gap bigger
+                    rndGap = Random.Range(0.0f, -2.0f);
+                }   
+                else {
+                    //make gap smaller
+                    rndGap = Random.Range(0f, 0.7f);
+                }
+
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+            }
+
+            if (columns[currentColumn].tag == "1")
+            {
+                var randomSmaller = Random.Range(0, 2);
+                float rndGap;
+
+                if (randomSmaller == 1)
+                {
+                    //make bigger
+                    rndGap = Random.Range(0.0f, 2.0f);
+                }
+                else
+                {
+                    //make smaller
+                    rndGap = Random.Range(0f, -0.7f);
+
+                }
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, curLocalY - rndGap);
+            }
+
+
             currentColumn++;
-            if(currentColumn >= columnPoolSize)
+            if (currentColumn >= columnPoolSize)
             {
                 currentColumn = 0;
             }
-        }
+
+        }  
     }
 }
