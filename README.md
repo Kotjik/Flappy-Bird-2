@@ -6,13 +6,13 @@
 |:-----------------:|:-----------------:|:-----------------:|:-----------------:|:-----------------:|
 | E-Mail: sabrina1.hartl@stud.uni-regensburg.de <br/>Github-Nutzer: 96Sabiii |  E-Mail: melanie.kloss@stud.uni-regensburg.de <br/>Github-Nutzer: AboutWhite | E-Mail: konstantin.kulik@stud.uni-regensburg.de <br/>Github-Nutzer: Kotjik | E-Mail: burak.sahan@stud.uni-regensburg.de <br/>Github-Nutzer: buraks95 | E-Mail: vera1.wittmann@stud.uni-regensburg.de <br/>Github-Nutzer: veraarev |
 
-## Beschreibung des Spiels 
+## Beschreibung des Spiels
 
 Flappy Dragon ist ein Singleplayer-Spiel, welches in die klassischen Genres Geschicklichkeit und Jump & Run fällt. Es wurde in einem schlichten und ästhetischen 2D Grafikstil gehalten und das Spielgeschehen verläuft von links nach rechts.
 
 Es gibt es keine Sieg-Bedingung - das Ziel des Spiels ist es so viele Punkte wie möglich zu sammeln und somit einen neuen Highscore zu erreichen. Auf dem Weg zum Highscore muss der Spieler in der Luft bleiben und verschiedenen Hindernissen ausweichen, welche ihm entgegenkommen. Durch drücken der entsprechenden Tasten kann der Spieler mit kräftigen Flügelschlägen in die Höhe flattert, schneller abstürzen und sich auch nach rechts und links bewegen, um möglichst keinen Schaden zu erleiden. Durch das Aufsammeln von verschiedenen Items kann sich der Spieler dabei das Leben erleichtern oder zur Hölle machen.
 
-Eine im Browser spielbare Version findet man unter: kotjik.github.io/Flappy-Dragon/app/index.html [Link einfügen]
+Eine im Browser spielbare Version findet man unter: <a href="https://kotjik.github.io/Flappy-Dragon/app/index.html">kotjik.github.io/Flappy-Dragon/app/index.html</a>
 
 <p align=center>
 <img src="Readme/menu.png" width="400">
@@ -68,7 +68,7 @@ Während des Spiels kann man dieses über "P" oder "Escape" pausieren. Dabei wir
 
 ## Technische Features und Verteilung der Aufgaben
 
-Im Folgenden werden die technischen Features aufgezählt und beschrieben. Daneben wird aufgezählt, welche Person das Feature implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V). Eine genauere Auflistung sämtlicher Features ist in den Issues auf GitHub zu finden. 
+Im Folgenden werden die technischen Features aufgezählt und beschrieben. Daneben wird aufgezählt, welche Person das Feature implementiert hat. Die Namen der Personen werden abgekürzt: Burak Sahan (B), Konstantin Kulik (K), Melanie Kloss (M), Sabrina Hartl (S) und Vera Wittmann (V). Eine genauere Auflistung sämtlicher Features ist in den Issues auf GitHub zu finden.
 
 - Grundspiel: Erstellen der Hindernisse, sich wiederholender Hintergrund, Grundbewegung des Spielers (B)(K)(M)(S)(V)
 - Bewegung von Boden, Himmel und Obstacles von rechts nach links (B)(K)(M)(S)(V)
@@ -135,4 +135,3 @@ Tutorials:
 | Pause-Menü | https://www.youtube.com/watch?v=q-exLAHGLfk |
 | Sound-Handler| https://kurzelinks.de/lg3e |
 | Basics | https://kurzelinks.de/o9tk |
-
