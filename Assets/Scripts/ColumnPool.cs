@@ -100,6 +100,23 @@ public class ColumnPool : MonoBehaviour
             }
 
 
+
+
+            // reset child position of the obstacle
+            if(columns[currentColumn].tag == "0")
+            {
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, 2.503f);
+              
+            }
+            else
+            {
+                columns[currentColumn].transform.GetChild(0).transform.localPosition = new Vector2(0, -7.759f);
+
+            }
+           
+
+
+            //spawn obstacle
             columns[currentColumn].transform.position = new Vector2(spawXPosition, spawnYPosition);
 
 
